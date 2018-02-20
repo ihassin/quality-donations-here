@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./DonateForm.css";
 
 
 class DonateForm extends Component {
@@ -36,7 +37,7 @@ class DonateForm extends Component {
 
   render() {
     return (
-      <div className="DonateForm">
+      <div className="page-content">
         <h1>Donate</h1>
       </div>
     );

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./MyPickups.css";
+import "./Shop.css";
 
 
-class MyPickups extends Component {
+class Shop extends Component {
   state = {
 
   };
@@ -37,11 +37,11 @@ class MyPickups extends Component {
 
   render() {
     return (
-      <div className="page-content">
-        <h1>My Pickups</h1>
+      <div className="Shop">
+        <h1>Shop</h1>
       </div>
     );
   }
 }
 
-export default MyPickups;
+export default Shop;

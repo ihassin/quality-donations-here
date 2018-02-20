@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import "./MyDonations.css";
 
 
-class MyStuff extends Component {
+class MyDonations extends Component {
   state = {
 
   };
@@ -36,11 +37,11 @@ class MyStuff extends Component {
 
   render() {
     return (
-      <div className="MyStuff">
-        <h1>My Stuff</h1>
+      <div className="page-content">
+        <h1>My Donations</h1>
       </div>
     );
   }
 }
 
-export default MyStuff;
+export default MyDonations;

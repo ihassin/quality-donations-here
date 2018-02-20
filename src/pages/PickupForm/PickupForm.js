@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./PickupForm.css";
 
 
 class PickupForm extends Component {
@@ -36,7 +37,7 @@ class PickupForm extends Component {
 
   render() {
     return (
-      <div className="PickupForm">
+      <div className="page-content">
         <h1>Donate</h1>
       </div>
     );

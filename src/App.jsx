@@ -2,89 +2,13 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Route, Link } from 'react-router-dom'
 import './App.css'
+import Navbar from './components/Navbar'
 import LoginForm from './components/Login/LoginForm'
 import SignupForm from './components/SignupForm'
-import Header from './components/Header'
-import Home from './components/Home'
 import DonateForm from './pages/DonateForm'
-
-const DisplayLinks = props => {
-	if (props.loggedIn) {
-		return (
-			<nav className="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
-				 <a className="navbar-brand" href="#">
-    				<img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt=""/>
-    				Quality Donations
- 				</a>
-
-				<ul className="navbar-nav mr-auto">
-				</ul>
-
-				<ul className="nav">
-					<li className="nav-item">
-						<Link to="/" className="nav-link">
-							home
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/donate" className="nav-link">
-							donate
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/mystuff" className="nav-link">
-							my donations
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/mypickups" className="nav-link">
-							my pickups
-						</Link>
-					</li>
-					<li>
-						<Link to="#" className="nav-link" onClick={props._logout}>
-							logout
-						</Link>
-					</li>
-				</ul>
-
-		</nav>
-		)
-	} else {
-		return (
-			<nav className="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
-				 <a className="navbar-brand" href="#">
-    				<img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt=""/>
-    				Quality Donations
- 				</a>
-				 <ul className="navbar-nav mr-auto">
-				</ul>
-				<ul className="nav">
-					<li className="nav-item">
-						<Link to="/" className="nav-link">
-							home
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/login" className="nav-link">
-							donate
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/login" className="nav-link">
-							login
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/signup" className="nav-link">
-							sign up
-						</Link>
-					</li>
-				</ul>
-			</nav>
-		)
-	}
-}
+import MyDonations from './pages/MyDonations'
+import MyPickups from './pages/MyPickups'
+import Shop from './pages/Shop'
 
 class App extends Component {
 	constructor() {
@@ -149,24 +73,23 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Header user={this.state.user} />
-				{/* LINKS to our different 'pages' */}
-				<DisplayLinks _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} />
-				{/*  ROUTES */}
-				{/* <Route exact path="/" component={Home} /> */}
-				<Route exact path="/" render={() => <Home user={this.state.user} />} />
+				<Route exact path="/" render={() => <div><Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} shop={true}/> <Shop /></div>} />
 				<Route
 					exact
 					path="/login"
 					render={() =>
+						<div>
+						<Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} />
 						<LoginForm
 							_login={this._login}
 							_googleSignin={this._googleSignin}
-						/>}
+						/>
+						</div>}
 				/>
-				<Route exact path="/signup" component={SignupForm} />
-				<Route exact path="/donate" component={DonateForm} />
-				{/* <LoginForm _login={this._login} /> */}
+				<Route exact path="/signup" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} /> <SignupForm /> </div>} />
+				<Route exact path="/donate" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <DonateForm /> </div>} />
+				<Route exact path="/mydonations" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyDonations /> </div>} />
+				<Route exact path="/mypickups" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyPickups /> </div>} />
 			</div>
 		)
 	}
