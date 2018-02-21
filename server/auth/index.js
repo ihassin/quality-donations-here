@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../db/models/user')
+// const User = require('../db/models/user')
+const {User, Donation} = require('../db/models')
+// const donationsController = require('../controllers/donationController.js')
 const passport = require('../passport')
 
 router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
@@ -23,7 +25,11 @@ router.get('/user', (req, res, next) => {
 	}
 })
 
-// this route is just used to get the user basic info
+// router.get('/shop', (req, res, next) => {
+// 	donationsController.findAll(req, res);
+// })
+
+
 router.get('/donate', (req, res, next) => {
 	console.log('===== user!!======')
 	console.log(req.user)
@@ -34,7 +40,7 @@ router.get('/donate', (req, res, next) => {
 	}
 })
 
-// this route is just used to get the user basic info
+
 router.get('/mydonations', (req, res, next) => {
 	console.log('===== user!!======')
 	console.log(req.user)
@@ -45,7 +51,7 @@ router.get('/mydonations', (req, res, next) => {
 	}
 })
 
-// this route is just used to get the user basic info
+
 router.get('/mypickups', (req, res, next) => {
 	console.log('===== user!!======')
 	console.log(req.user)
@@ -55,6 +61,7 @@ router.get('/mypickups', (req, res, next) => {
 		return res.json({ user: null })
 	}
 })
+
 
 router.post(
 	'/login',

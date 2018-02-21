@@ -1,5 +1,13 @@
-#search-input {
-    padding: 5px;
-    width: 600px;
-    margin: 0 10px;
+#keyword-search-input {
+    padding: 8px;
+    width: 50rem;
+    margin: 0 40px;
+}
+
+.form-rounded {
+    border-radius: 1rem;
+}
+
+div.dropdown-item {
+    padding:0px;
 }

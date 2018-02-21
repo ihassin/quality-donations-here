@@ -1,104 +1,95 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl } from 'react-bootstrap';
+// import { Link } from 'react-router-dom'
 import "./Navbar.css";
 
-const Navbar = props => {
+const DonateNavbar = props => {
 	if (props.loggedIn) {
 		return (
-			<nav className="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
-				 <a className="navbar-brand" href="#">
-    				<img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt=""/>
-    				Quality Donations
- 				</a>
-                 {props.shop ? 
-                      <form className="form-inline">
-                      <input className="form-control form-rounded" type="text" id="search-input" placeholder="What are you looking for?"/>
-                      {/* <input class="form-control" type="text" id="location-input" placeholder="city, state or zip"/> */}
-                    </form>
-                    : ""}
-				<ul className="navbar-nav mr-auto">
-				</ul>
-                <ul className="nav">
 
-                    {props.shop ? "" :
-                    <li className="nav-item">
-                        <Link to="/" className="nav-link">
-                            shop 
-                        </Link>
-                    </li>}
+<Navbar>
+	<Navbar.Header>
+		<Navbar.Brand>
+		<a href="#home">Quality Donations</a>
+		</Navbar.Brand>
+	</Navbar.Header>
+	<Navbar.Collapse>
+		{props.shop ? 
+			<Navbar.Form pullLeft>
+				<FormGroup>
+					<FormControl type="text" id="keyword-search-input" name="keyword" onChange={props.handleKeywordSearch} placeholder="What are you looking for?" />
+				</FormGroup>{' '}
+			</Navbar.Form>
+			: ""}
+			<Nav pullRight>
+			{props.shop ? "" :
+				<NavItem eventKey={1} href="/">
+							shop 
+				</NavItem>
+				}
 
-					<li className="nav-item">
-						<Link to="/donate" className="nav-link">
-							donate
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/mydonations" className="nav-link">
-							my donations
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/mypickups" className="nav-link">
-							my pickups
-						</Link>
-					</li>
-                    <li>
-                        <Link to="#" className="nav-link">
-                            {props.user.local.username}
-						</Link>
-					</li>
-					<li>
-						<Link to="#" className="nav-link" onClick={props._logout}>
-							logout
-						</Link>
-					</li>
-				</ul>
-		    </nav>
+			<NavItem eventKey={2} href="/donate">
+				donate
+			</NavItem>
+
+			<NavDropdown eventKey={3} title={props.user.local.username} id="basic-nav-dropdown">
+				<MenuItem eventKey={3.1} href="/mydonations">
+					my donations
+				</MenuItem>
+				<MenuItem eventKey={3.2} href="/mypickups">
+					my pickups
+				</MenuItem>
+			</NavDropdown>
+
+			<NavItem eventKey={4} href="#" onClick={props._logout}>
+				logout
+			</NavItem>
+
+		</Nav>
+	</Navbar.Collapse>
+</Navbar>
+
 		)
 	} else {
 		return (
-			<nav className="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
-				 <a className="navbar-brand" href="#">
-    				<img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt=""/>
-    				Quality Donations
- 				</a>
-				<ul className="navbar-nav mr-auto">
-				</ul>
-                {props.shop ? 
-                      <form class="form-inline">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Search"/>
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                    : ""}
 
-                    <ul className="nav">
+<Navbar>
+  <Navbar.Header>
+    <Navbar.Brand>
+      <a href="#home">Quality Donations</a>
+    </Navbar.Brand>
+  </Navbar.Header>
+	<Navbar.Collapse>
+		{props.shop ? 
+			<Navbar.Form pullLeft>
+				<FormGroup>
+				<FormControl type="text" id="keyword-search-input" name="keyword" onChange={props.handleKeywordSearch} placeholder="What are you looking for?" />
+				</FormGroup>{' '}
+			</Navbar.Form>
+			: ""}
+			<Nav pullRight>
+			{props.shop ? "" :
+				<NavItem eventKey={1} href="/">
+							shop 
+				</NavItem>
+				}
+				<NavItem eventKey={2} href="/login">
+						donate
+				</NavItem>
 
-                    {props.shop ? "" :
-                    <li className="nav-item">
-                        <Link to="/" className="nav-link">
-                            shop 
-                        </Link>
-                    </li>}
+				<NavItem eventKey={3} href="/login">
+						login
+				</NavItem>
 
-					<li className="nav-item">
-						<Link to="/login" className="nav-link">
-							donate
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/login" className="nav-link">
-							login
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/signup" className="nav-link">
-							sign up 
-						</Link>
-					</li>
-				</ul>
-			</nav>
+				<NavItem eventKey={4} href="/signup">
+						sign up 
+				</NavItem>
+			</Nav>
+		</Navbar.Collapse>
+	</Navbar>
+
 		)
 	}
 }
 
-export default Navbar
+export default DonateNavbar
