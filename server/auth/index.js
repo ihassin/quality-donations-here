@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-// const User = require('../db/models/user')
 const {User, Donation} = require('../db/models')
 // const donationsController = require('../controllers/donationController.js')
 const passport = require('../passport')
@@ -24,11 +23,6 @@ router.get('/user', (req, res, next) => {
 		return res.json({ user: null })
 	}
 })
-
-// router.get('/shop', (req, res, next) => {
-// 	donationsController.findAll(req, res);
-// })
-
 
 router.get('/donate', (req, res, next) => {
 	console.log('===== user!!======')

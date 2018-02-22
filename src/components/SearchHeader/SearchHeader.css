@@ -1,0 +1,77 @@
+#search-header {
+    position: fixed;
+    top: 60px;
+    padding: 5px;
+    margin: 0px 60px;
+}
+
+/* toolbar>.btn-group {
+    margin-left:0px;
+} */
+
+.category-buttons,
+.condition-buttons,
+.age-buttons,
+.gender-buttons,
+.like-buttons {
+    text-decoration: none;
+    font-weight: bold;
+    width: 100px;
+    margin: 2px 10px; 
+}
+
+label.category-buttons.btn.btn-default.active,
+label.condition-buttons.btn.btn-default.active,
+label.age-buttons.btn.btn-default.active,
+label.gender-buttons.btn.btn-default.active,
+label.like-buttons.btn.btn-default.active
+ {
+    font-weight: bolder;
+    font-size:15px;
+    border: 3px solid darkgoldenrod;
+}
+
+.category-buttons {
+    background: yellow
+}
+
+label.category-buttons.btn.btn-default.active
+ {
+    background: yellow
+}
+
+.condition-buttons {
+    background: #cddc39;
+}
+
+label.condition-buttons.btn.btn-default.active {
+    background: #cddc39;
+}
+
+.age-buttons {
+    background:orange;
+}
+
+label.age-buttons.btn.btn-default.active {
+    background: orange;
+}
+
+.gender-buttons {
+    background:#8bc34a;
+}
+
+label.gender-buttons.btn.btn-default.active {
+    background: #8bc34a;
+}
+
+.like-buttons {
+    background:fuchsia;
+}
+
+label.like-buttons.btn.btn-default.active {
+    background:fuchsia;
+}
+
+#city-input {
+    width: 160px;
+}

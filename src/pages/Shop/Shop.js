@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./Shop.css";
 import API from "../../utils/API";
-import DonationCard from '../../components/DonationCard'
+import DonationCard from '../../components/DonationCard';
+import SearchHeader from '../../components/SearchHeader';
+
 
 
 class Shop extends Component {
@@ -63,29 +65,32 @@ class Shop extends Component {
 
   };
 
-  ageTagOnClick = event => {
+  handleAgeTagClick = event => {
     event.preventDefault();
     this.setState({
-      ageTag: event.value
+      ageTag: event.text
     }, () => {
-      const searchObj = {name: this.props.keyword, 
-                    categoryTag:this.state.categoryTag, 
-                    conditionTag:this.state.conditionTag, 
-                    ageTag:this.state.ageTag, 
-                    genderTag:this.state.genderTag, 
-                    city:this.state.city, 
-                    state:this.state.state, zip:this.state.zip }
-        this.loadDonations(searchObj);
+      const searchobj = {name:this.props.keyword, ageTag:this.state.ageTag, 
+        conditionTag:this.state.conditionTag};
+        this.loadDonations(searchobj);
+
+      // const searchObj = {name: this.props.keyword, 
+      //               categoryTag:this.state.categoryTag, 
+      //               conditionTag:this.state.conditionTag, 
+      //               ageTag:this.state.ageTag, 
+      //               genderTag:this.state.genderTag, 
+      //               city:this.state.city, 
+      //               state:this.state.state, zip:this.state.zip }
+        // this.loadDonations(searchObj);
     })
-
-
-    const test = {name:"Sneakers", ageTag : "youth"}
 
   };
 
   render() {
     return (
-      <div className="Shop">
+      <div>
+      <SearchHeader handleAgeTagClick={this.handleAgeTagClick}/>
+      <div id="Shop">
               {this.state.donations.map(donation => (
           <DonationCard
             removeFriend={this.removeFriend}
@@ -97,6 +102,7 @@ class Shop extends Component {
             location={donation.city}
           />
         ))}
+        </div>
      
       </div>
     );

@@ -7,7 +7,7 @@ const DonateNavbar = props => {
 	if (props.loggedIn) {
 		return (
 
-<Navbar>
+<Navbar fixedTop>
 	<Navbar.Header>
 		<Navbar.Brand>
 		<a href="#home">Quality Donations</a>
@@ -18,6 +18,9 @@ const DonateNavbar = props => {
 			<Navbar.Form pullLeft>
 				<FormGroup>
 					<FormControl type="text" id="keyword-search-input" name="keyword" onChange={props.handleKeywordSearch} placeholder="What are you looking for?" />
+				</FormGroup>{' '}
+				<FormGroup>
+					<FormControl type="text" id="cityZip-search-input" name="keyword" onChange={props.handleCityZipSearch} placeholder="Enter City or Zip" />
 				</FormGroup>{' '}
 			</Navbar.Form>
 			: ""}
@@ -53,7 +56,7 @@ const DonateNavbar = props => {
 	} else {
 		return (
 
-<Navbar>
+<Navbar fixedTop>
   <Navbar.Header>
     <Navbar.Brand>
       <a href="#home">Quality Donations</a>
@@ -65,11 +68,14 @@ const DonateNavbar = props => {
 				<FormGroup>
 				<FormControl type="text" id="keyword-search-input" name="keyword" onChange={props.handleKeywordSearch} placeholder="What are you looking for?" />
 				</FormGroup>{' '}
+				<FormGroup>
+					<FormControl type="text" id="cityZip-search-input" name="keyword" onChange={props.handleCityZipSearch} placeholder="Enter City or Zip" />
+				</FormGroup>{' '}
 			</Navbar.Form>
 			: ""}
 			<Nav pullRight>
 			{props.shop ? "" :
-				<NavItem eventKey={1} href="/">
+				<NavItem className="color-white" eventKey={1} href="/">
 							shop 
 				</NavItem>
 				}

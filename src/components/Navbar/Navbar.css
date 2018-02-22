@@ -1,7 +1,8 @@
 #keyword-search-input {
     padding: 8px;
     width: 50rem;
-    margin: 0 40px;
+    margin: 0 20px;
+    
 }
 
 .form-rounded {
@@ -10,4 +11,9 @@
 
 div.dropdown-item {
     padding:0px;
+}
+
+nav.navbar.navbar-default {
+    margin-bottom: 0px;
+    
 }
