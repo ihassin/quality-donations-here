@@ -28,7 +28,8 @@
     font-weight: bolder;
 }
 
-.donate-Form-tag-text {
+.donate-Form-tag-text
+ {
     font-size: 14px;
     font-weight: bolder;
 }
@@ -36,6 +37,12 @@
 .radio-inline {
     font-size: 12px;
     font-weight: bold;
+}
+
+#time-text {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 3px;
 }
 
 #category-second-row {
@@ -50,7 +57,7 @@
 }
 
 #pickup-location-title {
-    margin: 10px 10px 0px 10px;
+    margin: 5px 10px 0px 10px;
     font-size: 20px;
     font-weight: bolder;
     padding-bottom: 5px;
@@ -61,23 +68,60 @@
     width: 115px;
 }
 
-#state-input {
+#state-input{
     width: 45px;
+}
+
+#pickup-time-meridiem {
+    width: 30px;
 }
 
 #zip-input {
     width: 66px;
 }
 
+#start-time-input,
+#end-time-input {
+    width: 50px;
+    padding:6px 6px;
+}
+
+#start-time-input {
+    margin: 0 0 0 5px;
+}
+
+#end-time-input {
+    margin-left: 3px;
+}
+
 #address {
     margin-left: 20px;
 }
 
-#address-title {
-    font-size: 16px;
+#address-title,
+#pickup-day-title,
+.size14-bolder
+ {
+    font-size: 14px;
     font-weight: bolder;
+}
+
+#address-title {
     margin-left: 45px;
 }
+
+#pickup-day-title {
+    margin-left: 10px;
+}
+
+.am-pm,
+.am-pm > label{
+    padding:0px;
+    margin: 0px;
+    margin-left:12px;
+    font-size:12px;
+}
+
 
 
 

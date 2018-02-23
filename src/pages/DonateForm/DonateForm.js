@@ -259,12 +259,54 @@ class DonateForm extends Component {
           <FormControl className="pull-left" type="text" id="zip-input" name="type" placeholder="zip"  />
         </Col>
         </Row>
+      </Col>
+      <Col componentClass={ControlLabel} md={3}>
+        <Row className="show-grid">
+         <Col componentClass={ControlLabel} md={12}>
+          <ControlLabel className="pull-left" id="pickup-day-title">Pickup Day &amp; Time Frame</ControlLabel>
+          </Col>
+        </Row>
+        <Row className="show-grid">
+          <Col componentClass={ControlLabel} md={12}>
+            <FormControl id="pickup-location-type" componentClass="select">
+              <option value="">select location type</option>
+              <option value="residence">Residence</option>
+              <option value="business">Business</option>
+              <option value="police">Police Deptartment</option>
+            </FormControl>
+          </Col>
+        </Row>
+        <Row className="show-grid">
+        <Col componentClass={ControlLabel} md={12}>
+          <FormControl id="pickup-location-type" componentClass="select" >
+              <option value="sunday">Sunday</option>
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+           </FormControl>
+        </Col>
+        </Row>
+        <Row className="show-grid">
+        <Col componentClass={ControlLabel} md={12}>
+         <ControlLabel className="size14-bolder pull-left">B/W</ControlLabel>
+          <FormControl className="pull-left" type="text" id="start-time-input" name="type" placeholder="0:00"  />
+          <ControlLabel id="donate-Form-text" className="pull-left">-</ControlLabel>
+          <FormControl className="pull-left" type="text" id="end-time-input" name="type" placeholder="0:00"  />
+          < Radio className="am-pm pull-left" name="meridiem" >
+                am
+          </Radio>{' '}
+          <Radio className="am-pm pull-left" name="meridiem" >
+            pm
+          </Radio>{' '}
+        </Col>
+        </Row>
+      </Col>
 
-        {/* <h5 className="pull-left">Address</h5> */}
-      </Col>
-      <Col componentClass={ControlLabel} md={4}>
-        <h5 className="pull-left">Date / Time</h5>
-      </Col>
+      
+
       <Col componentClass={ControlLabel} md={4}>
       <h5 className="pull-left">Confirmation</h5>
       </Col>
