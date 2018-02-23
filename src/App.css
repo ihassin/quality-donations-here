@@ -24,5 +24,10 @@
 }
 
 .page-content {
-  padding-top: 50px;
+  padding-top: 60px;
+}
+
+body {
+  background-image: url("./images/halftone-yellow.png");
+  background-color: #ffeb3b;
 }

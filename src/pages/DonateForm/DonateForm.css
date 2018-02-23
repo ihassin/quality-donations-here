@@ -1,0 +1,83 @@
+#donate-form {
+    max-width: 1000px;
+    margin: 20px auto;
+    border: 3px solid green;
+    padding-top:10px;
+}
+
+#file-chosen,
+#upload-picture {
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+#donate-img-container {
+    margin: 0px 20px 0px 20px;
+    width: 325px;
+    height: 225px;
+    border: 3px solid green;
+}
+
+#donate-img {
+    width: 320px;
+    height: 220px;
+}
+
+.donate-Form-text {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.donate-Form-tag-text {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.radio-inline {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#category-second-row {
+    padding-top: 0px;
+    width:425px;
+}
+
+#tags {
+    padding: 0px 0px 10px 20px;
+    margin-left: 20px;
+    border: 1px solid green;
+}
+
+#pickup-location-title {
+    margin: 10px 10px 0px 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    padding-bottom: 5px;
+    border-bottom: 1px solid green;
+}
+
+#city-input {
+    width: 115px;
+}
+
+#state-input {
+    width: 45px;
+}
+
+#zip-input {
+    width: 66px;
+}
+
+#address {
+    margin-left: 20px;
+}
+
+#address-title {
+    font-size: 16px;
+    font-weight: bolder;
+    margin-left: 45px;
+}
+
+
+

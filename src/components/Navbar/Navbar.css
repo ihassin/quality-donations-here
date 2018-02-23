@@ -1,10 +1,16 @@
 #keyword-search-input {
     padding: 8px;
-    width: 50rem;
-    margin: 0 20px;
-    
+    width: 40rem;
+    margin: 0 20px;   
 }
 
+#donate-title {
+    margin: 0 250px; 
+    text-transform: uppercase;
+    color:white;
+    font-size: 24px;
+    font-weight: bolder;
+}
 .form-rounded {
     border-radius: 1rem;
 }
@@ -13,7 +19,23 @@ div.dropdown-item {
     padding:0px;
 }
 
+.dropdown-menu>li>a {
+    font-weight: bolder;
+    font-size: 14px;
+    text-transform: uppercase;
+    color:black;
+}
+
 nav.navbar.navbar-default {
     margin-bottom: 0px;
-    
+    background: #f9a825;
+    border:none;
 }
+
+.navbar-default .navbar-nav>li>a {
+    color:white;
+    font-weight: bolder;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+

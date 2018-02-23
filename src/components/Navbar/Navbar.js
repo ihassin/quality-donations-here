@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 // import { Link } from 'react-router-dom'
 import "./Navbar.css";
 
@@ -10,7 +10,7 @@ const DonateNavbar = props => {
 <Navbar fixedTop>
 	<Navbar.Header>
 		<Navbar.Brand>
-		<a href="#home">Quality Donations</a>
+		<a href="#home">Quality Donations Here</a>
 		</Navbar.Brand>
 	</Navbar.Header>
 	<Navbar.Collapse>
@@ -24,6 +24,13 @@ const DonateNavbar = props => {
 				</FormGroup>{' '}
 			</Navbar.Form>
 			: ""}
+			{props.donate ? 
+			<Navbar.Form pullLeft>
+				<FormGroup>
+					<ControlLabel id="donate-title">Donate Here</ControlLabel>
+				</FormGroup>{' '}
+			</Navbar.Form>
+			: ""}
 			<Nav pullRight>
 			{props.shop ? "" :
 				<NavItem eventKey={1} href="/">
@@ -31,9 +38,11 @@ const DonateNavbar = props => {
 				</NavItem>
 				}
 
-			<NavItem eventKey={2} href="/donate">
-				donate
-			</NavItem>
+			{props.donate ? "" :
+				<NavItem eventKey={2} href="/donate">
+					donate
+				</NavItem>
+			}
 
 			<NavDropdown eventKey={3} title={props.user.local.username} id="basic-nav-dropdown">
 				<MenuItem eventKey={3.1} href="/mydonations">
@@ -59,7 +68,7 @@ const DonateNavbar = props => {
 <Navbar fixedTop>
   <Navbar.Header>
     <Navbar.Brand>
-      <a href="#home">Quality Donations</a>
+      <a href="#home">Quality Donations Here</a>
     </Navbar.Brand>
   </Navbar.Header>
 	<Navbar.Collapse>

@@ -32,7 +32,15 @@ export default {
 
  // return axios.get("/api/shop?ageTag=youth&name=Sneakers");
    
+  },
+
+
+  uploadPicture: (pic, config) => {
+    return axios.post("/api/upload/image", pic, config);
   }
 
+  // uploadPicture: (pic, config) => {
+  //   return axios.post('/upload/image', pic, config);
+  // }
 
 };

@@ -14,15 +14,27 @@ const dbConnection = require('./db') // loads our connection to the mongo databa
 const passport = require('./passport')
 const routes = require("./routes");
 const app = express()
+var uploader = require('express-fileuploader');
+var mutilpart = require('connect-multiparty');
+
 const PORT = process.env.PORT || 8080
 
 // ===== Middleware ====
 app.use(morgan('dev'))
+
+app.use('/api/upload/image', mutilpart());
+ 
+uploader.use(new uploader.LocalStrategy({
+  uploadPath: '/server/uploads',
+  baseUrl: 'http://127.0.0.1:8080/api/uploads/'
+}));
+
 app.use(
 	bodyParser.urlencoded({
 		extended: false
 	})
 )
+
 app.use(bodyParser.json())
 app.use(
 	session({

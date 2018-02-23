@@ -7,40 +7,60 @@ import SearchHeader from '../../components/SearchHeader';
 
 
 class Shop extends Component {
-  state = {
-    donations:[],
-    categoryTag:"",
-    conditionTag:"",
-    ageTag:"",
-    genderTag:"",
-    city:"",
-    state:"",
-    zip:""
-  };
+  constructor() {
+		super()
+		this.state = {
+      donations:[],
+      categoryTag:"",
+      conditionTag:"",
+      ageTag:"",
+      genderTag:"",
+      city:"",
+      state:"",
+      zip:"",
+      typingTimeout:null
+		}
+		this.loadDonations = this.loadDonations.bind(this)
+	
+	}
 
   componentDidMount() {
     this.loadDonations({});
   }
 
-  componentWillReceiveProps(nextProps) {
-    const searchobj = {name:nextProps.keyword, ageTag:this.state.ageTag, 
-      conditionTag:this.state.conditionTag};
-    this.loadDonations(searchobj);
-  }
 
-  // componentWillReceiveProps(nextProps) {
-  //   const searchObj = {name:nextProps.keyword, 
-  //     categoryTag:this.state.categoryTag, 
-  //     conditionTag:this.state.conditionTag, 
-  //     ageTag:this.state.ageTag, 
-  //     genderTag:this.state.genderTag, 
-  //     city:this.state.city, 
-  //     state:this.state.state, zip:this.state.zip };
-  //     console.log("searchobj", searchObj);
-  //   this.loadDonations({searchObj});
+  // componentWillReceiveProps = nextProps => {
+  //   const searchobj = {name:nextProps.keyword, 
+  //     categoryTag:this.state.categoryTag,
+  //     conditionTag:this.state.conditionTag,
+  //     ageTag:this.state.ageTag,
+  //     genderTag:this.state.genderTag,
+  //     city:this.state.city,
+  //     zip:this.state.zip};
+  //   this.loadDonations(searchobj);
   // }
 
-  loadDonations(search) {
+  componentWillReceiveProps = nextProps => {
+    const city = "";
+    const zip = "";
+    let searchobj = {name:nextProps.keyword, city, zip,
+      categoryTag:this.state.categoryTag,
+      conditionTag:this.state.conditionTag,
+      ageTag:this.state.ageTag,
+      genderTag:this.state.genderTag};
+
+    if (this.state.typingTimeout) {
+      clearTimeout(this.state.typingTimeout);
+   }
+
+   this.setState({
+      typingTimeout: setTimeout( () => {   
+        this.loadDonations(searchobj);
+        }, 1000)
+   });
+  }
+
+ loadDonations = search => {
     API.getDonations(search)
       .then(res =>
         this.setState({ donations: res.data })
@@ -67,23 +87,20 @@ class Shop extends Component {
 
   handleAgeTagClick = event => {
     event.preventDefault();
+    console.log("handleagetag", event.target);
+
     this.setState({
-      ageTag: event.text
+      ageTag: event.target.value
     }, () => {
-      const searchobj = {name:this.props.keyword, ageTag:this.state.ageTag, 
-        conditionTag:this.state.conditionTag};
-        this.loadDonations(searchobj);
-
-      // const searchObj = {name: this.props.keyword, 
-      //               categoryTag:this.state.categoryTag, 
-      //               conditionTag:this.state.conditionTag, 
-      //               ageTag:this.state.ageTag, 
-      //               genderTag:this.state.genderTag, 
-      //               city:this.state.city, 
-      //               state:this.state.state, zip:this.state.zip }
-        // this.loadDonations(searchObj);
+      const searchobj = {name:this.props.keyword, 
+          categoryTag:this.state.categoryTag,
+          conditionTag:this.state.conditionTag,
+          ageTag:this.state.ageTag,
+          genderTag:this.state.genderTag,
+          city:this.state.city,
+          zip:this.state.zip};
+       this.loadDonations(searchobj);
     })
-
   };
 
   render() {

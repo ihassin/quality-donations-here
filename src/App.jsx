@@ -91,9 +91,12 @@ handleKeywordSearch = event => {
 	});
 }
 
+
+
+
 	render() {
 		if (this.state.redirectTo) {
-			return <div><Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} shop={true} handleKeywordSearch={this.handleKeywordSearch}/> <Shop keyword={this.state.keyword}/></div>
+			return <div><Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} shop={true} handleKeywordSearch={this.handleKeywordSearch} handleCityZipSearch={this.handleCityZipSearch}/> <Shop keyword={this.state.keyword}/></div>
 		}
 		return (
 			<div className="App">
@@ -111,7 +114,7 @@ handleKeywordSearch = event => {
 						</div>}
 				/>
 				<Route exact path="/signup" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} /> <SignupForm /> </div>} />
-				<Route exact path="/donate" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <DonateForm /> </div>} />
+				<Route exact path="/donate" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} donate={true}/> <DonateForm /> </div>} />
 				<Route exact path="/mydonations" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyDonations /> </div>} />
 				<Route exact path="/mypickups" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyPickups /> </div>} />
 			</div>
