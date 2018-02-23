@@ -88,13 +88,13 @@ class DonateForm extends Component {
         <FormControl type="file" id="file-chosen" name="keyword" onChange={this.handleFileChosen} />
       </Col>
       <Col componentClass={ControlLabel} md={1}>
-        <ControlLabel className="donate-Form-text pull-left">Type</ControlLabel>
+        <ControlLabel className="size18-bolder pull-left">Type</ControlLabel>
       </Col>
       <Col componentClass={ControlLabel} md={2}>
         <FormControl className="pull-left" type="text" id="type-input" name="type" onChange={this.handleInputChange} />
       </Col>
       <Col componentClass={ControlLabel} md={2}>
-        <ControlLabel className="donate-Form-text pull-left">Date Posted</ControlLabel>
+        <ControlLabel className="size18-bolder pull-left">Date Posted</ControlLabel>
       </Col>
       <Col componentClass={ControlLabel} md={2}>
       <FormControl className="pull-left" type="text" id="date-posted" name="type" />
@@ -106,7 +106,7 @@ class DonateForm extends Component {
         <Button className="pull-left" id="upload-picture" onClick={this.handleUploadPicture} bsStyle="success">Upload Picture</Button>
       </Col>
       <Col componentClass={ControlLabel} md={1}>
-        <ControlLabel className="donate-Form-text pull-left">Desc</ControlLabel>
+        <ControlLabel className="size18-bolder pull-left">Desc</ControlLabel>
       </Col>
       <Col componentClass={ControlLabel} md={6}>
         <FormControl className="pull-left" type="text" id="desc-input" name="type" onChange={this.handleInputChange} />
@@ -122,7 +122,7 @@ class DonateForm extends Component {
         <div id="tags">
           <Row className="show-grid">
             <Col componentClass={ControlLabel} md={2}>
-              <ControlLabel className="donate-Form-tag-text pull-left">Category</ControlLabel>
+              <ControlLabel className="size14-bolder pull-left">Category</ControlLabel>
             </Col>
             <Col componentClass={ControlLabel} md={8}>
               <Radio className="pull-left" name="category" inline>
@@ -145,7 +145,7 @@ class DonateForm extends Component {
 
           <Row className="show-grid">
             <Col componentClass={ControlLabel} md={2}>
-              <ControlLabel className="donate-Form-tag-text pull-left"></ControlLabel>
+              <ControlLabel className="size14-bolder pull-left"></ControlLabel>
             </Col>
             <Col id="category-second-row" componentClass={ControlLabel} md={8}>
               <Radio className="pull-left" name="category" inline>
@@ -171,7 +171,7 @@ class DonateForm extends Component {
 
           <Row className="show-grid">
             <Col componentClass={ControlLabel} md={2}>
-              <ControlLabel className="donate-Form-tag-text pull-left">Condition</ControlLabel>
+              <ControlLabel className="size14-bolder pull-left">Condition</ControlLabel>
             </Col>
             <Col componentClass={ControlLabel} md={8}>
               < Radio className="pull-left" name="condition" inline>
@@ -191,7 +191,7 @@ class DonateForm extends Component {
 
           <Row className="show-grid">
             <Col componentClass={ControlLabel} md={2}>
-              <ControlLabel className="donate-Form-tag-text pull-left">Age</ControlLabel>
+              <ControlLabel className="size14-bolder pull-left">Age</ControlLabel>
             </Col>
             <Col componentClass={ControlLabel} md={8}>
               < Radio className="pull-left" name="age" inline>
@@ -211,7 +211,7 @@ class DonateForm extends Component {
 
           <Row className="show-grid">
             <Col componentClass={ControlLabel} md={2}>
-              <ControlLabel className="donate-Form-tag-text pull-left">Gender</ControlLabel>
+              <ControlLabel className="size14-bolder pull-left">Gender</ControlLabel>
             </Col>
             <Col componentClass={ControlLabel} md={8}>
               < Radio className="pull-left" name="gender" inline>
@@ -239,7 +239,7 @@ class DonateForm extends Component {
       {/* Pickup Adress */}
         <Row className="show-grid">
          <Col componentClass={ControlLabel} md={12}>
-          <ControlLabel className="pull-left" id="address-title">Pickup Address</ControlLabel>
+          <ControlLabel className="size14-bolder pull-left" id="address-title">Pickup Address</ControlLabel>
           </Col>
         </Row>
         <Row className="show-grid">
@@ -263,7 +263,7 @@ class DonateForm extends Component {
       <Col componentClass={ControlLabel} md={3}>
         <Row className="show-grid">
          <Col componentClass={ControlLabel} md={12}>
-          <ControlLabel className="pull-left" id="pickup-day-title">Pickup Day &amp; Time Frame</ControlLabel>
+          <ControlLabel className="size14-bolder pull-left" id="pickup-day-title">Pickup Day &amp; Time Frame</ControlLabel>
           </Col>
         </Row>
         <Row className="show-grid">
@@ -293,7 +293,7 @@ class DonateForm extends Component {
         <Col componentClass={ControlLabel} md={12}>
          <ControlLabel className="size14-bolder pull-left">B/W</ControlLabel>
           <FormControl className="pull-left" type="text" id="start-time-input" name="type" placeholder="0:00"  />
-          <ControlLabel id="donate-Form-text" className="pull-left">-</ControlLabel>
+          <ControlLabel id="size18-bolder" className="pull-left">-</ControlLabel>
           <FormControl className="pull-left" type="text" id="end-time-input" name="type" placeholder="0:00"  />
           < Radio className="am-pm pull-left" name="meridiem" >
                 am
@@ -306,10 +306,68 @@ class DonateForm extends Component {
       </Col>
 
       
+      <Col componentClass={ControlLabel} md={5}>
+        <Row className="show-grid">
+         <Col componentClass={ControlLabel} md={4}>
+              <Row className="show-grid">
+                <Col componentClass={ControlLabel} md={12}>
+                  <ControlLabel className="pull-left">Donor: </ControlLabel>
+                  <ControlLabel className="pull-left">Lisa</ControlLabel>
+                </Col>
+                </Row>
+                <Row className="show-grid">
+                <Col componentClass={ControlLabel} md={12}>
+                  <ControlLabel className="pull-left">Comments</ControlLabel>
+                </Col>
+                </Row>       
+          </Col>
+          <Col componentClass={ControlLabel} md={8}>
+          <FormControl className="pull-left" componentClass="textarea" id="donor-comments-input" name="type" onChange={this.handleInputChange} />
+          </Col>
+        </Row>
+        <Row className="show-grid">
+          <Checkbox className="pull-left" id="donor-pickup-confirmed" inline>Donor Pickup Confirmed</Checkbox>
+          <Checkbox className="pull-left" id="donor-donation-complete" inline>Donation Complete</Checkbox>
+        </Row>
 
-      <Col componentClass={ControlLabel} md={4}>
-      <h5 className="pull-left">Confirmation</h5>
+        <Row className="show-grid">
+         <Col componentClass={ControlLabel} md={4}>
+          <Row className="show-grid">
+            <Col componentClass={ControlLabel} md={12}>
+              <ControlLabel className="pull-left">Donee: </ControlLabel>
+              <ControlLabel className="pull-left">Jack</ControlLabel>
+            </Col>
+            </Row>
+            <Row className="show-grid">
+            <Col componentClass={ControlLabel} md={12}>
+              <ControlLabel className="pull-left">Comments</ControlLabel>
+            </Col>
+            </Row>       
+          </Col>
+          <Col componentClass={ControlLabel} md={8}>
+          <FormControl className="pull-left" componentClass="textarea" id="donee-comments-input" name="type" onChange={this.handleInputChange} />
+          </Col>
+        </Row>
+        <Row className="show-grid">
+          <Checkbox className="pull-left" id="donee-pickup-confirmed" inline>Donee Pickup Confirmed</Checkbox>
+          <ControlLabel className="pull-left">Time</ControlLabel>
+          <FormControl className="pull-left" type="text" id="donee-pickup-time" name="type" placeholder="0:00"  />
+          < Radio className="am-pm pull-left" name="donee-meridiem"  >
+                am
+          </Radio>{' '}
+          <Radio className="am-pm pull-left" name="donee-meridiem" >
+            pm
+          </Radio>{' '}
+        </Row>
+
       </Col>
+    </Row>
+    <Row className="show-grid">
+    <Col componentClass={ControlLabel} md={6}>
+    <Button className="CRUD-buttons pull-left"  onClick={this.handleCreate} bsStyle="success">Donate</Button>
+    <Button className="CRUD-buttons pull-left"  onClick={this.handleEdit} bsStyle="warning">Edit</Button>
+    <Button className="CRUD-buttons pull-left"  onClick={this.handleDelete} bsStyle="danger">Remove</Button>
+          </Col>
     </Row>
 
 

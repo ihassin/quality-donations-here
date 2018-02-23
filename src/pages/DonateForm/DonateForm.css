@@ -5,9 +5,12 @@
     padding-top:10px;
 }
 
-#file-chosen,
-#upload-picture {
+#file-chosen {
     font-size: 18px;
+    margin-left: 20px;
+}
+
+#upload-picture {
     margin-left: 20px;
 }
 
@@ -21,22 +24,6 @@
 #donate-img {
     width: 320px;
     height: 220px;
-}
-
-.donate-Form-text {
-    font-size: 18px;
-    font-weight: bolder;
-}
-
-.donate-Form-tag-text
- {
-    font-size: 14px;
-    font-weight: bolder;
-}
-
-.radio-inline {
-    font-size: 12px;
-    font-weight: bold;
 }
 
 #time-text {
@@ -81,7 +68,8 @@
 }
 
 #start-time-input,
-#end-time-input {
+#end-time-input,
+#donee-pickup-time {
     width: 50px;
     padding:6px 6px;
 }
@@ -98,12 +86,26 @@
     margin-left: 20px;
 }
 
-#address-title,
-#pickup-day-title,
 .size14-bolder
  {
     font-size: 14px;
     font-weight: bolder;
+}
+
+.size18-bolder {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.size14-bolder
+ {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.radio-inline {
+    font-size: 12px;
+    font-weight: bold;
 }
 
 #address-title {
@@ -120,6 +122,12 @@
     margin: 0px;
     margin-left:12px;
     font-size:12px;
+}
+
+.CRUD-buttons {
+    width: 100px;
+    margin-left: 20px;
+    margin-bottom: 10px
 }
 
 

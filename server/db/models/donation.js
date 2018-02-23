@@ -15,8 +15,18 @@ var donationSchema = new Schema({
         required: true
     },
 
+    donorFirstName: {
+        type: String,
+        required: true
+    },
+
     // donee id, ???
     doneeId: {
+        type: String,
+        required: true
+    },
+
+    doneeFirstName: {
         type: String,
         required: true
     },
