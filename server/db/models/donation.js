@@ -129,9 +129,9 @@ var donationSchema = new Schema({
     },
 
     // am=true, pm=false
-    donorpickupAm: {
-        type: Boolean,
-        default: false
+    donorPickupAmPm: {
+        type: String,
+        default: true
     },
 
     // donor pickup comments, a string, must be entered
@@ -153,8 +153,8 @@ var donationSchema = new Schema({
     },
 
     // am=true, pm=false
-    doneepickupAm: {
-        type: Boolean,
+    doneePickupAmPm: {
+        type: String,
         default: false
     },
 
