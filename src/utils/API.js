@@ -13,22 +13,22 @@ export default {
   // deleteBook: function(id) {
   //   return axios.delete("/api/books/" + id);
   // },
-  // // Saves a book to the database
-  // saveBook: function(bookData) {
-  //   return axios.post("/api/books", bookData);
-  // }
 
-  // Gets all books
+
+  saveDonation: donateObj => {
+    return axios.post("/api/donate", donateObj);
+  },
+
 
   getDonations: function({name, categoryTag, conditionTag, ageTag, genderTag, city, state, zip }) {
     console.log("name", name);
     const nameQuery = name ? `&name=${name}` :"";
-    console.log("nameQuery", nameQuery);
+    const conditionTagQuery = conditionTag ? `&conditionTag=${conditionTag}` :"";
     const categoryTagQuery = categoryTag ? `&categoryTag=${categoryTag}` :"";
     const ageTagQuery = ageTag ? `&ageTag=${ageTag}` :"";
-
-    console.log("getDonations", `/api/shop?${nameQuery}${categoryTagQuery}${ageTagQuery}`);
-    return axios.get(`/api/shop?${nameQuery}${categoryTagQuery}${ageTagQuery}`);
+    const genderTagQuery = genderTag ? `&genderTag=${genderTag}` :"";
+    
+    return axios.get(`/api/shop?${nameQuery}${categoryTagQuery}${conditionTagQuery}${ageTagQuery}${genderTagQuery}`);
 
  // return axios.get("/api/shop?ageTag=youth&name=Sneakers");
    
@@ -38,9 +38,5 @@ export default {
   uploadPicture: (pic, config) => {
     return axios.post("/api/upload/image", pic, config);
   }
-
-  // uploadPicture: (pic, config) => {
-  //   return axios.post('/upload/image', pic, config);
-  // }
 
 };

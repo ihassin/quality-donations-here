@@ -8,6 +8,10 @@ router.get('/shop', (req, res, next) => {
 	donationController.findAll(req, res);
 })
 
+router.post('/donate', (req, res, next) => {
+	donationController.create(req, res);
+})
+
 router.get("/uploads/:user/:imageName", (req, res) =>{
 	res.sendFile(path.join(__dirname, `../../uploads/${req.params.user}/${req.params.imageName}`));
 })

@@ -29,17 +29,6 @@ class Shop extends Component {
   }
 
 
-  // componentWillReceiveProps = nextProps => {
-  //   const searchobj = {name:nextProps.keyword, 
-  //     categoryTag:this.state.categoryTag,
-  //     conditionTag:this.state.conditionTag,
-  //     ageTag:this.state.ageTag,
-  //     genderTag:this.state.genderTag,
-  //     city:this.state.city,
-  //     zip:this.state.zip};
-  //   this.loadDonations(searchobj);
-  // }
-
   componentWillReceiveProps = nextProps => {
     const city = "";
     const zip = "";
@@ -68,23 +57,40 @@ class Shop extends Component {
       .catch(err => console.log(err));
   }
 
-  editDonation = id => {
-
-  };
-
-  deleteDonation = id => {
-
-  };
-
-  saveDonation = () => {
-
-    };
-
-  handleFormSubmit = event => {
+  handleCategoryTagClick = event => {
     event.preventDefault();
 
+    this.setState({
+      categoryTag: event.target.value
+    }, () => {
+      const searchobj = {name:this.props.keyword, 
+          categoryTag:this.state.categoryTag,
+          conditionTag:this.state.conditionTag,
+          ageTag:this.state.ageTag,
+          genderTag:this.state.genderTag,
+          city:this.state.city,
+          zip:this.state.zip};
+       this.loadDonations(searchobj);
+    })
   };
+  
+  handleConditionTagClick = event => {
+    event.preventDefault();
 
+    this.setState({
+      conditionTag: event.target.value
+    }, () => {
+      const searchobj = {name:this.props.keyword, 
+          categoryTag:this.state.categoryTag,
+          conditionTag:this.state.conditionTag,
+          ageTag:this.state.ageTag,
+          genderTag:this.state.genderTag,
+          city:this.state.city,
+          zip:this.state.zip};
+       this.loadDonations(searchobj);
+    })
+  };
+  
   handleAgeTagClick = event => {
     event.preventDefault();
     console.log("handleagetag", event.target);
@@ -103,10 +109,28 @@ class Shop extends Component {
     })
   };
 
+  handleGenderTagClick = event => {
+    event.preventDefault();
+
+    this.setState({
+      genderTag: event.target.value
+    }, () => {
+      const searchobj = {name:this.props.keyword, 
+          categoryTag:this.state.categoryTag,
+          conditionTag:this.state.conditionTag,
+          ageTag:this.state.ageTag,
+          genderTag:this.state.genderTag,
+          city:this.state.city,
+          zip:this.state.zip};
+       this.loadDonations(searchobj);
+    })
+  };
+
+
   render() {
     return (
       <div>
-      <SearchHeader handleAgeTagClick={this.handleAgeTagClick}/>
+      <SearchHeader handleCategoryTagClick= {this.handleCategoryTagClick} handleConditionTagClick={this.handleConditionTagClick} handleAgeTagClick={this.handleAgeTagClick} handleGenderTagClick={this.handleGenderTagClick}/>
       <div id="Shop">
               {this.state.donations.map(donation => (
           <DonationCard

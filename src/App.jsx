@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Route } from 'react-router-dom'
-// import { Redirect } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 import LoginForm from './components/Login/LoginForm'
@@ -84,12 +83,12 @@ class App extends Component {
 	// 	});
 	//   };
 
-handleKeywordSearch = event => {
-	const { name, value } = event.target;
-	this.setState({
-	  [name]: value
-	});
-}
+	handleKeywordSearch = event => {
+		const { name, value } = event.target;
+		this.setState({
+			[name]: value
+		});
+	}
 
 
 

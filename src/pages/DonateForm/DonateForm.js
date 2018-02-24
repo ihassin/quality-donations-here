@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Button, Form, FormControl, ControlLabel, FormGroup, Radio, Checkbox } from 'react-bootstrap';
+import { Row, Col, Button, Form, FormControl, ControlLabel, Radio, Checkbox } from 'react-bootstrap';
 import API from "../../utils/API";
 import "./DonateForm.css";
 
@@ -13,6 +13,7 @@ class DonateForm extends Component {
     categoryTag:"",
     conditionTag:"",
     ageTag:"",
+    genderTag:"",
     pickupAddress1:"",
     pickupAddress2:"",
     pickupCity:"",
@@ -55,8 +56,37 @@ class DonateForm extends Component {
   };
 
   handleCreate = () => {
-
-    };
+    const donateObj = {
+      name:this.state.name,
+      desc:this.state.desc,
+      url: this.state.url,
+      categoryTag:this.state.categoryTag,
+      conditionTag:this.state.conditionTag,
+      ageTag:this.state.ageTag,
+      genderTag:this.state.genderTag,
+      pickupAddress1:this.state.pickupAddress1,
+      pickupAddress2:this.state.pickupAddress2,
+      pickupCity:this.state.pickupCity,
+      pickupState:this.state.pickupState,
+      pickupZip:this.state.pickupZip,
+      pickupLocationType:this.state.pickupLocationType,
+      pickupDay:this.state.pickupDay,
+      pickupTimeStart:this.state.pickupTimeStart,
+      pickupTimeEnd:this.state.pickupTimeEnd, 
+      donorPickupAmPm:this.state.donorPickupAmPm,
+      donorPickupComments:this.state.donorPickupComments,
+      doneePickupComments:this.state.doneePickupComments,
+      doneePickupTime:this.state.doneePickupTime,
+      doneePickupAmPm:this.state.doneePickupAmPm
+    }
+    console.log("handleCreate", donateObj);
+    API.saveDonation(donateObj)
+    .then(res =>
+      // this.setState({ donations: res.data })
+      console.log("create successful", res.data)
+    )
+    .catch(err => console.log(err));
+    }
 
 
 
@@ -217,16 +247,16 @@ class DonateForm extends Component {
               <ControlLabel className="size14-bolder pull-left">Age</ControlLabel>
             </Col>
             <Col componentClass={ControlLabel} md={8}>
-              < Radio className="pull-left" name="ageTab" value="child" inline onChange={this.handleInputChange}>
+              < Radio className="pull-left" name="ageTag" value="child" inline onChange={this.handleInputChange}>
                 Child
               </Radio>{' '}
-              <Radio className="pull-left" name="ageTab" value="youth" inline onChange={this.handleInputChange}>
+              <Radio className="pull-left" name="ageTag" value="youth" inline onChange={this.handleInputChange}>
                 Youth
               </Radio>{' '}
-              <Radio className="pull-left" name="ageTab" value="adult" inline onChange={this.handleInputChange}>
+              <Radio className="pull-left" name="ageTag" value="adult" inline onChange={this.handleInputChange}>
                 Adult
               </Radio>
-              <Radio className="pull-left" name="ageTab" value="senior" inline onChange={this.handleInputChange}>
+              <Radio className="pull-left" name="ageTag" value="senior" inline onChange={this.handleInputChange}>
                 Senior
               </Radio>{' '}
             </Col>
@@ -335,7 +365,7 @@ class DonateForm extends Component {
               <Row className="show-grid">
                 <Col componentClass={ControlLabel} md={12}>
                   <ControlLabel className="pull-left">Donor: </ControlLabel>
-                  <ControlLabel className="pull-left">{this.props.donorUsername}</ControlLabel>
+                  <ControlLabel className="pull-left">Lisa</ControlLabel>
                 </Col>
                 </Row>
                 <Row className="show-grid">
@@ -358,7 +388,7 @@ class DonateForm extends Component {
           <Row className="show-grid">
             <Col componentClass={ControlLabel} md={12}>
               <ControlLabel className="pull-left">Donee: </ControlLabel>
-              <ControlLabel className="pull-left">{this.props.doneeUsername}</ControlLabel>
+              <ControlLabel className="pull-left">Jack</ControlLabel>
             </Col>
             </Row>
             <Row className="show-grid">

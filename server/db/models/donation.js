@@ -12,23 +12,23 @@ var donationSchema = new Schema({
     // donor id, ???
     donorId: {
         type: String,
-        required: true
+        required: false
     },
 
     donorFirstName: {
         type: String,
-        required: true
+        required: false
     },
 
     // donee id, ???
     doneeId: {
         type: String,
-        required: true
+        required: false
     },
 
     doneeFirstName: {
         type: String,
-        required: true
+        required: false
     },
 
     // item name, a string, must be entered
@@ -70,6 +70,12 @@ var donationSchema = new Schema({
 
     // age tag, a string, must be entered
     ageTag: {
+        type: String,
+        required: false
+    },
+
+    // age tag, a string, must be entered
+    genderTag: {
         type: String,
         required: false
     },

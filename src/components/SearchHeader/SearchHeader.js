@@ -39,7 +39,7 @@ const SearchHeader = props => (
         <ToggleButton bsStyle="warning" className="gender-buttons" onChange={props.handleGenderTagClick} value={"female"}>Female</ToggleButton>
     </ToggleButtonGroup>
     <ToggleButtonGroup type="radio" name="options"  >
-      <ToggleButton bsStyle="danger" className="like-buttons" onChange={props.handleLikeTagClick} value={"Like"}>Like</ToggleButton>
+      <ToggleButton bsStyle="danger" className="like-buttons" onChange={props.handleLikeTagClick} value={"Like"} disabled>Like</ToggleButton>
     </ToggleButtonGroup>
   </ButtonToolbar>
   </div>
