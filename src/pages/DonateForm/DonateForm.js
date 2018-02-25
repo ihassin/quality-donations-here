@@ -7,6 +7,7 @@ import "./DonateForm.css";
 class DonateForm extends Component {
   state = {
     file:null,
+    nameDisplay:"",
     name:"",
     desc:"",
     url: "",
@@ -39,7 +40,6 @@ class DonateForm extends Component {
 
     // doneeId
     // doneeFirstName
-    // datePosted
     // Not working:
     // donorPickupConfirmed: false,
     // doneePickupConfirmed:false,
@@ -71,6 +71,7 @@ class DonateForm extends Component {
   handleCreate = () => {
     const donateObj = {
       name:this.state.name,
+      nameDisplay:this.state.nameDisplay,
       desc:this.state.desc,
       url: this.state.url,
       donorUser: this.state.donorUser,
@@ -111,6 +112,15 @@ class DonateForm extends Component {
       [name]: value
     });
   };
+
+  handleNameChange = event => {
+    const name = event.target.value.toLowerCase();
+    const nameDisplay = event.target.value
+    this.setState({
+      name,
+      nameDisplay
+    });
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -159,13 +169,13 @@ class DonateForm extends Component {
         <ControlLabel className="size18-bolder pull-left">Type</ControlLabel>
       </Col>
       <Col componentClass={ControlLabel} md={2}>
-        <FormControl className="pull-left" type="text" id="type-input" name="name" onChange={this.handleInputChange} />
+        <FormControl className="pull-left" type="text" id="type-input" name="nameDisplay" onChange={this.handleNameChange} />
       </Col>
       <Col componentClass={ControlLabel} md={2}>
         <ControlLabel className="size18-bolder pull-left">Date Posted</ControlLabel>
       </Col>
       <Col componentClass={ControlLabel} md={2}>
-      <FormControl className="pull-left" type="text" id="date-posted" value={this.state.datePosted} name="datePosted" readonly />
+      <FormControl className="pull-left" type="text" id="date-posted" value={this.state.datePosted} name="datePosted" readOnly />
       </Col>
     </Row>
 

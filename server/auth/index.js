@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const {User, Donation} = require('../db/models')
-// const donationsController = require('../controllers/donationController.js')
 const passport = require('../passport')
 
 router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
@@ -58,8 +57,6 @@ router.get('/mypickups', (req, res, next) => {
 router.post(
 	'/login',
 	function(req, res, next) {
-		console.log(req.body)
-		console.log('================')
 		next()
 	},
 	passport.authenticate('local'),

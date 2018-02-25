@@ -9,7 +9,6 @@ var Schema = mongoose.Schema;
 
 // Create the headlineSchema with our schema class
 var donationSchema = new Schema({
-    // donor id, ???
     donorUser: {
         type: String,
         required: true
@@ -20,7 +19,6 @@ var donationSchema = new Schema({
         required: false
     },
 
-    // donee id, ???
     doneeUser: {
         type: String,
         required: false
@@ -37,6 +35,13 @@ var donationSchema = new Schema({
     required: true
     // unique: { index: { unique: true } }
     },
+
+    // item name, a string, must be entered
+    nameDisplay: {
+        type: String,
+        required: true
+        // unique: { index: { unique: true } }
+        },
 
     // item description, a string, must be entered
     desc: {

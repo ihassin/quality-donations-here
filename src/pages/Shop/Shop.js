@@ -145,7 +145,7 @@ class Shop extends Component {
             removeFriend={this.removeFriend}
             id={donation._id}
             key={donation._id}
-            name={donation.name}
+            nameDisplay={donation.nameDisplay}
             image={donation.url}
             desc={donation.desc}
             city={donation.pickupCity}
