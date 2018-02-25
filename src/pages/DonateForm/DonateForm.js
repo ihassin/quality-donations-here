@@ -385,50 +385,50 @@ class DonateForm extends Component {
 
       
       <Col componentClass={ControlLabel} md={5}>
-        <Row className="show-grid">
-         <Col componentClass={ControlLabel} md={4}>
+        <Row className="info show-grid">
+         <Col className="zero-right-pad zero-top-pad" componentClass={ControlLabel} md={4}>
               <Row className="show-grid">
-                <Col componentClass={ControlLabel} md={12}>
-                  <ControlLabel className="pull-left">Donor: </ControlLabel>
-                  <ControlLabel id="donorUser" className="pull-left">{this.state.donorUser}</ControlLabel>
+                <Col className="zero-right-pad zero-left-pad zero-top-pad" componentClass={ControlLabel} md={12}>
+                  <ControlLabel className="zero-left-pad pull-left">Donor: </ControlLabel>
+                  <ControlLabel className="info-user pull-left">{this.state.donorUser}</ControlLabel>
                 </Col>
                 </Row>
-                <Row className="show-grid">
-                <Col componentClass={ControlLabel} md={12}>
-                  <ControlLabel className="pull-left">Comments</ControlLabel>
+                <Row className="zero-right-pad show-grid">
+                <Col className="zero-right-pad zero-top-pad" componentClass={ControlLabel} md={12}>
+                  <ControlLabel className="pull-left">Comments:</ControlLabel>
                 </Col>
                 </Row>       
           </Col>
           <Col componentClass={ControlLabel} md={8}>
-          <FormControl className="pull-left" componentClass="textarea" id="donor-comments-input" name="donorPickupComments" onChange={this.handleInputChange} />
+          <FormControl className="zero-right-pad zero-left-pad pull-left" componentClass="textarea" id="donor-comments-input" name="donorPickupComments" onChange={this.handleInputChange} />
           </Col>
         </Row>
         <Row className="show-grid">
-          <Checkbox className="pull-left" id="donor-pickup-confirmed" name="donorPickupConfirmed" onChange={this.handleInputChange} inline>Donor Pickup Confirmed</Checkbox>
-          <Checkbox className="pull-left" id="donor-donation-complete" name="donationComplete" onChange={this.handleInputChange} inline>Donation Complete</Checkbox>
+          <Checkbox className="size14-bolder pull-left" id="donor-pickup-confirmed" name="donorPickupConfirmed" onChange={this.handleInputChange} inline>Donor Pickup Confirmed</Checkbox>
+          <Checkbox className="size14-bolder pull-left" id="donor-donation-complete" name="donationComplete" onChange={this.handleInputChange} inline>Donation Complete</Checkbox>
         </Row>
 
-        <Row className="show-grid">
-         <Col componentClass={ControlLabel} md={4}>
+        <Row className="info show-grid">
+         <Col className="zero-right-pad zero-top-pad" componentClass={ControlLabel} md={4}>
           <Row className="show-grid">
-            <Col componentClass={ControlLabel} md={12}>
-              <ControlLabel className="pull-left">Donee: </ControlLabel>
-              <ControlLabel className="pull-left"></ControlLabel>
+            <Col className="zero-right-pad zero-left-pad zero-top-pad" componentClass={ControlLabel} md={12}>
+              <ControlLabel className="zero-left-pad pull-left">Donee: </ControlLabel>
+              <ControlLabel className="info-user pull-left">Jack</ControlLabel>
             </Col>
             </Row>
-            <Row className="show-grid">
-            <Col componentClass={ControlLabel} md={12}>
-              <ControlLabel className="pull-left">Comments</ControlLabel>
+            <Row className="zero-right-pad show-grid">
+            <Col className="zero-right-pad zero-top-pad" componentClass={ControlLabel} md={12}>
+              <ControlLabel className="pull-left">Comments:</ControlLabel>
             </Col>
             </Row>       
           </Col>
           <Col componentClass={ControlLabel} md={8}>
-          <FormControl className="pull-left" componentClass="textarea" id="donee-comments-input" name="doneePickupComments" onChange={this.handleInputChange} />
+          <FormControl className="zero-right-pad zero-left-pad pull-left" componentClass="textarea" id="donee-comments-input" name="doneePickupComments" onChange={this.handleInputChange} />
           </Col>
         </Row>
         <Row className="show-grid">
-          <Checkbox className="pull-left" id="donee-pickup-confirmed" name="doneePickupConfirmed" onChange={this.handleInputChange} inline>Donee Pickup Confirmed</Checkbox>
-          <ControlLabel className="pull-left">Time</ControlLabel>
+          <Checkbox className="size14-bolder pull-left" id="donee-pickup-confirmed" name="doneePickupConfirmed" onChange={this.handleInputChange} inline>Donee Pickup Confirmed</Checkbox>
+          <ControlLabel id="donee-pickup-time-label" className="pull-left">Time:</ControlLabel>
           <FormControl className="pull-left" type="text" id="donee-pickup-time" name="type" placeholder="0:00" name="doneePickupTime" onChange={this.handleInputChange} />
           < Radio className="am-pm pull-left" name="donee-meridiem" value="am" name="doneePickupAmPm" onChange={this.handleInputChange} >
                 am
@@ -441,10 +441,10 @@ class DonateForm extends Component {
       </Col>
     </Row>
     <Row className="show-grid">
-    <Col componentClass={ControlLabel} md={6}>
+    <Col componentClass={ControlLabel} md={8}>
     <Button className="CRUD-buttons pull-left"  onClick={this.handleCreate} bsStyle="success">Donate</Button>
-    <Button className="CRUD-buttons pull-left"  onClick={this.handleEdit} bsStyle="warning">Edit</Button>
-    <Button className="CRUD-buttons pull-left"  onClick={this.handleDelete} bsStyle="danger">Remove</Button>
+    <Button className="CRUD-buttons pull-left"  onClick={this.handleEdit} bsStyle="warning" disabled>Edit</Button>
+    <Button className="CRUD-buttons pull-left"  onClick={this.handleDelete} bsStyle="danger" disabled>Remove</Button>
           </Col>
     </Row>
   </Form>

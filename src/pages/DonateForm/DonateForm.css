@@ -2,7 +2,6 @@
     max-width: 1000px;
     margin: 20px auto;
     border: 3px solid green;
-    padding-top:10px;
 }
 
 #file-chosen {
@@ -131,10 +130,30 @@
     margin-bottom: 10px
 }
 
-#donorUser {
+.info-user {
     font-size: 16px;
     font-weight: bolder;
     padding: 5px 5px 0 5px;
+}
+
+.info {
+    width:400px;
+}
+
+.zero-left-pad {
+    padding-left:0px!important;
+}
+.zero-right-pad {
+    padding-right: 0px!important;
+}
+
+.zero-top-pad {
+    padding-top:0px!important;
+}
+
+#donee-pickup-time-label {
+    padding-left:15px;
+    padding-right:5px;
 }
 
 
