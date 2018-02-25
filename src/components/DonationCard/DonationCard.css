@@ -1,47 +1,48 @@
-.card {
-  background: #fff;
-  border-radius: 2px;
-  height: 325px;
-  margin: 1rem;
-  position: relative;
-  width: 325px;
-  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-  text-align: left;
+.shop-img-container {
+  width: 300px;
+  height: 225px;
+  border: 3px solid green;
 }
 
-.card > .img-container {
-  height: 60%;
-  overflow: hidden;
-  text-align: center;
-  background:#6CADDC;
-}
-.card > .img-container > img {
-  width: 60%
-}
-
-.card > .content {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 15px;
+#shop-details {
+  width: 300px;
+  border-bottom: 3px solid green;
+  border-left: 3px solid green;
+  border-right: 3px solid green;
+  padding:5px;
+  margin-bottom: 10px;
+  background-image: url("../../images/halftone-yellow.png");
 }
 
-.card > .content > ul {
-  list-style-type: none;
+.shop-img {
+  width: 293px;
+  height: 219px;
 }
 
-.card > .content > ul > li {
-  margin-top: 18px;
+#interested-button,
+#interested-button:hover  {
+  font-family: sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  background:yellow;
+  color:  darkslategray;
+  border: 2px solid darkslategray;
+  border-radius: 1rem;
+  padding: 6px;
+  margin-bottom: 5px;
 }
 
-.card > .remove {
-  color: #ff1744;
-  font-size: 48px;
-  position: absolute;
-  top: -20px;
-  right: 5px;
-  cursor: pointer;
+p {
+  color: darkslategray;
+  font-size: 14px;
+  font-weight: bolder;
+  padding:0 10px;
 }
 
-.card > .remove:hover {
-  color: #d50000;
+.card-title {
+  color: darkslategray;
+  font-size: 20px;
+  font-weight: bolder;
+  padding:0 10px;
 }

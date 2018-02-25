@@ -12,6 +12,7 @@
 
 #upload-picture {
     margin-left: 20px;
+    float:left!important;
 }
 
 #donate-img-container {
@@ -128,6 +129,12 @@
     width: 100px;
     margin-left: 20px;
     margin-bottom: 10px
+}
+
+#donorUser {
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 5px 5px 0 5px;
 }
 
 

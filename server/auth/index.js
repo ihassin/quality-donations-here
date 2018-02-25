@@ -36,8 +36,7 @@ router.get('/donate', (req, res, next) => {
 
 
 router.get('/mydonations', (req, res, next) => {
-	console.log('===== user!!======')
-	console.log(req.user)
+
 	if (req.user) {
 		return res.json({ user: req.user })
 	} else {
@@ -47,8 +46,7 @@ router.get('/mydonations', (req, res, next) => {
 
 
 router.get('/mypickups', (req, res, next) => {
-	console.log('===== user!!======')
-	console.log(req.user)
+
 	if (req.user) {
 		return res.json({ user: req.user })
 	} else {
@@ -88,7 +86,7 @@ router.post('/logout', (req, res) => {
 })
 
 router.post('/signup', (req, res) => {
-	const { username, password } = req.body
+	const { username, password, firstname, lastname, email} = req.body
 	// ADD VALIDATION
 	User.findOne({ 'local.username': username }, (err, userMatch) => {
 		if (userMatch) {
@@ -98,7 +96,11 @@ router.post('/signup', (req, res) => {
 		}
 		const newUser = new User({
 			'local.username': username,
-			'local.password': password
+			'local.password': password,
+			'firstname':firstname,
+			'lastname':lastname,
+			'email':email
+
 		})
 		newUser.save((err, savedUser) => {
 			if (err) return res.json(err)

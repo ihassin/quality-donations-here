@@ -30,10 +30,13 @@ class DonateForm extends Component {
     doneePickupAmPm:"",
     donorPickupConfirmed: false,
     doneePickupConfirmed:false,
-    donationComplete:false
+    donationComplete:false,
+    donorUser:"",
+    donorFirstname:"",
+    datePosted: (new Date().getMonth() + 1)  + "/" + new Date().getDate() + "/" + new Date().getFullYear()
+   
+    
 
-    // donorId
-    // donorFirstName
     // doneeId
     // doneeFirstName
     // datePosted
@@ -42,6 +45,16 @@ class DonateForm extends Component {
     // doneePickupConfirmed:false,
     // donationComplete:false
   };
+
+  componentWillReceiveProps = nextProps => {
+    console.log("nextPRops", nextProps);
+    this.setState({
+      donorUser:nextProps.user.local.username,
+      // donorFirstname:nextProps.firstname
+    })
+
+
+  }
 
   componentDidMount() {
 
@@ -60,6 +73,8 @@ class DonateForm extends Component {
       name:this.state.name,
       desc:this.state.desc,
       url: this.state.url,
+      donorUser: this.state.donorUser,
+      // donorFirstname: this.state.donorFirstname,
       categoryTag:this.state.categoryTag,
       conditionTag:this.state.conditionTag,
       ageTag:this.state.ageTag,
@@ -150,7 +165,7 @@ class DonateForm extends Component {
         <ControlLabel className="size18-bolder pull-left">Date Posted</ControlLabel>
       </Col>
       <Col componentClass={ControlLabel} md={2}>
-      <FormControl className="pull-left" type="text" id="date-posted" name="datePosted" />
+      <FormControl className="pull-left" type="text" id="date-posted" value={this.state.datePosted} name="datePosted" readonly />
       </Col>
     </Row>
 
@@ -365,7 +380,7 @@ class DonateForm extends Component {
               <Row className="show-grid">
                 <Col componentClass={ControlLabel} md={12}>
                   <ControlLabel className="pull-left">Donor: </ControlLabel>
-                  <ControlLabel className="pull-left">Lisa</ControlLabel>
+                  <ControlLabel id="donorUser" className="pull-left">{this.state.donorUser}</ControlLabel>
                 </Col>
                 </Row>
                 <Row className="show-grid">
@@ -388,7 +403,7 @@ class DonateForm extends Component {
           <Row className="show-grid">
             <Col componentClass={ControlLabel} md={12}>
               <ControlLabel className="pull-left">Donee: </ControlLabel>
-              <ControlLabel className="pull-left">Jack</ControlLabel>
+              <ControlLabel className="pull-left"></ControlLabel>
             </Col>
             </Row>
             <Row className="show-grid">

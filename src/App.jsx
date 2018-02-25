@@ -16,6 +16,7 @@ class App extends Component {
 		this.state = {
 			loggedIn: false,
 			user: null,
+			firstname:null,
 			redirectTo: false,
 			keyword:""
 		}
@@ -31,12 +32,14 @@ class App extends Component {
 				this.setState({
 					loggedIn: true,
 					user: response.data.user,
+					firstname: response.data.firstname,
 					redirectTo:false
 				})
 			} else {
 				this.setState({
 					loggedIn: false,
 					user: null,
+					firstname: null,
 					redirectTo: false
 				})
 			}
@@ -51,6 +54,7 @@ class App extends Component {
 				this.setState({
 					loggedIn: false,
 					user: null,
+					firstname:null,
 					redirectTo: true
 				})
 			}
@@ -70,6 +74,7 @@ class App extends Component {
 					this.setState({
 						loggedIn: true,
 						user: response.data.user,
+						firstname: response.data.firstname,
 						redirectTo: false
 					})
 				}
@@ -113,7 +118,7 @@ class App extends Component {
 						</div>}
 				/>
 				<Route exact path="/signup" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} /> <SignupForm /> </div>} />
-				<Route exact path="/donate" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} donate={true}/> <DonateForm /> </div>} />
+				<Route exact path="/donate" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} donate={true}/> <DonateForm user={this.state.user} /> </div>} />
 				<Route exact path="/mydonations" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyDonations /> </div>} />
 				<Route exact path="/mypickups" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyPickups /> </div>} />
 			</div>

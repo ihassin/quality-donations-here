@@ -10,23 +10,23 @@ var Schema = mongoose.Schema;
 // Create the headlineSchema with our schema class
 var donationSchema = new Schema({
     // donor id, ???
-    donorId: {
+    donorUser: {
         type: String,
-        required: false
+        required: true
     },
 
-    donorFirstName: {
+    donorFirstname: {
         type: String,
         required: false
     },
 
     // donee id, ???
-    doneeId: {
+    doneeUser: {
         type: String,
         required: false
     },
 
-    doneeFirstName: {
+    doneeFirstname: {
         type: String,
         required: false
     },

@@ -1,11 +1,11 @@
 import React from "react";
 import "./SearchHeader.css";
-import { ButtonToolbar, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import {ButtonToolbar, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 
 const SearchHeader = props => (
 
-    <div id="search-header">
-  <ButtonToolbar>
+<div id="search-header">
+  <ButtonToolbar className="button-toolbar">
     <ToggleButtonGroup type="radio" name="options"  >
       <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"home"}>Home</ToggleButton>
       <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"fashion"}>Fashion</ToggleButton>
@@ -21,7 +21,7 @@ const SearchHeader = props => (
     </ToggleButtonGroup>
   </ButtonToolbar>
 
-   <ButtonToolbar>
+   <ButtonToolbar className="button-toolbar">
       <ToggleButtonGroup type="radio" name="options"  >
       <ToggleButton bsStyle="primary" className="condition-buttons" onChange={props.handleConditionTagClick} value={"new"}>New</ToggleButton>
       <ToggleButton bsStyle="primary" className="condition-buttons" onChange={props.handleConditionTagClick} value={"like new"}>Like New</ToggleButton>
@@ -43,6 +43,7 @@ const SearchHeader = props => (
     </ToggleButtonGroup>
   </ButtonToolbar>
   </div>
+
 
 );
 

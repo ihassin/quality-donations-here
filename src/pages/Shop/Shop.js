@@ -126,12 +126,20 @@ class Shop extends Component {
     })
   };
 
+  handleInteresed = () => {
+    alert("I'm Interested");
+  }
+
+  handleLike = () => {
+    alert("I Like it");
+  }
+
 
   render() {
     return (
-      <div>
+      <div className="container-fluid">
       <SearchHeader handleCategoryTagClick= {this.handleCategoryTagClick} handleConditionTagClick={this.handleConditionTagClick} handleAgeTagClick={this.handleAgeTagClick} handleGenderTagClick={this.handleGenderTagClick}/>
-      <div id="Shop">
+      <div id="shop">
               {this.state.donations.map(donation => (
           <DonationCard
             removeFriend={this.removeFriend}
@@ -139,8 +147,12 @@ class Shop extends Component {
             key={donation._id}
             name={donation.name}
             image={donation.url}
-            occupation={donation.desc}
-            location={donation.city}
+            desc={donation.desc}
+            city={donation.pickupCity}
+            state={donation.pickupState}
+            zip={donation.pickupZip}
+            handleInteresed={this.handleInteresed}
+            handleLike={this.handleLike}
           />
         ))}
         </div>

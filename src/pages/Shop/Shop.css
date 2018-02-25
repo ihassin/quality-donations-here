@@ -1,4 +1,6 @@
-#Shop {
+#shop {
     /* position: relative; */
-    padding-top: 150px;
+    padding: 160px 0px 0px 0px;
+    margin: 0 auto;
+    max-width: 1000px;
 }

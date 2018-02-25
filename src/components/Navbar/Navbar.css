@@ -1,7 +1,11 @@
 #keyword-search-input {
     padding: 8px;
-    width: 40rem;
-    margin: 0 20px;   
+    width: 25rem;
+    margin: 0 15px;   
+}
+
+#cityZip-search-input {
+    width:15rem;
 }
 
 #donate-title {

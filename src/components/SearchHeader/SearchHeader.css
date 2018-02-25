@@ -1,14 +1,33 @@
+
+
 #search-header {
     position: fixed;
     top: 60px;
-    padding: 5px;
-    margin: 0px 65px;
-    /* z-index: 999; */
+    left:0px;
+    right:0px;
+    width:100%;
+    /* padding:0px!important;
+    margin:0px!important; */
 }
 
 div.btn-group {
     margin-left: 0px!important;
 }
+
+.button-toolbar {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+.btn-toolbar,
+.btn, 
+.btn-toolbar,
+.btn-group, 
+.btn-toolbar,
+.input-group {
+    float:none!important;
+}
+
 
 .category-buttons,
 .condition-buttons,
@@ -17,8 +36,10 @@ div.btn-group {
 .like-buttons {
     text-decoration: none;
     font-weight: bold;
-    width: 100px;
-    margin: 2px 5px; 
+    width: 85px;
+    margin: 2px 3px; 
+    padding: 6px;
+    font-size: 12px;
 }
 
 .category-buttons.active,
@@ -28,7 +49,7 @@ div.btn-group {
 .like-buttons.active
  {
     font-weight: bolder!important;
-    font-size:15px!important;
+    font-size:13px!important;
 }
 
 .category-buttons.active
