@@ -11,10 +11,10 @@ const DonationCard = props => (
           <img className="shop-img" src={props.image} alt={props.nameDisplay}  />
       </div>
       <div id="shop-details">
-      <p className="card-title text-center">{props.nameDisplay}</p>
-      <Button id="interested-button" onClick={props.handleInterested}>Yes... I'm Interested!</Button> 
-      {/* <Button  onClick={props.handleLike} inline>Like it</Button> */}
-      <p>{props.city}, {props.state} {props.zip}</p>
+        <p className="card-title text-left">{props.nameDisplay} - <span id="desc">{props.desc}</span></p>
+        <Button className="text-center" id="interested-button" onClick={props.handleInterested}>Yes... I'm Interested!</Button> 
+        {/* <Button  onClick={props.handleLike} inline>Like it</Button> */}
+        <p className="text-center">{props.city}, {props.state} {props.zip}</p>
       </div>
     </Col>
 

@@ -50,7 +50,7 @@ class DonateForm extends Component {
     console.log("nextPRops", nextProps);
     this.setState({
       donorUser:nextProps.user.local.username,
-      // donorFirstname:nextProps.firstname
+      donorFirstname:nextProps.firstname
     })
 
 

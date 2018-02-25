@@ -33,16 +33,20 @@
   margin-bottom: 5px;
 }
 
-p {
+p,
+#desc{
   color: darkslategray;
   font-size: 14px;
-  font-weight: bolder;
+  font-weight: bold;
   padding:0 10px;
+  margin-bottom: 0px;
 }
 
 .card-title {
   color: darkslategray;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bolder;
   padding:0 10px;
+  height: 50px;
+  overflow: hidden;
 }

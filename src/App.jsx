@@ -18,11 +18,14 @@ class App extends Component {
 			user: null,
 			firstname:null,
 			redirectTo: false,
-			keyword:""
+			keyword:"",
+			city:"",
+			zip:""
 		}
 		this._logout = this._logout.bind(this)
 		this._login = this._login.bind(this)
 		this.handleKeywordSearch = this.handleKeywordSearch.bind(this)
+		this.handleCityZipSearch = this.handleCityZipSearch.bind(this)
 	}
 	componentDidMount() {
 		axios.get('/auth/user').then(response => {
@@ -33,7 +36,7 @@ class App extends Component {
 				this.setState({
 					loggedIn: true,
 					user: response.data.user,
-					firstname: response.data.firstname,
+					firstname: response.data.user.firstname,
 					redirectTo:false
 				})
 			} else {
@@ -75,7 +78,7 @@ class App extends Component {
 					this.setState({
 						loggedIn: true,
 						user: response.data.user,
-						firstname: response.data.firstname,
+						firstname: response.data.user.firstname,
 						redirectTo: false
 					})
 				}
@@ -92,14 +95,34 @@ class App extends Component {
 
 
 
+	handleCityZipSearch = event => {
+		const { name, value } = event.target;
+
+		// if value is not a number then it is city, otherwise zip
+		if (isNaN(value.charAt(0))) {
+			this.setState({
+				city: value,
+				zip:""
+			});
+		}else {
+			this.setState({
+				zip: value,
+				city:""
+			});
+		}
+
+	}
+
+
+
 
 	render() {
 		if (this.state.redirectTo) {
-			return <div><Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} shop={true} handleKeywordSearch={this.handleKeywordSearch} handleCityZipSearch={this.handleCityZipSearch}/> <Shop keyword={this.state.keyword}/></div>
+			return <div><Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} shop={true} handleKeywordSearch={this.handleKeywordSearch} handleCityZipSearch={this.handleCityZipSearch}/> <Shop keyword={this.state.keyword} city={this.state.city} zip={this.state.zip}/></div>
 		}
 		return (
 			<div className="App">
-				<Route exact path="/" render={() => <div><Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} shop={true} handleKeywordSearch={this.handleKeywordSearch}/> <Shop keyword={this.state.keyword}/></div>} />
+				<Route exact path="/" render={() => <div><Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} shop={true} handleKeywordSearch={this.handleKeywordSearch} handleCityZipSearch={this.handleCityZipSearch} /> <Shop keyword={this.state.keyword} city={this.state.city} zip={this.state.zip}/></div>} />
 				<Route
 					exact
 					path="/login"

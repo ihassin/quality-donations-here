@@ -15,9 +15,9 @@ class Shop extends Component {
       conditionTag:"",
       ageTag:"",
       genderTag:"",
-      city:"",
-      state:"",
-      zip:"",
+      // city:"",
+      // state:"",
+      // zip:"",
       typingTimeout:null
 		}
 		this.loadDonations = this.loadDonations.bind(this)
@@ -30,9 +30,9 @@ class Shop extends Component {
 
 
   componentWillReceiveProps = nextProps => {
-    const city = "";
-    const zip = "";
-    let searchobj = {name:nextProps.keyword, city, zip,
+    let searchobj = {name:nextProps.keyword, 
+      pickupCity:nextProps.city, 
+      pickupZip:nextProps.zip,
       categoryTag:this.state.categoryTag,
       conditionTag:this.state.conditionTag,
       ageTag:this.state.ageTag,
@@ -44,6 +44,7 @@ class Shop extends Component {
 
    this.setState({
       typingTimeout: setTimeout( () => {   
+        console.log("searchobj", searchobj);
         this.loadDonations(searchobj);
         }, 1000)
    });
@@ -68,8 +69,8 @@ class Shop extends Component {
           conditionTag:this.state.conditionTag,
           ageTag:this.state.ageTag,
           genderTag:this.state.genderTag,
-          city:this.state.city,
-          zip:this.state.zip};
+          pickupCity:this.state.city,
+          pickupZip:this.state.zip};
        this.loadDonations(searchobj);
     })
   };
@@ -85,8 +86,8 @@ class Shop extends Component {
           conditionTag:this.state.conditionTag,
           ageTag:this.state.ageTag,
           genderTag:this.state.genderTag,
-          city:this.state.city,
-          zip:this.state.zip};
+          pickupCity:this.state.city,
+          pickupZip:this.state.zip};
        this.loadDonations(searchobj);
     })
   };
@@ -103,8 +104,8 @@ class Shop extends Component {
           conditionTag:this.state.conditionTag,
           ageTag:this.state.ageTag,
           genderTag:this.state.genderTag,
-          city:this.state.city,
-          zip:this.state.zip};
+          pickupCity:this.state.city,
+          pickupZip:this.state.zip};
        this.loadDonations(searchobj);
     })
   };
@@ -120,8 +121,8 @@ class Shop extends Component {
           conditionTag:this.state.conditionTag,
           ageTag:this.state.ageTag,
           genderTag:this.state.genderTag,
-          city:this.state.city,
-          zip:this.state.zip};
+          pickupCity:this.state.city,
+          pickupZip:this.state.zip};
        this.loadDonations(searchobj);
     })
   };
