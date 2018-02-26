@@ -1,6 +1,5 @@
 import React from 'react'
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
-// import { Link } from 'react-router-dom'
 import "./Navbar.css";
 
 const DonateNavbar = props => {
@@ -10,7 +9,7 @@ const DonateNavbar = props => {
 <Navbar fixedTop>
 	<Navbar.Header>
 		<Navbar.Brand>
-		<a href="#home">Quality Donations Here</a>
+		<a href="#"><img id="logo" src={require("../../images/qualitydonationslogo.png")}/></a>
 		</Navbar.Brand>
 	</Navbar.Header>
 	<Navbar.Collapse>
@@ -27,7 +26,7 @@ const DonateNavbar = props => {
 			{props.donate ? 
 			<Navbar.Form pullLeft>
 				<FormGroup>
-					<ControlLabel id="donate-title">Donate Here</ControlLabel>
+					<ControlLabel id="donate-title">Donate</ControlLabel>
 				</FormGroup>{' '}
 			</Navbar.Form>
 			: ""}
@@ -68,7 +67,7 @@ const DonateNavbar = props => {
 <Navbar fixedTop>
   <Navbar.Header>
     <Navbar.Brand>
-      <a href="#home">Quality Donations Here</a>
+	<a href="#"><img id="logo" src={require("../../images/qualitydonationslogo.png")}/></a>
     </Navbar.Brand>
   </Navbar.Header>
 	<Navbar.Collapse>

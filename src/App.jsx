@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Route } from 'react-router-dom'
-import { Popover, Tooltip, Button, Modal, OverlayTrigger } from 'react-bootstrap';
+import { Popover, Tooltip, Button, Modal, OverlayTrigger, Form, FormControl, Col, FormGroup } from 'react-bootstrap';
 import './App.css'
 import Navbar from './components/Navbar'
 import LoginForm from './components/Login/LoginForm'
@@ -10,11 +10,14 @@ import DonateForm from './pages/DonateForm'
 import MyDonations from './pages/MyDonations'
 import MyPickups from './pages/MyPickups'
 import Shop from './pages/Shop'
+import googleButton from './components/Login/google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png'
 
 class App extends Component {
 	constructor() {
 		super()
 		this.state = {
+			username: '',
+			password: '',
 			loggedIn: false,
 			user: null,
 			firstname:null,
@@ -57,6 +60,7 @@ class App extends Component {
 		console.log('logging out')
 		axios.post('/auth/logout').then(response => {
 			if (response.status === 200) {
+				window.location.href = "/"
 				this.setState({
 					loggedIn: false,
 					user: null,
@@ -77,10 +81,9 @@ class App extends Component {
 			.then(response => {
 				console.log("login", response.data)
 				if (response.status === 200) {
-					
-					var fName = response.data.user.firstname;
-					console.log("login firstname", fName);
-					
+					// close login modal
+					this.handleCloseLogin();
+					var fName = response.data.user.firstname;				
 					// update the state
 					this.setState({
 						loggedIn: true,
@@ -90,6 +93,19 @@ class App extends Component {
 					})
 				}
 			})
+	}
+
+	handleChange = event => {
+		const { name, value } = event.target;
+		this.setState({
+			[name]: value
+		});
+	}
+
+
+	handleLoginSubmit = event=> {
+		event.preventDefault()
+		this._login(this.state.username, this.state.password)
 	}
 
 	handleShowLogIn = () =>{
@@ -171,72 +187,55 @@ class App extends Component {
 				<Route exact path="/mypickups" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyPickups /> </div>} />
 
 
-						<Modal className="modal-container" show={this.state.showLogIn} onHide={this.handleCloseLogin}>
-						<Modal.Header closeButton>
-						<Modal.Title>Quality Donations Here</Modal.Title>
-						</Modal.Header>
-						<Modal.Body>
+		<Modal className="modal-container" show={this.state.showLogIn} onHide={this.handleCloseLogin}>
+          <Modal.Header closeButton>
+            <Modal.Title className="text-center">		
+				<a href="#"><img id="logo" src={require("./images/qualitydonationslogo.png")}/></a>
+			</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
 
-						<Form horizontal>
-							<FormGroup controlId="formHorizontalEmail">
-								<Col sm={12}>
-								<FormControl type="email" placeholder="Username" />
-								</Col>
-							</FormGroup>
+			<Form horizontal>
+				<FormGroup controlId="formHorizontalEmail">
+					<Col md={12}>
+					<FormControl type="email" 
+					placeholder="Username" 
+					name="username"
+					value={this.state.username}
+					onChange={this.handleChange} />
+					</Col>
+				</FormGroup>
 
-							<FormGroup controlId="formHorizontalPassword">
-								<Col componentClass={ControlLabel} sm={2}>
-								Password
-								</Col>
-								<Col sm={10}>
-								<FormControl type="password" placeholder="Password" />
-								</Col>
-							</FormGroup>
+				<FormGroup controlId="formHorizontalPassword">
+					<Col md={12}>
+					<FormControl type="password" 
+					placeholder="Password" 
+					name="password"
+					value={this.state.password}
+					onChange={this.handleChange}/>
+					</Col>
+				</FormGroup>
 
-							<FormGroup>
-								<Col smOffset={2} sm={10}>
-								<Button type="submit">Login</Button>
-								</Col>
-							</FormGroup>
-						</Form>;
-
-
-						{/* <h4>Text in a modal</h4>
-						<p>
-							Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-						</p>
-			
-						<h4>Popover in a modal</h4>
-						<p>
-							there is a{' '}
-							<OverlayTrigger overlay={popover}>
-							<a href="#popover">popover</a>
-							</OverlayTrigger>{' '}
-							here
-						</p>
-			
-						<h4>Tooltips in a modal</h4>
-						<p>
-							there is a{' '}
-							<OverlayTrigger overlay={tooltip}>
-							<a href="#tooltip">tooltip</a>
-							</OverlayTrigger>{' '}
-							here
-						</p> */}
-			
-						{/* <hr />
-			
-						<h4>Overflowing text to show scroll behavior</h4>
-						<p>
-							Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-							dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-							ac consectetur ac, vestibulum at eros.
-						</p> */}
-						</Modal.Body>
-						<Modal.Footer>
-						<Button onClick={this.handleCloseLogin}>Close</Button>
-						</Modal.Footer>
-					</Modal>
+				<FormGroup>
+					<Col md={12}>
+					<Button className="modal-submit" bsStyle="success" type="submit" onClick={this.handleLoginSubmit} >Login</Button>
+					</Col>
+				</FormGroup>
+				<FormGroup>
+				<Col md={6} xsOffset={2}>
+					<a href="/auth/google">
+						{/* <GoogleButton /> */}
+						<img id="google-img" src={googleButton} alt="sign into Google Button" />
+					</a>
+					</Col>
+				</FormGroup>
+			</Form> 
+           
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.handleCloseLogin}>Close</Button>
+          </Modal.Footer>
+        </Modal>
 
 			</div>
 		)
@@ -244,3 +243,6 @@ class App extends Component {
 }
 
 export default App
+
+
+				

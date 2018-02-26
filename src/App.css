@@ -24,7 +24,7 @@
 }
 
 .page-content {
-  padding-top: 50px;
+  padding-top: 45px;
 }
 
 body {
@@ -33,5 +33,40 @@ body {
 }
 
 .modal-container {
-  margin: 80px auto;
+  top:80px;
+}
+
+.modal-content {
+  width:400px;
+  margin: 0 auto;
+  background: #f9a825;
+}
+
+.modal-body {
+  margin-top:10px;
+  width:380px;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.modal-header {
+  padding-bottom: 2px;
+}
+
+
+.modal-submit {
+  width: 100%;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+#google-img {
+  padding-left:15px;
+}
+
+#logo {
+  width: 225px;
+  transform:translateY(-10px);
+  height:auto;
 }

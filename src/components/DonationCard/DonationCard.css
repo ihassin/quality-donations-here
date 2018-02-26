@@ -4,6 +4,11 @@
   border: 3px solid green;
 }
 
+.shop-img {
+  width: 293px;
+  height: 219px;
+}
+
 #shop-details {
   width: 300px;
   border-bottom: 3px solid green;
@@ -14,10 +19,7 @@
   background-image: url("../../images/halftone-yellow.png");
 }
 
-.shop-img {
-  width: 293px;
-  height: 219px;
-}
+
 
 #interested-button,
 #interested-button:hover  {
