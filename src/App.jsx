@@ -34,11 +34,11 @@ class App extends Component {
 			console.log(response.data)
 			if (!!response.data.user) {
 				console.log('THERE IS A USER')
-				// console.log("login", response.data)
+				console.log("login", response.data)
 				this.setState({
 					loggedIn: true,
 					user: response.data.user,
-					// firstname: response.data.user.firstname,
+					firstname: response.data.user.firstname,
 					redirectTo:false
 				})
 			} else {
@@ -64,7 +64,8 @@ class App extends Component {
 					redirectTo: true
 				})
 			}
-		})
+		});
+		
 	}
 
 	_login(username, password) {
@@ -74,13 +75,17 @@ class App extends Component {
 				password
 			})
 			.then(response => {
-				// console.log("login", response.data)
+				console.log("login", response.data)
 				if (response.status === 200) {
+					
+					var fName = response.data.user.firstname;
+					console.log("login firstname", fName);
+					
 					// update the state
 					this.setState({
 						loggedIn: true,
 						user: response.data.user,
-						// firstname: response.data.user.firstname,
+						firstname: fName,
 						redirectTo: false
 					})
 				}
@@ -156,17 +161,47 @@ class App extends Component {
 						</div>}
 				/>
 				<Route exact path="/signup" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} /> <SignupForm /> </div>} />
-				<Route exact path="/donate" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} donate={true}/> <DonateForm user={this.state.user} firstname={this.state.firstname}/> </div>} />
+				<Route exact path="/donate" render={() => {
+					console.log("Routing to /donate", this.state.firstname);
+					 return (<div> 
+						 <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} donate={true}/> 
+						 <DonateForm user={this.state.user} firstname={this.state.firstname}/> 
+					 </div>)}} />
 				<Route exact path="/mydonations" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyDonations /> </div>} /> 
 				<Route exact path="/mypickups" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyPickups /> </div>} />
 
 
 						<Modal className="modal-container" show={this.state.showLogIn} onHide={this.handleCloseLogin}>
 						<Modal.Header closeButton>
-						<Modal.Title>Modal heading</Modal.Title>
+						<Modal.Title>Quality Donations Here</Modal.Title>
 						</Modal.Header>
 						<Modal.Body>
-						<h4>Text in a modal</h4>
+
+						<Form horizontal>
+							<FormGroup controlId="formHorizontalEmail">
+								<Col sm={12}>
+								<FormControl type="email" placeholder="Username" />
+								</Col>
+							</FormGroup>
+
+							<FormGroup controlId="formHorizontalPassword">
+								<Col componentClass={ControlLabel} sm={2}>
+								Password
+								</Col>
+								<Col sm={10}>
+								<FormControl type="password" placeholder="Password" />
+								</Col>
+							</FormGroup>
+
+							<FormGroup>
+								<Col smOffset={2} sm={10}>
+								<Button type="submit">Login</Button>
+								</Col>
+							</FormGroup>
+						</Form>;
+
+
+						{/* <h4>Text in a modal</h4>
 						<p>
 							Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
 						</p>
@@ -187,16 +222,16 @@ class App extends Component {
 							<a href="#tooltip">tooltip</a>
 							</OverlayTrigger>{' '}
 							here
-						</p>
+						</p> */}
 			
-						<hr />
+						{/* <hr />
 			
 						<h4>Overflowing text to show scroll behavior</h4>
 						<p>
 							Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
 							dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
 							ac consectetur ac, vestibulum at eros.
-						</p>
+						</p> */}
 						</Modal.Body>
 						<Modal.Footer>
 						<Button onClick={this.handleCloseLogin}>Close</Button>

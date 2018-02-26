@@ -55,7 +55,9 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-#.env
+
+# should include for gitHub but should comment For heroku
+.env
 
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
@@ -66,7 +68,8 @@ typings/
 /coverage
 
 # production
-#/build
+# should include for gitHub but should comment For heroku
+/build
 
 # misc
 .DS_Store
