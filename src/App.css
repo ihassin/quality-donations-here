@@ -31,3 +31,7 @@ body {
   background-image: url("./images/halftone-yellow.png");
   background-color: #ffeb3b;
 }
+
+.modal-container {
+  margin: 80px auto;
+}

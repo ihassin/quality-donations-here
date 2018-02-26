@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Route } from 'react-router-dom'
+import { Popover, Tooltip, Button, Modal, OverlayTrigger } from 'react-bootstrap';
 import './App.css'
 import Navbar from './components/Navbar'
 import LoginForm from './components/Login/LoginForm'
@@ -20,7 +21,8 @@ class App extends Component {
 			redirectTo: false,
 			keyword:"",
 			city:"",
-			zip:""
+			zip:"",
+			showLogIn: false
 		}
 		this._logout = this._logout.bind(this)
 		this._login = this._login.bind(this)
@@ -32,11 +34,11 @@ class App extends Component {
 			console.log(response.data)
 			if (!!response.data.user) {
 				console.log('THERE IS A USER')
-				console.log("login", response.data)
+				// console.log("login", response.data)
 				this.setState({
 					loggedIn: true,
 					user: response.data.user,
-					firstname: response.data.user.firstname,
+					// firstname: response.data.user.firstname,
 					redirectTo:false
 				})
 			} else {
@@ -72,17 +74,29 @@ class App extends Component {
 				password
 			})
 			.then(response => {
-				console.log("login", response.data)
+				// console.log("login", response.data)
 				if (response.status === 200) {
 					// update the state
 					this.setState({
 						loggedIn: true,
 						user: response.data.user,
-						firstname: response.data.user.firstname,
+						// firstname: response.data.user.firstname,
 						redirectTo: false
 					})
 				}
 			})
+	}
+
+	handleShowLogIn = () =>{
+		this.setState({
+			showLogIn: true
+		})
+	}
+
+	handleCloseLogin = () => {
+		this.setState({
+			showLogIn: false
+		})
 	}
 
 
@@ -117,12 +131,18 @@ class App extends Component {
 
 
 	render() {
+		const popover = (
+			<Popover id="modal-popover" title="popover">
+			  very popover. such engagement
+			</Popover>
+		  );
+		  const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
 		if (this.state.redirectTo) {
-			return <div><Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} shop={true} handleKeywordSearch={this.handleKeywordSearch} handleCityZipSearch={this.handleCityZipSearch}/> <Shop keyword={this.state.keyword} city={this.state.city} zip={this.state.zip}/></div>
+			return <div><Navbar _logout={this._logout} handleShowLogIn={this.handleShowLogIn} loggedIn={this.state.loggedIn} user={this.state.user} shop={true} handleKeywordSearch={this.handleKeywordSearch} handleCityZipSearch={this.handleCityZipSearch}/> <Shop keyword={this.state.keyword} city={this.state.city} zip={this.state.zip}/></div>
 		}
 		return (
 			<div className="App">
-				<Route exact path="/" render={() => <div><Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} shop={true} handleKeywordSearch={this.handleKeywordSearch} handleCityZipSearch={this.handleCityZipSearch} /> <Shop keyword={this.state.keyword} city={this.state.city} zip={this.state.zip}/></div>} />
+				<Route exact path="/" render={() => <div><Navbar _logout={this._logout}  handleShowLogIn={this.handleShowLogIn} loggedIn={this.state.loggedIn} user={this.state.user} shop={true} handleKeywordSearch={this.handleKeywordSearch} handleCityZipSearch={this.handleCityZipSearch} /> <Shop keyword={this.state.keyword} city={this.state.city} zip={this.state.zip}/></div>} />
 				<Route
 					exact
 					path="/login"
@@ -137,8 +157,52 @@ class App extends Component {
 				/>
 				<Route exact path="/signup" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} /> <SignupForm /> </div>} />
 				<Route exact path="/donate" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} donate={true}/> <DonateForm user={this.state.user} firstname={this.state.firstname}/> </div>} />
-				<Route exact path="/mydonations" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyDonations /> </div>} />
+				<Route exact path="/mydonations" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyDonations /> </div>} /> 
 				<Route exact path="/mypickups" render={() => <div> <Navbar _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user}/> <MyPickups /> </div>} />
+
+
+						<Modal className="modal-container" show={this.state.showLogIn} onHide={this.handleCloseLogin}>
+						<Modal.Header closeButton>
+						<Modal.Title>Modal heading</Modal.Title>
+						</Modal.Header>
+						<Modal.Body>
+						<h4>Text in a modal</h4>
+						<p>
+							Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+						</p>
+			
+						<h4>Popover in a modal</h4>
+						<p>
+							there is a{' '}
+							<OverlayTrigger overlay={popover}>
+							<a href="#popover">popover</a>
+							</OverlayTrigger>{' '}
+							here
+						</p>
+			
+						<h4>Tooltips in a modal</h4>
+						<p>
+							there is a{' '}
+							<OverlayTrigger overlay={tooltip}>
+							<a href="#tooltip">tooltip</a>
+							</OverlayTrigger>{' '}
+							here
+						</p>
+			
+						<hr />
+			
+						<h4>Overflowing text to show scroll behavior</h4>
+						<p>
+							Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+							dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+							ac consectetur ac, vestibulum at eros.
+						</p>
+						</Modal.Body>
+						<Modal.Footer>
+						<Button onClick={this.handleCloseLogin}>Close</Button>
+						</Modal.Footer>
+					</Modal>
+
 			</div>
 		)
 	}
