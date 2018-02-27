@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import "./Navbar.css";
+import {Link} from 'react-router-dom';
 
 const DonateNavbar = props => {
 	if (props.loggedIn) {
@@ -38,9 +39,11 @@ const DonateNavbar = props => {
 				}
 
 			{props.donate ? "" :
-				<NavItem eventKey={2} href="/donate">
-					donate
-				</NavItem>
+				<Link to="/donate">donate</Link>
+				// <NavItem eventKey={2} href="/donate">
+				// 	donate
+				// </NavItem>
+				
 			}
 
 			<NavDropdown eventKey={3} title={props.user.local.username} id="basic-nav-dropdown">

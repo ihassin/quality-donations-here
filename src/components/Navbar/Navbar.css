@@ -24,10 +24,15 @@ div.dropdown-item {
 }
 
 .dropdown-menu>li>a {
+    background: #f9a825;
     font-weight: bolder;
     font-size: 14px;
     text-transform: uppercase;
-    color:black;
+    color:white;
+}
+
+.navbar-nav>li>.dropdown-menu {
+    padding:0px;
 }
 
 nav.navbar.navbar-default {
