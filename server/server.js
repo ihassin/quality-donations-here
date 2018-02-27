@@ -24,10 +24,16 @@ app.use(morgan('dev'))
 
 app.use('/api/upload/image', mutilpart());
  
+// uploader.use(new uploader.LocalStrategy({
+// 	uploadPath: '/server/uploads',
+// 	baseUrl: 'http://127.0.0.1:8080/api/uploads/'
+//   }));
+
 uploader.use(new uploader.LocalStrategy({
-  uploadPath: '/server/uploads',
-  baseUrl: 'http://127.0.0.1:8080/api/uploads/'
-}));
+	uploadPath: '/server/uploads',
+	baseUrl: `http://127.0.0.1:${PORT}/api/uploads/`
+  }));
+
 
 app.use(
 	bodyParser.urlencoded({

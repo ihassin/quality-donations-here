@@ -124,9 +124,7 @@ class App extends Component {
 
 	handleCloseLogin = () => {
 		this.setState({
-			showLogIn: false,
-			username: '',
-			password: ''
+			showLogIn: false
 		})
 	}
 
