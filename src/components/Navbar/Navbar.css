@@ -48,5 +48,10 @@ nav.navbar.navbar-default {
     text-transform: uppercase;
 }
 
+#donate-link {
+    color: white;
+    text-decoration: none;
+}
+
 
 
