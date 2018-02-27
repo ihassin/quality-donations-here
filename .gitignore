@@ -56,8 +56,8 @@ typings/
 
 # dotenv environment variables file
 
-# should include for gitHub but should comment For heroku
-#.env
+# should include (no #) for gitHub but should comment (add #) For heroku
+.env
 
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
@@ -68,8 +68,8 @@ typings/
 /coverage
 
 # production
-# should include for gitHub but should comment For heroku
-#/build
+# should include (no #) for gitHub but should comment (add #) For heroku
+/build
 
 # misc
 .DS_Store

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Row, Col, Button, Form, FormControl, ControlLabel, Radio, Checkbox } from 'react-bootstrap';
 import API from "../../utils/API";
 import "./DonateForm.css";
+import Noty from 'noty';
 
 
 class DonateForm extends Component {
@@ -98,11 +99,25 @@ class DonateForm extends Component {
     console.log("handleCreate", donateObj);
     API.saveDonation(donateObj)
     .then(res =>
+      window.location.href = "/"
+
       // this.setState({ donations: res.data })
-      console.log("create successful", res.data)
+
+        //   new Noty({
+        //     // type: 'success',
+        //     text: 'Donation Added Sucessfully!',
+        //     animation: {
+        //         open: 'animated bounceInRight', // Animate.css class names
+        //         close: 'animated bounceOutRight' // Animate.css class names
+        //     }
+        // }).show()
+
     )
-    .catch(err => console.log(err));
-    }
+    .catch(err => console.log(err)); 
+  }
+
+
+
 
 
 
@@ -238,8 +253,8 @@ class DonateForm extends Component {
               <Radio className="pull-left" name="categoryTag" value="motors" inline onChange={this.handleInputChange}>
                 Motors
               </Radio>
-              <Radio className="pull-left" name="categoryTag" value="cars" inline onChange={this.handleInputChange}>
-                Cars
+              <Radio className="pull-left" name="categoryTag" value="car" inline onChange={this.handleInputChange}>
+                Car
               </Radio>{' '}
               <Radio className="pull-left" name="categoryTag" value="other" inline onChange={this.handleInputChange}>
                 Other

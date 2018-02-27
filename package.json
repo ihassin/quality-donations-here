@@ -15,6 +15,7 @@
     "express-session": "^1.15.4",
     "mongoose": "^4.11.4",
     "morgan": "^1.8.2",
+    "noty": "^3.2.0-beta",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
     "passport-google-oauth20": "^1.0.0",
@@ -38,10 +39,10 @@
     "prod": "export NODE_ENV=\"production\" && nodemon server/server.js"
   },
   "proxy": {
-    "/api/*" : {
+    "/api/*": {
       "target": "http://localhost:8080"
     },
-    "/auth/*" : {
+    "/auth/*": {
       "target": "http://localhost:8080"
     }
   }
