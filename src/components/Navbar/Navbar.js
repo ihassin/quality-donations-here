@@ -87,19 +87,16 @@ const DonateNavbar = props => {
 							shop 
 				</NavItem>
 				}
-				<NavItem eventKey={2} href="/login">
+
+				<NavItem eventKey={2} href="#" onClick={props.handleShowLogIn}>
 						donate
 				</NavItem>
-
-				{/* <NavItem eventKey={3} href="/login">
-						login
-				</NavItem> */}
 
 				<NavItem eventKey={3} href="#" onClick={props.handleShowLogIn}>
 					login
 				</NavItem>
 
-				<NavItem eventKey={4} href="/signup">
+				<NavItem eventKey={4} href="#" onClick={props.handleShowSignup}>
 						sign up 
 				</NavItem>
 			</Nav>

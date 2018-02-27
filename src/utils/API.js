@@ -19,12 +19,16 @@ export default {
     const zipQuery = pickupZip ? `&pickupZip=${pickupZip}` :"";
 
     return axios.get(`/api/shop?${nameQuery}${categoryTagQuery}${conditionTagQuery}${ageTagQuery}${genderTagQuery}${cityQuery}${zipQuery}`);
-   
-  },
+  },  
 
 
   uploadPicture: (pic, config) => {
     return axios.post("/api/upload/image", pic, config);
-  }
+  },
+
+  signup: (signupObj) => {
+    return axios.post('/auth/signup', signupObj);
+  }	
+
 
 };
