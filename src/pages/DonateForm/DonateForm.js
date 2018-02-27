@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Row, Col, Button, Form, FormControl, ControlLabel, Radio, Checkbox } from 'react-bootstrap';
 import API from "../../utils/API";
 import "./DonateForm.css";
-import Noty from 'noty';
+// import Noty from 'noty';
 
 
 class DonateForm extends Component {
@@ -428,7 +428,7 @@ class DonateForm extends Component {
           <Row className="show-grid">
             <Col className="zero-right-pad zero-left-pad zero-top-pad" componentClass={ControlLabel} md={12}>
               <ControlLabel className="zero-left-pad pull-left">Donee: </ControlLabel>
-              <ControlLabel className="info-user pull-left">Jack</ControlLabel>
+              <ControlLabel className="info-user pull-left"></ControlLabel>
             </Col>
             </Row>
             <Row className="zero-right-pad show-grid">

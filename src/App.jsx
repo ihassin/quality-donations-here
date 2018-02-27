@@ -118,13 +118,15 @@ class App extends Component {
 
 	handleShowLogIn = () =>{
 		this.setState({
-			showLogIn: true
+			showLogIn: true,
 		})
 	}
 
 	handleCloseLogin = () => {
 		this.setState({
-			showLogIn: false
+			showLogIn: false,
+			username: '',
+			password: ''
 		})
 	}
 
@@ -134,22 +136,22 @@ class App extends Component {
 		// TODO - validate!
 		axios
 			.post('/auth/signup', {
-				username: this.state.username,
-				password: this.state.password,
-				firstname:this.state.firstname,
-				lastname:this.state.lastname,
-				email:this.state.email
+				username: this.state.signupUsername,
+				password: this.state.signupPassword,
+				firstname:this.state.signupFirstname,
+				lastname:this.state.signupLastname,
+				email:this.state.signupEmail
 			})
 			.then(response => {
 				this.handleCloseSignup();
 			})
 
 		// const signupObj = {
-		// 	username: this.state.username,
-		// 	password: this.state.password,
-		// 	firstname:this.state.firstname,
-		// 	lastname:this.state.lastname,
-		// 	email:this.state.email}
+		// 	username: this.state.signupUsername,
+		// 	password: this.state.signupPassword,
+		// 	firstname:this.state.signupFirstname,
+		// 	lastname:this.state.signupLastname,
+		// 	email:this.state.signupEmail
 
 		// API.signup(signupObj).then(response => {
 		// 	this.handleCloseSignup();
@@ -164,7 +166,13 @@ class App extends Component {
 
 	handleCloseSignup = () => {
 		this.setState({
-			showSignup: false
+			showSignup: false,
+			signupFirstname:"",
+			signupLastname:"",
+			signupEmail:"",
+			signupUsername:"",
+			signupPassword:"",
+			signupconfirmPassword:""
 		})
 	}
 
@@ -280,8 +288,8 @@ class App extends Component {
           </Modal.Header>
           <Modal.Body>
 
-			<Form horizontal>
-			<FormGroup controlId="formHorizontalEmail">
+			<Form id="signup-form" horizontal>
+			<FormGroup controlId="formHorizontalsignupFirstname">
 					<Col md={12}>
 					<FormControl type="text" 
 					placeholder="First Name" 
@@ -290,7 +298,7 @@ class App extends Component {
 					onChange={this.handleChange} />
 					</Col>
 				</FormGroup>
-				<FormGroup controlId="formHorizontalEmail">
+				<FormGroup controlId="formHorizontalsignupLastnam">
 					<Col md={12}>
 					<FormControl type="text" 
 					placeholder="Last Name" 
@@ -299,7 +307,7 @@ class App extends Component {
 					onChange={this.handleChange} />
 					</Col>
 				</FormGroup>
-				<FormGroup controlId="formHorizontalEmail">
+				<FormGroup controlId="formHorizontalsignupEmail">
 					<Col md={12}>
 					<FormControl type="email" 
 					placeholder="Email" 
@@ -308,7 +316,7 @@ class App extends Component {
 					onChange={this.handleChange} />
 					</Col>
 				</FormGroup>
-				<FormGroup controlId="formHorizontalEmail">
+				<FormGroup controlId="formHorizontalsignupUsername">
 					<Col md={12}>
 					<FormControl type="text" 
 					placeholder="Username" 
@@ -318,7 +326,7 @@ class App extends Component {
 					</Col>
 				</FormGroup>
 
-				<FormGroup controlId="formHorizontalPassword">
+				<FormGroup controlId="formHorizontalsignupPassword">
 					<Col md={12}>
 					<FormControl type="password" 
 					placeholder="Password" 
@@ -327,7 +335,7 @@ class App extends Component {
 					onChange={this.handleChange}/>
 					</Col>
 				</FormGroup>
-				<FormGroup controlId="formHorizontalPassword">
+				<FormGroup controlId="formHorizontalsignupconfirmPassword">
 					<Col md={12}>
 					<FormControl type="password" 
 					placeholder="Confirm Password" 

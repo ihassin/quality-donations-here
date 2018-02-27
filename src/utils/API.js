@@ -26,9 +26,9 @@ export default {
     return axios.post("/api/upload/image", pic, config);
   },
 
-  signup: (signupObj) => {
-    return axios.post('/auth/signup', signupObj);
-  }	
+  // signup: (signupObj) => {
+  //   return axios.post('/auth/signup', signupObj);
+  // }	
 
 
 };
