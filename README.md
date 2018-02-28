@@ -4,7 +4,7 @@
 * MERN (MongoDB, Express, React, Node.js) Stack
 * Bootstrap
 * User Authentication
-* User Authentication
+* MVC Paradigm
 * RESTful API
 
 
