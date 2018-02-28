@@ -69,7 +69,7 @@ typings/
 
 # production
 # should include (no #) for gitHub but should comment (add #) For heroku
-#/build
+# /build
 
 # misc
 .DS_Store
