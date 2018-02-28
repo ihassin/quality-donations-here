@@ -11,7 +11,7 @@ var Schema = mongoose.Schema;
 var donationSchema = new Schema({
     donorUser: {
         type: String,
-        required: true
+        required: false
     },
 
     donorFirstname: {

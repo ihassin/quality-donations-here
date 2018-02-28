@@ -58,7 +58,6 @@ class DonateForm extends Component {
   }
 
   componentDidMount() {
-    console.log("DonateForm componentDidMount");
 
   }
 

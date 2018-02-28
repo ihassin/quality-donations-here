@@ -1,7 +1,7 @@
 #keyword-search-input {
     padding: 8px;
     width: 20rem;
-    margin-left:20px; 
+    margin-left:15px; 
 }
 
 #cityZip-search-input {
@@ -9,7 +9,7 @@
 }
 
 #donate-title {
-    margin: 0 150px; 
+    margin-left: 15px;
     text-transform: uppercase;
     color:white;
     font-size: 24px;
