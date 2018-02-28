@@ -1,4 +1,6 @@
-# Quality Donations Here
+# Quality Donations Here  
+
+### View the live version of this app here: https://glacial-mountain-71826.herokuapp.com/
 
 ## Technologies
 * MERN (MongoDB, Express, React, Node.js) Stack
@@ -22,4 +24,3 @@
 
 ![play Gif](https://github.com/lzapson/quality-donations-here/blob/master/readme%20pics/quality-donations-here.gif)
 
-View the live version of this app here: https://glacial-mountain-71826.herokuapp.com/
