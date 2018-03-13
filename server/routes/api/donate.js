@@ -1,6 +1,7 @@
 const router = require("express").Router();
 var uploader = require('express-fileuploader');
 const donationController = require("../../controllers/donationController");
+const {AWS} = require("../../uploaders");
 const path = require("path");
 
 
@@ -21,16 +22,18 @@ router.get("/uploads/:imageName", (req, res) =>{
 	res.sendFile(path.join(__dirname, `../../uploads/${req.params.imageName}`));
 })
 
-router.post("/upload/image", (req, res, next) =>{
-	console.log("req.files",req.files);
-	uploader.upload('local', req.files['file'], function(err, files) {
-		console.log("****** files *****", files);
-		if (err) {
-		  return next(err);
-		}
-		res.json(files);
-	  });
-})
+// router.post("/upload/image", (req, res, next) =>{
+// 	console.log("req.files",req.files);
+// 	uploader.upload('local', req.files['file'], function(err, files) {
+// 		console.log("****** files *****", files);
+// 		if (err) {
+// 		  return next(err);
+// 		}
+// 		res.json(files);
+// 	  });
+// })
+
+router.post("/upload/image", AWS.uploadFile);
 
 
 
