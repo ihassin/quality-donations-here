@@ -75,7 +75,7 @@ class DonateForm extends Component {
       nameDisplay:this.state.nameDisplay,
       desc:this.state.desc,
       url: this.state.url,
-      donorUser: this.state.donorUser,
+      donorUser: this.props.user.local.username,
       // donorFirstname: this.state.donorFirstname,
       categoryTag:this.state.categoryTag,
       conditionTag:this.state.conditionTag,
@@ -405,7 +405,9 @@ class DonateForm extends Component {
               <Row className="show-grid">
                 <Col className="zero-right-pad zero-left-pad zero-top-pad" componentClass={ControlLabel} md={12}>
                   <ControlLabel className="zero-left-pad pull-left">Donor: </ControlLabel>
-                  <ControlLabel className="info-user pull-left">{this.state.donorUser}</ControlLabel>
+                  {/* <ControlLabel className="info-user pull-left">{this.state.donorUser}</ControlLabel> */}
+                  <ControlLabel className="info-user pull-left">{this.props.firstname}</ControlLabel>
+                  
                 </Col>
                 </Row>
                 <Row className="zero-right-pad show-grid">
