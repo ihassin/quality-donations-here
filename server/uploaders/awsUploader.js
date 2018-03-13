@@ -24,7 +24,7 @@ function uploadFile(req, res, next){
   s3.putObject(data, function(err, data) {
     if (err){
       console.log("Error uploading File to AWS", err)
-      return next(error);
+      return next(err);
     }
     else{
       console.log(`${newName} has been successfully uploaded!`);
