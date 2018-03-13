@@ -39,14 +39,19 @@ const DonateNavbar = props => {
 				}
 
 			{props.donate ? "" :
-				<NavItem eventKey={2} href="#">
-					<Link id="donate-link" to="/donate">
-						donate
-					</Link>
-				 </NavItem>
-				// <NavItem eventKey={2} href="/donate">
+				// <NavItem eventKey={2} href="#">
+				// 	<Link id="donate-link" to="/donate">
 				// 		donate
-				// </NavItem>
+				// 	</Link>
+				//  </NavItem>
+				 	
+				// <Link id="donate-link" to="/donate">
+				// 	donate
+				// </Link>
+					
+				<NavItem eventKey={2} href="/donate">
+						donate
+				</NavItem>
 				
 			}
 
