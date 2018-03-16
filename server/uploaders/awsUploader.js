@@ -32,7 +32,8 @@ function uploadFile(req, res, next){
       s3.getSignedUrl("getObject", {
         Bucket: process.env.BUCKET_NAME,
         Key: newName,
-        Expires: 86400
+        // Expires: 86400 // seconds in 1 day
+        Expires: 3.154e+7 // seconds in 1 year
       }, (err, url) => {
         if(err){
           return next(err);
