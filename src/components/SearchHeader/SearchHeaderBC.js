@@ -2,12 +2,9 @@ import React from "react";
 import "./SearchHeader.css";
 import {ButtonToolbar, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 
-
-
 const SearchHeader = props => (
 
 <div id="search-header">
-
   <ButtonToolbar className="button-toolbar">
     <ToggleButtonGroup type="radio" name="options"  >
       <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"home"}>Home</ToggleButton>

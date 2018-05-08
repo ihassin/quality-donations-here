@@ -32,7 +32,7 @@ body {
   background-color: #ffeb3b;
 }
 
-.modal {
+.modal-container {
   top:50px;
 }
 
@@ -56,11 +56,11 @@ body {
 }
 
 
-/* .modal-submit {
+.modal-submit {
   width: 100%;
   font-size: 16px;
   font-weight: bolder;
-} */
+}
 
 #google-img {
   padding-left:15px;
@@ -70,10 +70,4 @@ body {
   width: 225px;
   transform:translateY(-10px);
   height:auto;
-  margin-left: 65px;
-}
-
-.modal-header,
-.modal-footer {
-  height: 60px;
 }

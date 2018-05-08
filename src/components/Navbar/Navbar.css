@@ -1,56 +1,97 @@
 #keyword-search-input {
-    padding: 8px;
+    padding: 4px;
     width: 20rem;
-    margin-left:15px; 
 }
 
 #cityZip-search-input {
-    width:15rem;
+    padding: 4px;
+    width:10rem;
 }
 
-#donate-title {
-    margin-left: 15px;
+.navbar-brand {
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+    vertical-align: middle;
+    height: 30px;
+}
+
+#logo {
+    padding-bottom: 55px;
+}
+
+.navbar-toggler-icon {
+    background: darkorange;
+}
+
+.navbar-toggler {
+    padding: 0;
+}
+
+li.dropdown>a {
+    border: .5px solid lightslategray;
+    font-size:12px;
+}
+
+/* #donate-title {
+    display:inline-block; 
+   margin:0px;
+   padding:0px;
     text-transform: uppercase;
-    color:white;
+     color:white;
     font-size: 24px;
-    font-weight: bolder;
-}
-.form-rounded {
+    font-weight: bolder; 
+} */
+
+
+/* .form-rounded {
     border-radius: 1rem;
-}
+} */
 
-div.dropdown-item {
+/* div.dropdown-item {
     padding:0px;
-}
+} */
 
-.dropdown-menu>li>a {
+
+
+.dropdown-menu {
+    padding:0;
+    margin:0;
     background: #f9a825;
-    font-weight: bolder;
+}
+
+.dropdown-menu>a {
+    font-weight: bold;
     font-size: 14px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     color:white;
+    padding-right: 0;
+    padding-top: 2px;
+    padding-bottom: 2px; 
 }
 
-.navbar-nav>li>.dropdown-menu {
-    padding:0px;
+.dropdown-menu>a:hover {
+    color:darkslategray;
+    background: #f9a825;
+    /* background: #fcd80e; */
 }
 
-nav.navbar.navbar-default {
+nav.navbar {
     margin-bottom: 0px;
     background: #f9a825;
     border:none;
 }
 
-.navbar-default .navbar-nav>li>a {
+.nav-link {
     color:white;
     font-weight: bolder;
     font-size: 14px;
     text-transform: uppercase;
+    margin-right: 5px;
 }
 
-#donate-link {
-    color: white;
-    text-decoration: none;
+.nav-link:hover {
+    color:darkslategray;
 }
 
 

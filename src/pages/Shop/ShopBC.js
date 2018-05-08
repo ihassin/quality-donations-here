@@ -141,7 +141,7 @@ class Shop extends Component {
       <div className="container-fluid">
       <SearchHeader handleCategoryTagClick= {this.handleCategoryTagClick} handleConditionTagClick={this.handleConditionTagClick} handleAgeTagClick={this.handleAgeTagClick} handleGenderTagClick={this.handleGenderTagClick}/>
       <div id="shop">
-        {this.state.donations.map(donation => (
+              {this.state.donations.map(donation => (
           <DonationCard
             removeFriend={this.removeFriend}
             id={donation._id}

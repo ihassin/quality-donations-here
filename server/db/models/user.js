@@ -5,10 +5,9 @@ mongoose.promise = Promise
 
 // Define userSchema
 const userSchema = new Schema({
-	firstname: { type: String, unique: false },
-	lastname: { type: String, unique: false },
-	email: { type: String, unique: false },
-	organization: { type: String, unique: false },
+	firstname: { type: String, unique: false, required: true },
+	lastname: { type: String, unique: false, required: true },
+	email: { type: String, unique: false, required: true },
 	local: {
 		username: { type: String, unique: false, required: false },
 		password: { type: String, unique: false, required: false }
@@ -16,17 +15,6 @@ const userSchema = new Schema({
 	google: {
 		googleId: { type: String, required: false }
 	}
-	// photos: []
-	// local: {
-	// 	email: { type: String, unique: true },
-	// 	password: { type: String }
-	// },
-	// google: {
-	// 	id: { type: String },
-	// 	photos: []
-	// },
-	// firstName: { type: String },
-	// lastName: { type: String }
 })
 
 // Define schema methods
