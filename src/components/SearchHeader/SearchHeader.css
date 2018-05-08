@@ -1,5 +1,8 @@
 
-
+#search-header input {
+    width: 0;
+    height: 0;
+}
 #search-header {
     position: fixed;
     top: 60px;

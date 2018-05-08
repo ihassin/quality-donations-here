@@ -8,8 +8,10 @@ const SearchHeader = props => (
 
 <div id="search-header">
 
+
+
   <ButtonToolbar className="button-toolbar">
-    <ToggleButtonGroup type="radio" name="options"  >
+    <ToggleButtonGroup type="checkbox" name="options"  >
       <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"home"}>Home</ToggleButton>
       <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"fashion"}>Fashion</ToggleButton>
       <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"leisure"}>Leisure</ToggleButton>

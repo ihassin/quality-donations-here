@@ -11,16 +11,15 @@ import {
 } from 'react-bootstrap'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import LoginM from '../Login/LoginM';
-import SignupM from '../Login/SignupM';
-
+import LoginM from '../Login/LoginM'
+import SignupM from '../Login/SignupM'
 
 const DonateNavbar = props => {
   if (props.loggedIn) {
     return (
-      <nav className="navbar navbar-expand-sm fixed-top">
-        <div className="container">
-          <a className="navbar-brand p-0 m-0 justify-context-center" href="#">
+      <nav className="navbar navbar-expand-md p-0 m-0 $zindex-tooltip">
+        <div className="container-fluid mx-2 my-2">
+          <a className="navbar-brand p-0 mr-4 my-0" href="#">
             <img
               id="logo"
               src={require('../../images/qualitydonationslogo.png')}
@@ -37,10 +36,10 @@ const DonateNavbar = props => {
 
           <div className="collapse navbar-collapse" id="navbarNavForm">
             {props.shop ? (
-              <form className="form-inline my-2 my-lg-0 mx-auto">
+              <form className="form-inline">
                 <input
                   type="text"
-                  className="form-control mr-sm-2"
+                  className="form-control mr-1"
                   id="keyword-search-input"
                   name="keyword"
                   onChange={props.handleKeywordSearch}
@@ -48,7 +47,7 @@ const DonateNavbar = props => {
                 />
                 <input
                   type="text"
-                  className="form-control mr-sm-2"
+                  className="form-control mr-1"
                   id="cityZip-search-input"
                   name="keyword"
                   onChange={props.handleCityZipSearch}
@@ -90,27 +89,25 @@ const DonateNavbar = props => {
                 </li>
               )}
 
-              {/* <NavDropdown
-                eventKey={3}
-                title={props.user.local.username}
-                id="basic-nav-dropdown"
-              >
-                <MenuItem eventKey={3.1} href="#">
-                  my donations
-                </MenuItem>
-
-                <MenuItem eventKey={3.2} href="#">
-                  my pickups
-                </MenuItem>
-              </NavDropdown> */}
-
               <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle rounded-circle" data-toggle="dropdown" href="#">{props.user.local.username}</a>
-                    <div className="dropdown-menu">
-                        <a href="#" className="dropdown-item">My Donations</a>
-                        <a href="#" className="dropdown-item">My Pickups</a>
-                        <a href="#" className="dropdown-item">My Profile</a>
-                    </div>
+                <a
+                  className="nav-link dropdown-toggle rounded-circle"
+                  data-toggle="dropdown"
+                  href="#"
+                >
+                  {props.user.local.username}
+                </a>
+                <div className="dropdown-menu">
+                  <a href="#" className="dropdown-item">
+                    My Donations
+                  </a>
+                  <a href="#" className="dropdown-item">
+                    My Pickups
+                  </a>
+                  <a href="#" className="dropdown-item">
+                    My Profile
+                  </a>
+                </div>
               </li>
 
               <li className="nav-item">
@@ -122,71 +119,12 @@ const DonateNavbar = props => {
           </div>
         </div>
       </nav>
-
-      /* { <Navbar fixedTop>
-	<Navbar.Header>
-		<Navbar.Brand>
-		<a href="#"><img id="logo" src={require("../../images/qualitydonationslogo.png")}/></a>
-		</Navbar.Brand>
-	</Navbar.Header>
-	<Navbar.Collapse>
-		{props.shop ?
-			<Navbar.Form pullLeft>
-				<FormGroup>
-					<FormControl type="text" id="keyword-search-input" name="keyword" onChange={props.handleKeywordSearch} placeholder="What are you looking for?" />
-				</FormGroup>{' '}
-				<FormGroup>
-					<FormControl type="text" id="cityZip-search-input" name="keyword" onChange={props.handleCityZipSearch} placeholder="Enter City or Zip" />
-				</FormGroup>{' '}
-			</Navbar.Form>
-			: ""}
-			{props.donate ?
-			<Navbar.Form pullLeft>
-				<FormGroup>
-					<ControlLabel id="donate-title">Donate</ControlLabel>
-				</FormGroup>{' '}
-			</Navbar.Form>
-			: ""}
-			<Nav pullRight>
-			{props.shop ? "" :
-				<NavItem eventKey={1} href="/">
-							shop
-				</NavItem>
-				}
-
-			{props.donate ? "" :
-				<NavItem eventKey={2} href="#">
-					<Link id="donate-link" to="/donate">
-						donate
-					</Link>
-				 </NavItem>
-
-			}
-
-			<NavDropdown eventKey={3} title={props.user.local.username} id="basic-nav-dropdown">
-
-				<MenuItem eventKey={3.1} href="#">
-					my donations
-				</MenuItem>
-
-				<MenuItem eventKey={3.2} href="#">
-					my pickups
-				</MenuItem>
-			</NavDropdown>
-
-			<NavItem eventKey={4} href="#" onClick={props._logout}>
-				logout
-			</NavItem>
-
-		</Nav>
-	</Navbar.Collapse>
-</Navbar> } */
     )
   } else {
     return (
-      <nav className="navbar navbar-expand-sm fixed-top">
-        <div className="container">
-          <a className="navbar-brand p-0 m-0" href="#">
+      <nav className="navbar navbar-expand-md p-0 m-0 $zindex-tooltip">
+        <div className="container-fluid mx-2 my-2">
+          <a className="navbar-brand p-0 mr-4 my-0" href="#">
             <img
               id="logo"
               src={require('../../images/qualitydonationslogo.png')}
@@ -203,7 +141,7 @@ const DonateNavbar = props => {
 
           <div className="collapse navbar-collapse" id="navbarNavForm">
             {props.shop ? (
-              <form className="form-inline my-2 my-lg-0 mx-auto">
+              <form className="form-inline mr-1">
                 <input
                   type="text"
                   className="form-control mr-sm-2"
@@ -214,7 +152,7 @@ const DonateNavbar = props => {
                 />
                 <input
                   type="text"
-                  className="form-control mr-sm-2"
+                  className="form-control mr-1"
                   id="cityZip-search-input"
                   name="keyword"
                   onChange={props.handleCityZipSearch}
@@ -261,88 +199,24 @@ const DonateNavbar = props => {
             </ul>
           </div>
         </div>
-            <LoginM  
-            username={props.username}
-            password={props.password}
-            handleChange={props.handleChange} 
-            handleLoginSubmit={props.handleLoginSubmit}
-            />
+        <LoginM
+          username={props.username}
+          password={props.password}
+          handleChange={props.handleChange}
+          handleLoginSubmit={props.handleLoginSubmit}
+        />
 
-            <SignupM 
-             signupFirstname={props.signupFirstname}
-             signupLastname={props.signupLastname}
-             signupEmail={props.signupEmail}
-             signupUsername={props.signupUsername}
-             signupPassword={props.signupPassword}
-             signupconfirmPassword={props.signupconfirmPassword}
-             handleChange={props.handleChange} 
-             handleSignupSubmit={props.handleSignupSubmit}
-             />
-
-
-            
-       
+        <SignupM
+          signupFirstname={props.signupFirstname}
+          signupLastname={props.signupLastname}
+          signupEmail={props.signupEmail}
+          signupUsername={props.signupUsername}
+          signupPassword={props.signupPassword}
+          signupconfirmPassword={props.signupconfirmPassword}
+          handleChange={props.handleChange}
+          handleSignupSubmit={props.handleSignupSubmit}
+        />
       </nav>
-
-      //   <Navbar fixedTop>
-      //     <Navbar.Header>
-      //       <Navbar.Brand>
-      //         <a href="#">
-      //           <img
-      //             id="logo"
-      //             src={require('../../images/qualitydonationslogo.png')}
-      //           />
-      //         </a>
-      //       </Navbar.Brand>
-      //     </Navbar.Header>
-      //     <Navbar.Collapse>
-      //       {props.shop ? (
-      //         <Navbar.Form pullLeft>
-      //           <FormGroup>
-      //             <FormControl
-      //               type="text"
-      //               id="keyword-search-input"
-      //               name="keyword"
-      //               onChange={props.handleKeywordSearch}
-      //               placeholder="What are you looking for?"
-      //             />
-      //           </FormGroup>{' '}
-      //           <FormGroup>
-      //             <FormControl
-      //               type="text"
-      //               id="cityZip-search-input"
-      //               name="keyword"
-      //               onChange={props.handleCityZipSearch}
-      //               placeholder="Enter City or Zip"
-      //             />
-      //           </FormGroup>{' '}
-      //         </Navbar.Form>
-      //       ) : (
-      //         ''
-      //       )}
-      //       <Nav pullRight>
-      //         {props.shop ? (
-      //           ''
-      //         ) : (
-      //           <NavItem className="color-white" eventKey={1} href="/">
-      //             shop
-      //           </NavItem>
-      //         )}
-
-      //         <NavItem eventKey={2} href="#" onClick={props.handleShowLogIn}>
-      //           donate
-      //         </NavItem>
-
-      //         <NavItem eventKey={3} href="#" onClick={props.handleShowLogIn}>
-      //           login
-      //         </NavItem>
-
-      //         <NavItem eventKey={4} href="#" onClick={props.handleShowSignup}>
-      //           sign up
-      //         </NavItem>
-      //       </Nav>
-      //     </Navbar.Collapse>
-      //   </Navbar>
     )
   }
 }
