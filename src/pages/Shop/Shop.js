@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import DonationCard from '../../components/DonationCard';
 import SearchHeader from '../../components/SearchHeader';
 
+
 class Shop extends Component {
   constructor() {
     super()
@@ -267,6 +268,7 @@ class Shop extends Component {
         handleAgeTagClick={this.handleAgeTagClick} 
         handleGenderTagClick={this.handleGenderTagClick}/>
       <div id="shop">
+      <div className="row">
         {this.state.donations.map(donation => (
           <DonationCard
             removeFriend={this.removeFriend}
@@ -282,6 +284,7 @@ class Shop extends Component {
             handleLike={this.handleLike}
           />
         ))}
+        </div>
         </div>
      
       </div>
