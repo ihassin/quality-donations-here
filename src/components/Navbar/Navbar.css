@@ -123,6 +123,29 @@ nav.navbar {
     li.dropdown>a {
         border: none;
     }
+    #keyword-search-input {
+        width:100%;
+        margin-top: 45px;
+    }
+
+    #cityZip-search-input {
+        width:100%;
+        margin-top:0;
+        margin-bottom:0;
+    }
+    #logo {
+        padding-bottom: 45px;
+    }
+
+    .navbar-nav {
+        margin:20px 10px !important;
+        text-align: left;
+    }
+
+    .navbar-nav .nav-link {
+        display:inline-block;
+        padding:5px 10px !important;
+    }
 }
 
 
