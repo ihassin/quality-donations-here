@@ -1,4 +1,91 @@
 
+#search-header {
+   padding-top: 20px; 
+}
+
+#search-header button {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+#home,
+#fashion,
+#jewelry,
+#books,
+#entertainment,
+#toys,
+#exercise,
+#tech,
+#motors,
+#cars,
+#other{
+    border: 2px solid darkgreen;
+}
+
+#new,
+#likeNew,
+#veryGood,
+#good,
+#baby,
+#child,
+#youth,
+#adult,
+#senior
+ {
+    border: 2px solid darkblue;
+}
+
+#male,
+#female,
+#neutral{
+    border: 2px solid brown;
+}
+
+
+.search-button {
+    padding: 2px;
+    margin: 0;
+}
+
+.btn-gender {
+    background-color: orange;
+    color: white;
+}
+
+.btn-gender:hover {
+    background-color: darkorange;
+}
+
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    #search-header button {
+        font-size: 9px;
+    }
+
+}
+
+  /* Small devices  */
+  @media (max-width:767px) {
+    #search-header button {
+        font-size: 10px;
+    }
+}
+
+  /* x-Small devices */
+  @media (max-width:575px) {
+    #search-header button {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+/* 
 #search-header input {
     width: 0;
     height: 0;
@@ -9,8 +96,6 @@
     left:0px;
     right:0px;
     width:100%;
-    /* padding:0px!important;
-    margin:0px!important; */
 }
 
 div.btn-group {
@@ -71,4 +156,4 @@ div.btn-group {
 }
 .like-buttons.active {
     border: 3px solid darkred;
-}
+} */

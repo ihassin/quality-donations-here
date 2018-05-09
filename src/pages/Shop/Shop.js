@@ -4,20 +4,43 @@ import API from "../../utils/API";
 import DonationCard from '../../components/DonationCard';
 import SearchHeader from '../../components/SearchHeader';
 
-
-
 class Shop extends Component {
   constructor() {
-		super()
+    super()
+    this.categoryClick = "";
+    this.conditionClick = "";
+    this.ageClick = "";
+    this.genderClick = "";
 		this.state = {
       donations:[],
       categoryTag:"",
       conditionTag:"",
       ageTag:"",
       genderTag:"",
-      // city:"",
-      // state:"",
-      // zip:"",
+      home: "",
+      home:"", 
+      fashion:"", 
+      jewelry:"", 
+      books:"", 
+      entertainment:"", 
+      toys:"", 
+      exercise:"", 
+      tech:"", 
+      motors:"", 
+      cars:"", 
+      other:"",
+      new:"",
+      likeNew: "",
+      veryGood: "",
+      good:"",
+      baby:"",
+      child:"",
+      youth:"",
+      adult:"",
+      senior:"",
+      male:"",
+      female:"",
+      neutral:"",   
       typingTimeout:null
 		}
 		this.loadDonations = this.loadDonations.bind(this)
@@ -25,11 +48,13 @@ class Shop extends Component {
 	}
 
   componentDidMount() {
+    console.log("Shop.js componentDidMount")
     this.loadDonations({});
   }
 
 
   componentWillReceiveProps = nextProps => {
+    console.log("Shop.js componentWillReceiveProps")
     let searchobj = {name:nextProps.keyword, 
       pickupCity:nextProps.city, 
       pickupZip:nextProps.zip,
@@ -41,10 +66,8 @@ class Shop extends Component {
     if (this.state.typingTimeout) {
       clearTimeout(this.state.typingTimeout);
    }
-
    this.setState({
       typingTimeout: setTimeout( () => {   
-        console.log("searchobj", searchobj);
         this.loadDonations(searchobj);
         }, 1000)
    });
@@ -60,9 +83,8 @@ class Shop extends Component {
 
   handleCategoryTagClick = event => {
     event.preventDefault();
-
     this.setState({
-      categoryTag: event.target.value
+      categoryTag: this.selectDeselectTag("category", event.target.value)
     }, () => {
       const searchobj = {name:this.props.keyword, 
           categoryTag:this.state.categoryTag,
@@ -79,7 +101,7 @@ class Shop extends Component {
     event.preventDefault();
 
     this.setState({
-      conditionTag: event.target.value
+      conditionTag: this.selectDeselectTag("condition", event.target.value)
     }, () => {
       const searchobj = {name:this.props.keyword, 
           categoryTag:this.state.categoryTag,
@@ -94,10 +116,8 @@ class Shop extends Component {
   
   handleAgeTagClick = event => {
     event.preventDefault();
-    console.log("handleagetag", event.target);
-
     this.setState({
-      ageTag: event.target.value
+      ageTag: this.selectDeselectTag("age", event.target.value)
     }, () => {
       const searchobj = {name:this.props.keyword, 
           categoryTag:this.state.categoryTag,
@@ -112,9 +132,8 @@ class Shop extends Component {
 
   handleGenderTagClick = event => {
     event.preventDefault();
-
     this.setState({
-      genderTag: event.target.value
+      genderTag: this.selectDeselectTag("gender", event.target.value)
     }, () => {
       const searchobj = {name:this.props.keyword, 
           categoryTag:this.state.categoryTag,
@@ -126,6 +145,86 @@ class Shop extends Component {
        this.loadDonations(searchobj);
     })
   };
+
+  selectDeselectTag = (type, value) => {
+    switch(type) {
+      case "category": {
+        if (this.categoryClick === value) {
+          // deselect
+          this.setState({[value]:""}, () =>  this.categoryClick = "");
+          return "";
+        } else {
+          if (this.categoryClick) {
+            // select & deselect
+            this.setState({[this.categoryClick]:"", [value]:value}, () => this.categoryClick = value);
+            return value;
+          } else {
+            // select
+            this.setState({[value]:value}, () => this.categoryClick = value);
+            return value;
+          }
+        }
+      }
+      break;
+      case "condition": {
+        if (this.conditionClick === value) {
+          // deselect
+          this.setState({[value]:""}, () =>  this.conditionClick = "");
+          return "";
+        } else {
+          if (this.conditionClick) {
+            // select & deselect
+            this.setState({[this.conditionClick]:"", [value]:value}, () => this.conditionClick = value);
+            return value;
+          } else {
+            // select
+            this.setState({[value]:value}, () => this.conditionClick = value);
+            return value;
+          }
+        }
+      }
+      break;
+      case "age": {
+        if (this.ageClick === value) {
+          // deselect
+          this.setState({[value]:""}, () =>  this.ageClick = "");
+          return "";
+        } else {
+          if (this.ageClick) {
+            // select & deselect
+            this.setState({[this.ageClick]:"", [value]:value}, () => this.ageClick = value);
+            return value;
+          } else {
+            // select
+            this.setState({[value]:value}, () => this.ageClick = value);
+            return value;
+          }
+        }
+      }
+      break;
+      case "gender": {
+        if (this.genderClick === value) {
+          // deselect
+          this.setState({[value]:""}, () =>  this.genderClick = "");
+          return "";
+        } else {
+          if (this.genderClick) {
+            // select & deselect
+            this.setState({[this.genderClick]:"", [value]:value}, () => this.genderClick = value);
+            return value;
+          } else {
+            // select
+            this.setState({[value]:value}, () => this.genderClick = value);
+            return value;
+          }
+        }
+      }
+      break;
+      default: return "";
+    }
+
+
+  }
 
   handleInteresed = () => {
     alert("I'm Interested");
@@ -139,7 +238,34 @@ class Shop extends Component {
   render() {
     return (
       <div className="container-fluid">
-      <SearchHeader handleCategoryTagClick= {this.handleCategoryTagClick} handleConditionTagClick={this.handleConditionTagClick} handleAgeTagClick={this.handleAgeTagClick} handleGenderTagClick={this.handleGenderTagClick}/>
+      <SearchHeader 
+        home={this.state.home} 
+        fashion={this.state.fashion}
+        jewelry={this.state.jewelry}
+        books={this.state.books}
+        entertainment={this.state.entertainment}
+        toys={this.state.toys}
+        exercise={this.state.exercise}
+        tech={this.state.tech}
+        motors={this.state.motors}
+        cars={this.state.cars}
+        other={this.state.other}
+        new={this.state.new}
+        likeNew={this.state.likeNew}
+        veryGood={this.state.veryGood}
+        good={this.state.good}
+        male={this.state.male}
+        female={this.state.female}
+        neutral={this.state.neutral}
+        baby={this.state.baby}
+        child={this.state.child}
+        youth={this.state.youth}
+        adult={this.state.adult}
+        senior={this.state.senior}
+        handleCategoryTagClick={this.handleCategoryTagClick} 
+        handleConditionTagClick={this.handleConditionTagClick} 
+        handleAgeTagClick={this.handleAgeTagClick} 
+        handleGenderTagClick={this.handleGenderTagClick}/>
       <div id="shop">
         {this.state.donations.map(donation => (
           <DonationCard

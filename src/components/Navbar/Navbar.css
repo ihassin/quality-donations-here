@@ -74,7 +74,6 @@ nav.navbar {
     font-weight: bolder;
     font-size: 14px;
     text-transform: uppercase;
-    margin-right: 5px;
 }
 
 .nav-link:hover {
@@ -108,8 +107,7 @@ nav.navbar {
     }
 
     .nav-link {
-        font-size: 12px;
-        margin-right: 2px;
+        font-size: 11px;
     }
     li.dropdown>a {
         font-size:10px;
@@ -117,6 +115,7 @@ nav.navbar {
     .dropdown-menu>a {
         font-size: 12px;
     }
+
 }
 
   /* Small devices (landscape phones) */

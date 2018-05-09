@@ -2,53 +2,37 @@ import React from "react";
 import "./SearchHeader.css";
 import {ButtonToolbar, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 
-
-
 const SearchHeader = props => (
 
-<div id="search-header">
-
-
-
-  <ButtonToolbar className="button-toolbar">
-    <ToggleButtonGroup type="checkbox" name="options"  >
-      <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"home"}>Home</ToggleButton>
-      <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"fashion"}>Fashion</ToggleButton>
-      <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"leisure"}>Leisure</ToggleButton>
-      <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"tech"}>Tech</ToggleButton>
-      <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"hobbies"}>Hobbies</ToggleButton>
-      <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"books"}>Books</ToggleButton>
-      <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"toys"}>Toys</ToggleButton>
-      <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"exercise"}>Exercise</ToggleButton>
-      <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"motors"}>Motors</ToggleButton>
-      <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"car"}>Car</ToggleButton>
-      <ToggleButton bsStyle="success" className="category-buttons" onChange={props.handleCategoryTagClick} value={"other"}>Other</ToggleButton>
-    </ToggleButtonGroup>
-  </ButtonToolbar>
-
-   <ButtonToolbar className="button-toolbar">
-      <ToggleButtonGroup type="radio" name="options"  >
-      <ToggleButton bsStyle="primary" className="condition-buttons" onChange={props.handleConditionTagClick} value={"new"}>New</ToggleButton>
-      <ToggleButton bsStyle="primary" className="condition-buttons" onChange={props.handleConditionTagClick} value={"like new"}>Like New</ToggleButton>
-      <ToggleButton bsStyle="primary" className="condition-buttons" onChange={props.handleConditionTagClick} value={"very good"}>Very Good</ToggleButton>
-      <ToggleButton bsStyle="primary" className="condition-buttons" onChange={props.handleConditionTagClick}value={"good"}>Good</ToggleButton>
-      </ToggleButtonGroup>
-      <ToggleButtonGroup type="radio" name="options"  >
-      <ToggleButton bsStyle="info" className="age-buttons" onChange={props.handleAgeTagClick} value={"child"}>Child</ToggleButton>
-      <ToggleButton bsStyle="info" className="age-buttons" onChange={props.handleAgeTagClick} value={"youth"}>Youth</ToggleButton>
-      <ToggleButton bsStyle="info" className="age-buttons" onChange={props.handleAgeTagClick} value={"adult"}>Adult</ToggleButton>
-      <ToggleButton bsStyle="info" className="age-buttons" onChange={props.handleAgeTagClick} value={"senior"}>Senior</ToggleButton>
-      </ToggleButtonGroup>
-      <ToggleButtonGroup type="radio" name="options"  >
-        <ToggleButton bsStyle="warning" className="gender-buttons" onChange={props.handleGenderTagClick} value={"male"}>Male</ToggleButton>
-        <ToggleButton bsStyle="warning" className="gender-buttons" onChange={props.handleGenderTagClick} value={"female"}>Female</ToggleButton>
-    </ToggleButtonGroup>
-    <ToggleButtonGroup type="radio" name="options"  >
-      <ToggleButton bsStyle="danger" className="like-buttons" onChange={props.handleLikeTagClick} value={"Like"} disabled>Like</ToggleButton>
-    </ToggleButtonGroup>
-  </ButtonToolbar>
-  </div>
-
+  <div id="search-header" className="container">
+  <div className="row p-0 m-0">
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-success btn-block p-1 m-0" value="home" id={props.home} onClick={props.handleCategoryTagClick} >Home</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-success btn-block p-1 m-0" value="fashion" id={props.fashion} onClick={props.handleCategoryTagClick}>Fashion</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-success btn-block p-1 m-0" value="jewelry" id={props.jewelry} onClick={props.handleCategoryTagClick}>Jewelry</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-success btn-block p-1 m-0" value="books" id={props.books} onClick={props.handleCategoryTagClick}>Books</button> </div>
+      <div className="col-md-2 col-sm-4 search-button"><button type="button" className="btn btn-success btn-block p-1 m-0" value="entertainment" id={props.entertainment} onClick={props.handleCategoryTagClick}>Entertainment</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-success btn-block p-1 m-0" value="toys" id={props.toys} onClick={props.handleCategoryTagClick}>Toys</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-success btn-block p-1 m-0" value="exercise" id={props.exercise} onClick={props.handleCategoryTagClick}>Exercise</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-success btn-block p-1 m-0" value="tech" id={props.tech} onClick={props.handleCategoryTagClick}>Tech</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-success btn-block p-1 m-0" value="motors" id={props.motors} onClick={props.handleCategoryTagClick}>Motors</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-success btn-block p-1 m-0" value="cars" id={props.cars} onClick={props.handleCategoryTagClick}>Cars</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-success btn-block p-1 m-0" value="other" id={props.other} onClick={props.handleCategoryTagClick}>Other</button> </div>
+    </div>
+    <div className="row p-0 m-0">
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-primary btn-block p-1 m-0" value="new" id={props.new} onClick={props.handleConditionTagClick}>New</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-primary btn-block p-1 m-0" value="likeNew" id={props.likeNew} onClick={props.handleConditionTagClick}>Like New</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-primary btn-block p-1 m-0" value="veryGood" id={props.veryGood} onClick={props.handleConditionTagClick}>Very Good</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-primary btn-block p-1 m-0" value="good" id={props.good} onClick={props.handleConditionTagClick}>Good</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-gender btn-block p-1 m-0" value="male" id={props.male} onClick={props.handleGenderTagClick} >Male</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-gender btn-block p-1 m-0" value="female" id={props.female} onClick={props.handleGenderTagClick} >Female</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-gender btn-block p-1 m-0" value="neutral" id={props.neutral} onClick={props.handleGenderTagClick}>Neutral</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-info btn-block p-1 m-0" value="baby" id={props.baby} onClick={props.handleAgeTagClick}>Baby</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-info btn-block p-1 m-0" value="child" id={props.child} onClick={props.handleAgeTagClick}>Child</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-info btn-block p-1 m-0" value="youth" id={props.youth} onClick={props.handleAgeTagClick}>Youth</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-info btn-block p-1 m-0" value="adult" id={props.adult} onClick={props.handleAgeTagClick}>Adult</button> </div>
+      <div className="col-md-1 col-sm-2 search-button"><button type="button" className="btn btn-info btn-block p-1 m-0" value="senior" id={props.senior} onClick={props.handleAgeTagClick}>Senior</button> </div>
+    </div>
+</div>
 
 );
 
