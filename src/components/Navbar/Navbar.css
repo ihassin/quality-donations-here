@@ -24,24 +24,13 @@ li.dropdown>a {
     font-size:12px;
 }
 
-/* #donate-title {
+#donate-title {
     display:inline-block; 
-   margin:0px;
-   padding:0px;
     text-transform: uppercase;
      color:white;
-    font-size: 24px;
-    font-weight: bolder; 
-} */
-
-
-/* .form-rounded {
-    border-radius: 1rem;
-} */
-
-/* div.dropdown-item {
-    padding:0px;
-} */
+     margin:0 auto;
+    font-size: 20px;
+}
 
 .dropdown-menu {
     padding:0;
@@ -126,6 +115,7 @@ nav.navbar {
     #keyword-search-input {
         width:100%;
         margin-top: 45px;
+        margin-bottom:5px;
     }
 
     #cityZip-search-input {
@@ -145,6 +135,13 @@ nav.navbar {
     .navbar-nav .nav-link {
         display:inline-block;
         padding:5px 10px !important;
+    }
+
+    #donate-title {
+        display:block;
+         margin:25px 0 0 10px;
+         text-align: left;
+
     }
 }
 

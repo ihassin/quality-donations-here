@@ -59,11 +59,14 @@ const DonateNavbar = props => {
             )}
 
             {props.donate ? (
-              <Navbar.Form pullLeft>
-                <FormGroup>
-                  <ControlLabel id="donate-title">Donate</ControlLabel>
-                </FormGroup>{' '}
-              </Navbar.Form>
+              // <Navbar.Form pullLeft>
+              //   <FormGroup>
+              //     <ControlLabel id="donate-title">Donate</ControlLabel>
+              //   </FormGroup>{' '}
+              // </Navbar.Form>
+              <form className="form" id="donate-title">
+                  Donate
+              </form>
             ) : (
               ''
             )}
@@ -167,7 +170,9 @@ const DonateNavbar = props => {
                 <a
                   className="nav-link"
                   href="#"
-                  onClick={props.handleShowLogIn}
+                  // onClick={props.handleShowLogIn}
+                  data-toggle="modal"
+                  data-target="#loginModal"
                 >
                   donate
                 </a>
