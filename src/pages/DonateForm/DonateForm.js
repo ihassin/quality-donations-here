@@ -93,7 +93,7 @@ class DonateForm extends Component {
 
     // window.location.href NOT WORKING. I also tried from server with GET, No Luck
     API.saveDonation(donateObj)
-      .then(res => (window.location.href = '/shop'))
+      .then(res => (window.location.href = '/'))
       .catch(err => console.log(err))
   }
 
