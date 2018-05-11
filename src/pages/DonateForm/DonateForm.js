@@ -139,8 +139,8 @@ class DonateForm extends Component {
     API.uploadPicture(formData, config).then(response => {
       // console.log('uploadPicture', response)
       this.setState({
-        url: response.data[0].url // local
-        // url: response.data     // production
+        // url: response.data[0].url // local
+        url: response.data     // production
       })
     })
   }

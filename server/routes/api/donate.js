@@ -23,19 +23,19 @@ router.get("/uploads/:imageName", (req, res) =>{
 })
 
 // local
-router.post("/upload/image", (req, res, next) =>{
-	// console.log("req.files",req.files);
-	uploader.upload('local', req.files['file'], function(err, files) {
-		// console.log("****** files *****", files);
-		if (err) {
-		  return next(err);
-		}
-		res.json(files);
-	  });
-})
+// router.post("/upload/image", (req, res, next) =>{
+// 	console.log("req.files",req.files);
+// 	uploader.upload('local', req.files['file'], function(err, files) {
+// 		console.log("****** files *****", files);
+// 		if (err) {
+// 		  return next(err);
+// 		}
+// 		res.json(files);
+// 	  });
+// })
 
 // production
-// router.post("/upload/image", AWS.uploadFile);
+router.post("/upload/image", AWS.uploadFile);
 
 
 
