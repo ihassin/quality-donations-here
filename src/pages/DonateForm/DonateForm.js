@@ -87,9 +87,9 @@ class DonateForm extends Component {
       doneePickupTime: this.state.doneePickupTime,
       doneePickupAmPm: this.state.doneePickupAmPm
     }
-    console.log('*** Donate Form ***')
-    console.log('handleCreate', donateObj)
-    console.log('------------------------');
+    // console.log('*** Donate Form ***')
+    // console.log('handleCreate', donateObj)
+    // console.log('------------------------');
 
     // window.location.href NOT WORKING. I also tried from server with GET, No Luck
     API.saveDonation(donateObj)
