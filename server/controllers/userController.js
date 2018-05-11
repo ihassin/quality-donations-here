@@ -6,7 +6,7 @@ module.exports = {
     const { username, password } = req.body
     db.User
       .find({ 'local.username': username }, (err, userMatch) => {
-        console.log("userMatch", userMatch);
+        // console.log("userMatch", userMatch);
         if (userMatch) {
             return res.json({
                 error: `Sorry, already a user with the username: ${username}`

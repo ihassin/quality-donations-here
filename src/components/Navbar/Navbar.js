@@ -1,14 +1,14 @@
 import React from 'react'
-import {
-  Navbar,
-  Nav,
-  NavItem,
-  NavDropdown,
-  MenuItem,
-  FormGroup,
-  FormControl,
-  ControlLabel
-} from 'react-bootstrap'
+// import {
+//   Navbar,
+//   Nav,
+//   NavItem,
+//   NavDropdown,
+//   MenuItem,
+//   FormGroup,
+//   FormControl,
+//   ControlLabel
+// } from 'react-bootstrap'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 import LoginM from '../Login/LoginM'
@@ -59,11 +59,6 @@ const DonateNavbar = props => {
             )}
 
             {props.donate ? (
-              // <Navbar.Form pullLeft>
-              //   <FormGroup>
-              //     <ControlLabel id="donate-title">Donate</ControlLabel>
-              //   </FormGroup>{' '}
-              // </Navbar.Form>
               <form className="form" id="donate-title">
                   Donate
               </form>

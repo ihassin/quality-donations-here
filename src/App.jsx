@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Route } from 'react-router-dom'
+// import {
+//   Popover,
+//   Tooltip,
+//   Button,
+//   Modal,
+//   OverlayTrigger,
+//   Form,
+//   FormControl,
+//   Col,
+//   FormGroup
+// } from 'react-bootstrap'
 import {
   Popover,
-  Tooltip,
-  Button,
-  Modal,
-  OverlayTrigger,
-  Form,
-  FormControl,
-  Col,
-  FormGroup
+  Tooltip
 } from 'react-bootstrap'
 import './App.css'
 import Navbar from './components/Navbar'
