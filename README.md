@@ -37,3 +37,7 @@ brew install mongo
 ```bash
 yarn install
 ```
+
+* Misc
+
+  - Copy .env.example to .env and fill in the needed keys.
