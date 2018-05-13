@@ -24,3 +24,20 @@
 
 ![play Gif](https://github.com/lzapson/quality-donations-here/blob/master/readme%20pics/quality-donations-here.gif)
 
+# Building
+
+## Install dependencies
+
+* Database
+```
+brew install mongo
+```
+
+* Other dependencies
+```bash
+yarn install
+```
+
+* Misc
+
+  - Copy .env.example to .env and fill in the needed keys.
