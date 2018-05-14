@@ -50,10 +50,59 @@ class DonateForm extends Component {
       new Date().getFullYear()
   }
 
-  componentWillReceiveProps = nextProps => {}
+  static getDerivedStateFromProps() {
+    console.log('*** Donate Form ***')
+    console.log('Lifecycle - getDerivedStateFromProps')
+    console.log('------------------------');
+  }
+    // considered unsafe
+  componentWillReceiveProps = nextProps => {
+    console.log('*** Donate Form ***')
+    console.log('Lifecycle - UNSAFE_componentWillReceiveProps')
+    console.log('------------------------');
+  }
+
+  // considered unsafe
+  componentWillMount() {
+    console.log('*** Donate Form ***')
+    console.log('Lifecycle - UNSAFE_componentWillMount')
+    console.log('------------------------');
+  }
+
+  shouldComponentUpdate() {
+    console.log('*** Donate Form ***')
+    console.log('Lifecycle - shouldComponentUpdate')
+    console.log('------------------------');
+  }
+
+  getSnapshotBeforeUpdate() {
+    console.log('*** Donate Form ***')
+    console.log('Lifecycle - getSnapshotBeforeUpdate')
+    console.log('------------------------');
+  }
+
+  componentDidUpdate() {
+    console.log('*** Donate Form ***')
+    console.log('Lifecycle - componentDidUpdate')
+    console.log('------------------------');
+  }
 
   componentDidMount() {
-    // console.log('componentDidMount this.props', this.props)
+    console.log('*** Donate Form ***')
+    console.log('Lifecycle - componentDidMount')
+    console.log('------------------------');
+  }
+
+  componentWillUnmount() {
+    console.log('*** Donate Form ***')
+    console.log('Lifecycle - componentWillUnmount')
+    console.log('------------------------');
+  }
+
+  componentDidCatch() {
+    console.log('*** Donate Form ***')
+    console.log('Lifecycle - componentDidCatch')
+    console.log('------------------------');
   }
 
   handleEdit = id => {}
@@ -139,13 +188,19 @@ class DonateForm extends Component {
     API.uploadPicture(formData, config).then(response => {
       // console.log('uploadPicture', response)
       this.setState({
-        // url: response.data[0].url // local
-        url: response.data     // production
+        // *** Local - Change to run locally
+        url: response.data[0].url
+
+        // *** Production - Change for deployment to Heroku
+        // url: response.data     
       })
     })
   }
 
   render() {
+    console.log('*** Donate Form ***')
+    console.log('Lifecycle - render')
+    console.log('------------------------');
     return (
       <div className="container-fluid" id="donate-form">
         <div className="row">

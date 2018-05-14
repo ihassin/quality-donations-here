@@ -22,20 +22,20 @@ router.get("/uploads/:imageName", (req, res) =>{
 	res.sendFile(path.join(__dirname, `../../uploads/${req.params.imageName}`));
 })
 
-// local
-// router.post("/upload/image", (req, res, next) =>{
-// 	console.log("req.files",req.files);
-// 	uploader.upload('local', req.files['file'], function(err, files) {
-// 		console.log("****** files *****", files);
-// 		if (err) {
-// 		  return next(err);
-// 		}
-// 		res.json(files);
-// 	  });
-// })
+// *** Local - Change to run locally
+router.post("/upload/image", (req, res, next) =>{
+	console.log("req.files",req.files);
+	uploader.upload('local', req.files['file'], function(err, files) {
+		console.log("****** files *****", files);
+		if (err) {
+		  return next(err);
+		}
+		res.json(files);
+	  });
+})
 
-// production
-router.post("/upload/image", AWS.uploadFile);
+// *** Production - Change for deployment to Heroku
+// router.post("/upload/image", AWS.uploadFile);
 
 
 
