@@ -1,5 +1,7 @@
 # Quality Donations Here  
 
+[![Build Status](https://travis-ci.org/ihassin/quality-donations-here.svg?branch=master)](https://travis-ci.org/ihassin/quality-donations-here)
+
 ### View the live version of this app here: https://glacial-mountain-71826.herokuapp.com/
 
 ## Technologies
