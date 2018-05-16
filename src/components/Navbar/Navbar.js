@@ -17,7 +17,7 @@ import SignupM from '../Login/SignupM'
 const DonateNavbar = props => {
   if (props.loggedIn) {
     return (
-      <nav className="navbar navbar-expand-md p-0 m-0">
+      <nav className="navbar navbar-expand-md navbar-light p-0 m-0">
         <div className="container-fluid mx-2 my-2">
           <a className="navbar-brand p-0 mr-4 my-0" href="#">
             <img
@@ -120,7 +120,7 @@ const DonateNavbar = props => {
     )
   } else {
     return (
-      <nav className="navbar navbar-expand-md p-0 m-0">
+      <nav className="navbar navbar-expand-md navbar-light p-0 m-0">
         <div className="container-fluid mx-2 my-2">
           <a className="navbar-brand p-0 mr-4 my-0" href="#">
             <img
