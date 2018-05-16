@@ -47,3 +47,7 @@ yarn install
 ```bash
 yarn test-ci src/tests/unit
 ```
+or
+```bash
+npm run test-ci src/tests/unit
+```
