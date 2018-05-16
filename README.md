@@ -41,3 +41,9 @@ yarn install
 * Misc
 
   - Copy .env.example to .env and fill in the needed keys.
+
+# Running tests
+
+```bash
+yarn test-ci src/tests/unit
+```
