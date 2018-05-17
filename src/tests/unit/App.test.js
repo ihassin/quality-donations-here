@@ -8,4 +8,4 @@ describe("Initial state", () => {
   it("Initializes the `state` Logged In equal to false", () => {
     expect(app.state().loggedIn).toEqual(false);
   });
-})
+});
