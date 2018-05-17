@@ -8,3 +8,4 @@ script:
   - yarn lint
   - yarn test-ci
   - npm run test
+  - node_modules/.bin/cypress run -s cypress/integration/home-page-spec.js
