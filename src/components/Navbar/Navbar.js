@@ -22,7 +22,8 @@ const DonateNavbar = props => {
           <a className="navbar-brand p-0 mr-4 my-0" >
             <img
               id="logo"
-              src={require('../../images/qualitydonationslogo.png')}
+              alt="logo"
+              src={require("../../images/qualitydonationslogo.png")}
             />
           </a>
 
@@ -124,12 +125,8 @@ const DonateNavbar = props => {
           <a className="navbar-brand p-0 mr-4 my-0">
             <img
               id="logo"
-<<<<<<< HEAD
               alt="logo"
-              src={require('../../images/qualitydonationslogo.png')}
-=======
               src={require("../../images/qualitydonationslogo.png")}
->>>>>>> Ran lint:fix and some manual linting too.
             />
           </a>
 
