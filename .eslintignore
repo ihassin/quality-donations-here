@@ -1,0 +1,4 @@
+cypress/**
+build/*
+!build/index.js
+

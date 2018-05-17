@@ -5,3 +5,4 @@ node_js:
 script:
   - yarn lint
   - yarn test-ci
+  - node_modules/.bin/cypress run -s cypress/integration/home-page-spec.js
