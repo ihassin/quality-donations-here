@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const conditionTags = props => (
   <form className="pb-1 mb-2 border-bottom border-success font-weight-bold text-left">
@@ -65,6 +65,6 @@ const conditionTags = props => (
       </div>
     </div>
   </form>
-)
+);
 
-export default conditionTags
+export default conditionTags;

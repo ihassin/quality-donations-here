@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const itemPicture = props => (
   <form className="ml-5">
@@ -15,6 +15,6 @@ const itemPicture = props => (
       </div>
     </div>
   </form>
-)
+);
 
-export default itemPicture
+export default itemPicture;

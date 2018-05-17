@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchHeader.css";
-import {ButtonToolbar, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import {ButtonToolbar, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 
 const SearchHeader = props => (
 

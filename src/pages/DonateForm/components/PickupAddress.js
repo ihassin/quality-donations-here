@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const pickupAddress = props => (
   <form id="pickup-address" className="font-weight-bold mx-4">
@@ -57,6 +57,6 @@ const pickupAddress = props => (
       </div>
     </div>
   </form>
-)
+);
 
-export default pickupAddress
+export default pickupAddress;
