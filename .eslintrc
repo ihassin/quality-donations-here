@@ -8,5 +8,8 @@
       "error",
       "double"
     ]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
   }
 }
