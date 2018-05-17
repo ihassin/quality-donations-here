@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./SearchHeader.css";
-import {ButtonToolbar, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import {ButtonToolbar, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 
 // const CATEGORY = "category-button-selected";
 // const CONDTION = "condition-button-selected";
@@ -26,19 +26,19 @@ class SearchHeader extends Component {
     console.log("event.target.value", event.target.value);
 
       switch(event.target.value) {
-        case "home": this.setState({home: this.state.home ? "" : "home"})
+        case "home": this.setState({home: this.state.home ? "" : "home"});
             break;
-        case "fashion": this.setState({fashion: this.state.fashion ? "" : "fashion"})
+        case "fashion": this.setState({fashion: this.state.fashion ? "" : "fashion"});
             break;
-        case "new": this.setState({new: this.state.new ? "" : "new"})
+        case "new": this.setState({new: this.state.new ? "" : "new"});
             break;
-        case "likeNew": this.setState({likeNew: this.state.likeNew ? "" : "likeNew"})
+        case "likeNew": this.setState({likeNew: this.state.likeNew ? "" : "likeNew"});
             break;
-        case "male": this.setState({male: this.state.male ? "" : "male"})
+        case "male": this.setState({male: this.state.male ? "" : "male"});
             break;
-        case "female": this.setState({female: this.state.female ? "" : "female"})
+        case "female": this.setState({female: this.state.female ? "" : "female"});
             break;
-        case "child": this.setState({child: this.state.child ? "" : "child"})
+        case "child": this.setState({child: this.state.child ? "" : "child"});
             break;
         default:
             

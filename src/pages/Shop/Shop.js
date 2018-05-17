@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./Shop.css";
 import API from "../../utils/API";
-import DonationCard from '../../components/DonationCard';
-import SearchHeader from '../../components/SearchHeader';
+import DonationCard from "../../components/DonationCard";
+import SearchHeader from "../../components/SearchHeader";
 
 
 class Shop extends Component {
   constructor() {
-    super()
+    super();
     this.categoryClick = "";
     this.conditionClick = "";
     this.ageClick = "";
@@ -42,19 +42,19 @@ class Shop extends Component {
       female:"",
       neutral:"",   
       typingTimeout:null
-		}
-		this.loadDonations = this.loadDonations.bind(this)
+		};
+		this.loadDonations = this.loadDonations.bind(this);
 	
 	}
 
   componentDidMount() {
-    console.log("Shop.js componentDidMount")
+    console.log("Shop.js componentDidMount");
     this.loadDonations({});
   }
 
 
   componentWillReceiveProps = nextProps => {
-    console.log("Shop.js componentWillReceiveProps")
+    console.log("Shop.js componentWillReceiveProps");
     let searchobj = {name:nextProps.keyword, 
       pickupCity:nextProps.city, 
       pickupZip:nextProps.zip,
@@ -94,7 +94,7 @@ class Shop extends Component {
           pickupCity:this.state.city,
           pickupZip:this.state.zip};
        this.loadDonations(searchobj);
-    })
+    });
   };
   
   handleConditionTagClick = event => {
@@ -111,7 +111,7 @@ class Shop extends Component {
           pickupCity:this.state.city,
           pickupZip:this.state.zip};
        this.loadDonations(searchobj);
-    })
+    });
   };
   
   handleAgeTagClick = event => {
@@ -127,7 +127,7 @@ class Shop extends Component {
           pickupCity:this.state.city,
           pickupZip:this.state.zip};
        this.loadDonations(searchobj);
-    })
+    });
   };
 
   handleGenderTagClick = event => {
@@ -143,7 +143,7 @@ class Shop extends Component {
           pickupCity:this.state.city,
           pickupZip:this.state.zip};
        this.loadDonations(searchobj);
-    })
+    });
   };
 
   selectDeselectTag = (type, value) => {

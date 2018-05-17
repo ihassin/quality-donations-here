@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import {
   Row,
   Col,
@@ -8,36 +8,36 @@ import {
   ControlLabel,
   Radio,
   Checkbox
-} from 'react-bootstrap'
-import API from '../../utils/API'
-import './DonateForm.css'
+} from "react-bootstrap";
+import API from "../../utils/API";
+import "./DonateForm.css";
 // import Noty from 'noty';
 
 class DonateForm extends Component {
   state = {
     file: null,
-    nameDisplay: '',
-    name: '',
-    desc: '',
-    url: '',
-    categoryTag: '',
-    conditionTag: '',
-    ageTag: '',
-    genderTag: '',
-    pickupAddress1: '',
-    pickupAddress2: '',
-    pickupCity: '',
-    pickupState: '',
-    pickupZip: '',
-    pickupLocationType: '',
-    pickupDay: 'sunday',
-    pickupTimeStart: '',
-    pickupTimeEnd: '',
-    donorPickupAmPm: '',
-    donorPickupComments: '',
-    doneePickupComments: '',
-    doneePickupTime: '',
-    doneePickupAmPm: '',
+    nameDisplay: "",
+    name: "",
+    desc: "",
+    url: "",
+    categoryTag: "",
+    conditionTag: "",
+    ageTag: "",
+    genderTag: "",
+    pickupAddress1: "",
+    pickupAddress2: "",
+    pickupCity: "",
+    pickupState: "",
+    pickupZip: "",
+    pickupLocationType: "",
+    pickupDay: "sunday",
+    pickupTimeStart: "",
+    pickupTimeEnd: "",
+    donorPickupAmPm: "",
+    donorPickupComments: "",
+    doneePickupComments: "",
+    doneePickupTime: "",
+    doneePickupAmPm: "",
     donorPickupConfirmed: false,
     doneePickupConfirmed: false,
     donationComplete: false,
@@ -46,9 +46,9 @@ class DonateForm extends Component {
     datePosted:
       new Date().getMonth() +
       1 +
-      '/' +
+      "/" +
       new Date().getDate() +
-      '/' +
+      "/" +
       new Date().getFullYear()
   }
 
@@ -56,7 +56,7 @@ class DonateForm extends Component {
 
 
   componentDidMount() {
-    console.log('componentDidMount this.props', this.props)
+    console.log("componentDidMount this.props", this.props);
   }
 
   handleEdit = id => {}
@@ -89,61 +89,61 @@ class DonateForm extends Component {
       doneePickupComments: this.state.doneePickupComments,
       doneePickupTime: this.state.doneePickupTime,
       doneePickupAmPm: this.state.doneePickupAmPm
-    }
-    console.log('handleCreate', donateObj)
+    };
+    console.log("handleCreate", donateObj);
     API.saveDonation(donateObj)
       .then(
-        res => (window.location.href = '/')
+        res => (window.location.href = "/")
       )
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
 
   handleInputChange = event => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
     this.setState({
       [name]: value
-    })
+    });
   }
 
   handleNameChange = event => {
-    const name = event.target.value.toLowerCase()
-    const nameDisplay = event.target.value
+    const name = event.target.value.toLowerCase();
+    const nameDisplay = event.target.value;
     this.setState({
       name,
       nameDisplay
-    })
+    });
   }
 
   handleFormSubmit = event => {
-    event.preventDefault()
+    event.preventDefault();
   }
 
   handleFileChosen = event => {
-    console.log('handleFileChosen', event.target.files[0])
+    console.log("handleFileChosen", event.target.files[0]);
     this.setState({
       file: event.target.files[0]
-    })
+    });
   }
 
   handleUploadPicture = event => {
-    event.preventDefault()
+    event.preventDefault();
 
-    const formData = new FormData()
-    console.log('this.state.file', this.state.file)
-    formData.append('file', this.state.file)
+    const formData = new FormData();
+    console.log("this.state.file", this.state.file);
+    formData.append("file", this.state.file);
     const config = {
       headers: {
-        'content-type': 'multipart/form-data'
+        "content-type": "multipart/form-data"
       }
-    }
+    };
 
     API.uploadPicture(formData, config).then(response => {
-      console.log('uploadPicture', response)
+      console.log("uploadPicture", response);
       this.setState({
         url: response.data[0].url // local
         // url: response.data     // production
-      })
-    })
+      });
+    });
   }
 
   render() {
@@ -243,7 +243,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Home
-                    </Radio>{' '}
+                    </Radio>{" "}
                     <Radio
                       className="pull-left"
                       name="categoryTag"
@@ -252,7 +252,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Fashion
-                    </Radio>{' '}
+                    </Radio>{" "}
                     <Radio
                       className="pull-left"
                       name="categoryTag"
@@ -300,7 +300,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Books
-                    </Radio>{' '}
+                    </Radio>{" "}
                     <Radio
                       className="pull-left"
                       name="categoryTag"
@@ -318,7 +318,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Exercise
-                    </Radio>{' '}
+                    </Radio>{" "}
                     <Radio
                       className="pull-left"
                       name="categoryTag"
@@ -336,7 +336,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Car
-                    </Radio>{' '}
+                    </Radio>{" "}
                     <Radio
                       className="pull-left"
                       name="categoryTag"
@@ -364,7 +364,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       New
-                    </Radio>{' '}
+                    </Radio>{" "}
                     <Radio
                       className="pull-left"
                       name="conditionTag"
@@ -373,7 +373,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Like New
-                    </Radio>{' '}
+                    </Radio>{" "}
                     <Radio
                       className="pull-left"
                       name="conditionTag"
@@ -391,7 +391,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Good
-                    </Radio>{' '}
+                    </Radio>{" "}
                   </Col>
                 </Row>
 
@@ -410,7 +410,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Child
-                    </Radio>{' '}
+                    </Radio>{" "}
                     <Radio
                       className="pull-left"
                       name="ageTag"
@@ -419,7 +419,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Youth
-                    </Radio>{' '}
+                    </Radio>{" "}
                     <Radio
                       className="pull-left"
                       name="ageTag"
@@ -437,7 +437,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Senior
-                    </Radio>{' '}
+                    </Radio>{" "}
                   </Col>
                 </Row>
 
@@ -456,7 +456,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Male
-                    </Radio>{' '}
+                    </Radio>{" "}
                     <Radio
                       className="pull-left"
                       name="genderTag"
@@ -465,7 +465,7 @@ class DonateForm extends Component {
                       onChange={this.handleInputChange}
                     >
                       Female
-                    </Radio>{' '}
+                    </Radio>{" "}
                   </Col>
                 </Row>
               </div>
@@ -626,7 +626,7 @@ class DonateForm extends Component {
                     onChange={this.handleInputChange}
                   >
                     am
-                  </Radio>{' '}
+                  </Radio>{" "}
                   <Radio
                     className="am-pm pull-left"
                     name="meridiem"
@@ -635,7 +635,7 @@ class DonateForm extends Component {
                     onChange={this.handleInputChange}
                   >
                     pm
-                  </Radio>{' '}
+                  </Radio>{" "}
                 </Col>
               </Row>
             </Col>
@@ -654,7 +654,7 @@ class DonateForm extends Component {
                       md={12}
                     >
                       <ControlLabel className="zero-left-pad pull-left">
-                        Donor:{' '}
+                        Donor:{" "}
                       </ControlLabel>
                       {/* <ControlLabel className="info-user pull-left">{this.state.donorUser}</ControlLabel> */}
                       <ControlLabel className="info-user pull-left">
@@ -718,7 +718,7 @@ class DonateForm extends Component {
                       md={12}
                     >
                       <ControlLabel className="zero-left-pad pull-left">
-                        Donee:{' '}
+                        Donee:{" "}
                       </ControlLabel>
                       <ControlLabel className="info-user pull-left" />
                     </Col>
@@ -778,7 +778,7 @@ class DonateForm extends Component {
                   onChange={this.handleInputChange}
                 >
                   am
-                </Radio>{' '}
+                </Radio>{" "}
                 <Radio
                   className="am-pm pull-left"
                   name="donee-meridiem"
@@ -787,7 +787,7 @@ class DonateForm extends Component {
                   onChange={this.handleInputChange}
                 >
                   pm
-                </Radio>{' '}
+                </Radio>{" "}
               </Row>
             </Col>
           </Row>
@@ -820,8 +820,8 @@ class DonateForm extends Component {
           </Row>
         </Form>
       </div>
-    )
+    );
   }
 }
 
-export default DonateForm
+export default DonateForm;

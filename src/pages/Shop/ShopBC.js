@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "./Shop.css";
 import API from "../../utils/API";
-import DonationCard from '../../components/DonationCard';
-import SearchHeader from '../../components/SearchHeader';
+import DonationCard from "../../components/DonationCard";
+import SearchHeader from "../../components/SearchHeader";
 
 
 
 class Shop extends Component {
   constructor() {
-		super()
+		super();
 		this.state = {
       donations:[],
       categoryTag:"",
@@ -19,8 +19,8 @@ class Shop extends Component {
       // state:"",
       // zip:"",
       typingTimeout:null
-		}
-		this.loadDonations = this.loadDonations.bind(this)
+		};
+		this.loadDonations = this.loadDonations.bind(this);
 	
 	}
 
@@ -72,7 +72,7 @@ class Shop extends Component {
           pickupCity:this.state.city,
           pickupZip:this.state.zip};
        this.loadDonations(searchobj);
-    })
+    });
   };
   
   handleConditionTagClick = event => {
@@ -89,7 +89,7 @@ class Shop extends Component {
           pickupCity:this.state.city,
           pickupZip:this.state.zip};
        this.loadDonations(searchobj);
-    })
+    });
   };
   
   handleAgeTagClick = event => {
@@ -107,7 +107,7 @@ class Shop extends Component {
           pickupCity:this.state.city,
           pickupZip:this.state.zip};
        this.loadDonations(searchobj);
-    })
+    });
   };
 
   handleGenderTagClick = event => {
@@ -124,7 +124,7 @@ class Shop extends Component {
           pickupCity:this.state.city,
           pickupZip:this.state.zip};
        this.loadDonations(searchobj);
-    })
+    });
   };
 
   handleInteresed = () => {

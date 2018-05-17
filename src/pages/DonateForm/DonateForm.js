@@ -1,41 +1,41 @@
-import React, { Component } from 'react'
-import API from '../../utils/API'
-import './DonateForm.css'
-import ChooseFile from './components/ChooseFile'
-import PictureInfo from './components/PictureInfo'
-import PickupAddress from './components/PickupAddress'
-import PickupLocation from './components/PickupLocation'
-import PickupComments from './components/PickupComments'
-import PictureTags from './components/PictureTags'
-import ItemPicture from './components/ItemPicture'
-import DonateButton from './components/DonateButton';
+import React, { Component } from "react";
+import API from "../../utils/API";
+import "./DonateForm.css";
+import ChooseFile from "./components/ChooseFile";
+import PictureInfo from "./components/PictureInfo";
+import PickupAddress from "./components/PickupAddress";
+import PickupLocation from "./components/PickupLocation";
+import PickupComments from "./components/PickupComments";
+import PictureTags from "./components/PictureTags";
+import ItemPicture from "./components/ItemPicture";
+import DonateButton from "./components/DonateButton";
 // import Noty from 'noty';
 
 class DonateForm extends Component {
   state = {
     file: null,
-    nameDisplay: '',
-    name: '',
-    desc: '',
-    url: '',
-    categoryTag: '',
-    conditionTag: '',
-    ageTag: '',
-    genderTag: '',
-    pickupAddress1: '',
-    pickupAddress2: '',
-    pickupCity: '',
-    pickupState: '',
-    pickupZip: '',
-    pickupLocationType: '',
-    pickupDay: 'sunday',
-    pickupTimeStart: '',
-    pickupTimeEnd: '',
-    donorPickupAmPm: '',
-    donorPickupComments: '',
-    doneePickupComments: '',
-    doneePickupTime: '',
-    doneePickupAmPm: '',
+    nameDisplay: "",
+    name: "",
+    desc: "",
+    url: "",
+    categoryTag: "",
+    conditionTag: "",
+    ageTag: "",
+    genderTag: "",
+    pickupAddress1: "",
+    pickupAddress2: "",
+    pickupCity: "",
+    pickupState: "",
+    pickupZip: "",
+    pickupLocationType: "",
+    pickupDay: "sunday",
+    pickupTimeStart: "",
+    pickupTimeEnd: "",
+    donorPickupAmPm: "",
+    donorPickupComments: "",
+    doneePickupComments: "",
+    doneePickupTime: "",
+    doneePickupAmPm: "",
     donorPickupConfirmed: false,
     doneePickupConfirmed: false,
     donationComplete: false,
@@ -44,65 +44,65 @@ class DonateForm extends Component {
     datePosted:
       new Date().getMonth() +
       1 +
-      '/' +
+      "/" +
       new Date().getDate() +
-      '/' +
+      "/" +
       new Date().getFullYear()
   }
 
   static getDerivedStateFromProps() {
-    console.log('*** Donate Form ***')
-    console.log('Lifecycle - getDerivedStateFromProps')
-    console.log('------------------------');
+    console.log("*** Donate Form ***");
+    console.log("Lifecycle - getDerivedStateFromProps");
+    console.log("------------------------");
   }
     // considered unsafe
   componentWillReceiveProps = nextProps => {
-    console.log('*** Donate Form ***')
-    console.log('Lifecycle - UNSAFE_componentWillReceiveProps')
-    console.log('------------------------');
+    console.log("*** Donate Form ***");
+    console.log("Lifecycle - UNSAFE_componentWillReceiveProps");
+    console.log("------------------------");
   }
 
   // considered unsafe
   componentWillMount() {
-    console.log('*** Donate Form ***')
-    console.log('Lifecycle - UNSAFE_componentWillMount')
-    console.log('------------------------');
+    console.log("*** Donate Form ***");
+    console.log("Lifecycle - UNSAFE_componentWillMount");
+    console.log("------------------------");
   }
 
   shouldComponentUpdate() {
-    console.log('*** Donate Form ***')
-    console.log('Lifecycle - shouldComponentUpdate')
-    console.log('------------------------');
+    console.log("*** Donate Form ***");
+    console.log("Lifecycle - shouldComponentUpdate");
+    console.log("------------------------");
   }
 
   getSnapshotBeforeUpdate() {
-    console.log('*** Donate Form ***')
-    console.log('Lifecycle - getSnapshotBeforeUpdate')
-    console.log('------------------------');
+    console.log("*** Donate Form ***");
+    console.log("Lifecycle - getSnapshotBeforeUpdate");
+    console.log("------------------------");
   }
 
   componentDidUpdate() {
-    console.log('*** Donate Form ***')
-    console.log('Lifecycle - componentDidUpdate')
-    console.log('------------------------');
+    console.log("*** Donate Form ***");
+    console.log("Lifecycle - componentDidUpdate");
+    console.log("------------------------");
   }
 
   componentDidMount() {
-    console.log('*** Donate Form ***')
-    console.log('Lifecycle - componentDidMount')
-    console.log('------------------------');
+    console.log("*** Donate Form ***");
+    console.log("Lifecycle - componentDidMount");
+    console.log("------------------------");
   }
 
   componentWillUnmount() {
-    console.log('*** Donate Form ***')
-    console.log('Lifecycle - componentWillUnmount')
-    console.log('------------------------');
+    console.log("*** Donate Form ***");
+    console.log("Lifecycle - componentWillUnmount");
+    console.log("------------------------");
   }
 
   componentDidCatch() {
-    console.log('*** Donate Form ***')
-    console.log('Lifecycle - componentDidCatch')
-    console.log('------------------------');
+    console.log("*** Donate Form ***");
+    console.log("Lifecycle - componentDidCatch");
+    console.log("------------------------");
   }
 
   handleEdit = id => {}
@@ -135,55 +135,55 @@ class DonateForm extends Component {
       doneePickupComments: this.state.doneePickupComments,
       doneePickupTime: this.state.doneePickupTime,
       doneePickupAmPm: this.state.doneePickupAmPm
-    }
+    };
     // console.log('*** Donate Form ***')
     // console.log('handleCreate', donateObj)
     // console.log('------------------------');
 
     // window.location.href NOT WORKING. I also tried from server with GET, No Luck
     API.saveDonation(donateObj)
-      .then(res => (window.location.href = '/'))
-      .catch(err => console.log(err))
+      .then(res => (window.location.href = "/"))
+      .catch(err => console.log(err));
   }
 
   handleInputChange = event => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
     this.setState({
       [name]: value
-    })
+    });
   }
 
   handleNameChange = event => {
-    const name = event.target.value.toLowerCase()
-    const nameDisplay = event.target.value
+    const name = event.target.value.toLowerCase();
+    const nameDisplay = event.target.value;
     this.setState({
       name,
       nameDisplay
-    })
+    });
   }
 
   handleFormSubmit = event => {
-    event.preventDefault()
+    event.preventDefault();
   }
 
   handleFileChosen = event => {
     // console.log('handleFileChosen', event.target.files[0])
     this.setState({
       file: event.target.files[0]
-    })
+    });
   }
 
   handleUploadPicture = event => {
-    event.preventDefault()
+    event.preventDefault();
 
-    const formData = new FormData()
+    const formData = new FormData();
     // console.log('this.state.file', this.state.file)
-    formData.append('file', this.state.file)
+    formData.append("file", this.state.file);
     const config = {
       headers: {
-        'content-type': 'multipart/form-data'
+        "content-type": "multipart/form-data"
       }
-    }
+    };
 
     API.uploadPicture(formData, config).then(response => {
       // console.log('uploadPicture', response)
@@ -193,14 +193,14 @@ class DonateForm extends Component {
 
         // *** Production - Change for deployment to Heroku
         // url: response.data     
-      })
-    })
+      });
+    });
   }
 
   render() {
-    console.log('*** Donate Form ***')
-    console.log('Lifecycle - render')
-    console.log('------------------------');
+    console.log("*** Donate Form ***");
+    console.log("Lifecycle - render");
+    console.log("------------------------");
     return (
       <div className="container-fluid" id="donate-form">
         <div className="row">
@@ -233,8 +233,8 @@ class DonateForm extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default DonateForm
+export default DonateForm;
