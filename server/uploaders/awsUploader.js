@@ -1,20 +1,20 @@
 const AWS = require("aws-sdk");
 const fs = require("fs");
 
-var s3 = new AWS.S3();
+const s3 = new AWS.S3();
 
 function uploadFile(req, res, next){
-  console.log("Attempting to upload file to AWS...")
+  console.log("Attempting to upload file to AWS...");
   // const currentFile = req.files["images"];
   const currentFile = req.files["file"];
-  var lastIndex = currentFile.path.lastIndexOf("/");
-  var newName = currentFile.path.substring(lastIndex + 1);
+  const lastIndex = currentFile.path.lastIndexOf("/");
+  const newName = currentFile.path.substring(lastIndex + 1);
 
   //My Storage Bucket is setup as a configuration variable
   //For this I used the .env file for the development environment
   console.log("Bucket Name", process.env.BUCKET_NAME);
 
-  var data = {
+  const data = {
     Bucket: process.env.BUCKET_NAME,
     Key: newName,
     Body: fs.createReadStream(currentFile.path),
@@ -23,7 +23,7 @@ function uploadFile(req, res, next){
 
   s3.putObject(data, function(err, data) {
     if (err){
-      console.log("Error uploading File to AWS", err)
+      console.log("Error uploading File to AWS", err);
       return next(err);
     }
     else{
@@ -40,8 +40,8 @@ function uploadFile(req, res, next){
         }
         console.log("DATA", url);
         res.json(url);
-      })
-      
+      });
+
     }
   });
 }

@@ -13,7 +13,7 @@ mongoose.connect(
 
 const donationSeed = [
   {
-    donorId: 'ObjectId("5a86180f03e8e336f479c1ef")',
+    donorId: "ObjectId(\"5a86180f03e8e336f479c1ef\")",
     name: "Wine Cabinet",
     desc: "Crate and Barrell wood cabinet",
     url: "api/uploads/lisa/cabinet.jpeg",
@@ -33,7 +33,7 @@ const donationSeed = [
 
   },
   {
-    donorId: 'ObjectId("5a86180f03e8e336f479c1ef")',
+    donorId: "ObjectId(\"5a86180f03e8e336f479c1ef\")",
     name: "Sneakers",
     desc: "Born in the USA Sneakers",
     url: "api/uploads/lisa/sneakers.jpg",
