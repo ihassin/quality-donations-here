@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const pickupComments = props => (
   <form id="pickup-comments" className="font-weight-bold mx-4 mb-4">
@@ -16,6 +16,6 @@ const pickupComments = props => (
       </div>
     </div>
   </form>
-)
+);
 
-export default pickupComments
+export default pickupComments;

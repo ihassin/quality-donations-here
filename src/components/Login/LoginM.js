@@ -1,5 +1,5 @@
-import React from 'react'
-import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png'
+import React from "react";
+import googleButton from "./google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png";
 
 const LoginM = props => (
   <div className="modal" id="loginModal">
@@ -9,7 +9,7 @@ const LoginM = props => (
         {/* Logo */}
           <img
             id="logo"
-            src={require('../../images/qualitydonationslogo.png')}
+            src={require("../../images/qualitydonationslogo.png")}
             alt="Quality Donations Here"
           />
           <button className="close" data-dismiss="modal">
@@ -81,6 +81,6 @@ const LoginM = props => (
       </div>
     </div>
   </div>
-)
+);
 
-export default LoginM
+export default LoginM;

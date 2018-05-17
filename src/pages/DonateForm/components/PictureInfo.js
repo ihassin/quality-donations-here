@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const pictureInfo = props => (
   <form id="picture-info" className="mr-5">
@@ -47,6 +47,6 @@ const pictureInfo = props => (
       </div>
     </div>
   </form>
-)
+);
 
-export default pictureInfo
+export default pictureInfo;

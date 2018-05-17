@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 // import {
 //   Navbar,
 //   Nav,
@@ -9,10 +9,10 @@ import React from 'react'
 //   FormControl,
 //   ControlLabel
 // } from 'react-bootstrap'
-import './Navbar.css'
-import { Link } from 'react-router-dom'
-import LoginM from '../Login/LoginM'
-import SignupM from '../Login/SignupM'
+import "./Navbar.css";
+import { Link } from "react-router-dom";
+import LoginM from "../Login/LoginM";
+import SignupM from "../Login/SignupM";
 
 const DonateNavbar = props => {
   if (props.loggedIn) {
@@ -22,7 +22,7 @@ const DonateNavbar = props => {
           <a className="navbar-brand p-0 mr-4 my-0" href="#">
             <img
               id="logo"
-              src={require('../../images/qualitydonationslogo.png')}
+              src={require("../../images/qualitydonationslogo.png")}
             />
           </a>
 
@@ -55,7 +55,7 @@ const DonateNavbar = props => {
                 />
               </form>
             ) : (
-              ''
+              ""
             )}
 
             {props.donate ? (
@@ -63,12 +63,12 @@ const DonateNavbar = props => {
                   Donate
               </form>
             ) : (
-              ''
+              ""
             )}
 
             <ul className="navbar-nav ml-auto">
               {props.shop ? (
-                ''
+                ""
               ) : (
                 <li className="nav-item">
                   <a className="nav-link" href="/">
@@ -78,7 +78,7 @@ const DonateNavbar = props => {
               )}
 
               {props.donate ? (
-                ''
+                ""
               ) : (
                 <li className="nav-item">
                   <Link className="nav-link" id="donate-link" to="/donate">
@@ -117,7 +117,7 @@ const DonateNavbar = props => {
           </div>
         </div>
       </nav>
-    )
+    );
   } else {
     return (
       <nav className="navbar navbar-expand-md navbar-light p-0 m-0">
@@ -125,7 +125,7 @@ const DonateNavbar = props => {
           <a className="navbar-brand p-0 mr-4 my-0" href="#">
             <img
               id="logo"
-              src={require('../../images/qualitydonationslogo.png')}
+              src={require("../../images/qualitydonationslogo.png")}
             />
           </a>
 
@@ -158,7 +158,7 @@ const DonateNavbar = props => {
                 />
               </form>
             ) : (
-              ''
+              ""
             )}
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -217,8 +217,8 @@ const DonateNavbar = props => {
           handleSignupSubmit={props.handleSignupSubmit}
         />
       </nav>
-    )
+    );
   }
-}
+};
 
-export default DonateNavbar
+export default DonateNavbar;

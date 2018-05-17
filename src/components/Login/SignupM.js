@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const SignupM = props => (
   <div className="modal" id="signupModal">
@@ -9,7 +9,7 @@ const SignupM = props => (
         <div className="modal-header">
           <img
             id="logo"
-            src={require('../../images/qualitydonationslogo.png')}
+            src={require("../../images/qualitydonationslogo.png")}
             alt="Quality Donations Here"
           />
           <button className="close" data-dismiss="modal">
@@ -136,6 +136,6 @@ const SignupM = props => (
       </div>
     </div>
   </div>
-)
+);
 
-export default SignupM
+export default SignupM;

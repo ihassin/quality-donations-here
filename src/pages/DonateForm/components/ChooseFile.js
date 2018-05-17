@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const chooseFile = props => (
   <form id="choose-file" className="ml-2 mb-4">
@@ -21,9 +21,9 @@ const chooseFile = props => (
       </div>
     </div>
   </form>
-)
+);
 
-export default chooseFile
+export default chooseFile;
 
 
          

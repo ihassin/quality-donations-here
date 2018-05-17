@@ -1,6 +1,6 @@
 import React from "react";
 import "./DonationCard.css";
-import { Button, Col } from 'react-bootstrap';
+import { Button, Col } from "react-bootstrap";
 
 const DonationCard = props => (
 
