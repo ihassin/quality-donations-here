@@ -32,6 +32,8 @@
     "concurrently": "^3.5.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
     "react-scripts": "1.0.7",
     "react-test-render": "^1.1.1"
   },
@@ -39,6 +41,7 @@
     "start": "export NODE_ENV=\"production\" && node server/server.js",
     "build": "react-scripts build",
     "seed": "node server/scripts/seedDB.js",
+    "lint": "eslint .",
     "test-ci": "CI=true yarn test",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
