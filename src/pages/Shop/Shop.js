@@ -18,7 +18,6 @@ class Shop extends Component {
       conditionTag:"",
       ageTag:"",
       genderTag:"",
-      home: "",
       home:"", 
       fashion:"", 
       jewelry:"", 
@@ -149,7 +148,7 @@ class Shop extends Component {
 
   selectDeselectTag = (type, value) => {
     switch(type) {
-      case "category": {
+      case "category":
         if (this.categoryClick === value) {
           // deselect
           this.setState({[value]:""}, () =>  this.categoryClick = "");
@@ -165,9 +164,7 @@ class Shop extends Component {
             return value;
           }
         }
-      }
-      break;
-      case "condition": {
+      case "condition": 
         if (this.conditionClick === value) {
           // deselect
           this.setState({[value]:""}, () =>  this.conditionClick = "");
@@ -183,9 +180,7 @@ class Shop extends Component {
             return value;
           }
         }
-      }
-      break;
-      case "age": {
+      case "age": 
         if (this.ageClick === value) {
           // deselect
           this.setState({[value]:""}, () =>  this.ageClick = "");
@@ -201,9 +196,7 @@ class Shop extends Component {
             return value;
           }
         }
-      }
-      break;
-      case "gender": {
+      case "gender": 
         if (this.genderClick === value) {
           // deselect
           this.setState({[value]:""}, () =>  this.genderClick = "");
@@ -219,8 +212,6 @@ class Shop extends Component {
             return value;
           }
         }
-      }
-      break;
       default: return "";
     }
 

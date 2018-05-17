@@ -19,9 +19,10 @@ const DonateNavbar = props => {
     return (
       <nav className="navbar navbar-expand-md navbar-light p-0 m-0">
         <div className="container-fluid mx-2 my-2">
-          <a className="navbar-brand p-0 mr-4 my-0" href="#">
+          <a className="navbar-brand p-0 mr-4 my-0" >
             <img
               id="logo"
+              alt="logo"
               src={require('../../images/qualitydonationslogo.png')}
             />
           </a>
@@ -91,25 +92,24 @@ const DonateNavbar = props => {
                 <a
                   className="nav-link dropdown-toggle rounded-circle"
                   data-toggle="dropdown"
-                  href="#"
                 >
                   {props.user.local.username}
                 </a>
                 <div className="dropdown-menu">
-                  <a href="#" className="dropdown-item">
+                  <a className="dropdown-item">
                     My Donations
                   </a>
-                  <a href="#" className="dropdown-item">
+                  <a className="dropdown-item">
                     My Pickups
                   </a>
-                  <a href="#" className="dropdown-item">
+                  <a className="dropdown-item">
                     My Profile
                   </a>
                 </div>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#" onClick={props._logout}>
+                <a className="nav-link" onClick={props._logout}>
                   logout
                 </a>
               </li>
@@ -122,9 +122,10 @@ const DonateNavbar = props => {
     return (
       <nav className="navbar navbar-expand-md navbar-light p-0 m-0">
         <div className="container-fluid mx-2 my-2">
-          <a className="navbar-brand p-0 mr-4 my-0" href="#">
+          <a className="navbar-brand p-0 mr-4 my-0">
             <img
               id="logo"
+              alt="logo"
               src={require('../../images/qualitydonationslogo.png')}
             />
           </a>
@@ -164,7 +165,6 @@ const DonateNavbar = props => {
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  href="#"
                   // onClick={props.handleShowLogIn}
                   data-toggle="modal"
                   data-target="#loginModal"
@@ -175,8 +175,7 @@ const DonateNavbar = props => {
 
               <li className="nav-item">
                 <a
-                  className="nav-link"
-                  href="#"
+                  className="nav-link test-login-click"
                   // onClick={props.handleShowLogIn}
                   data-toggle="modal"
                   data-target="#loginModal"
@@ -188,7 +187,6 @@ const DonateNavbar = props => {
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  href="#"
                   // onClick={props.handleShowSignup}
                   data-toggle="modal"
                   data-target="#signupModal"

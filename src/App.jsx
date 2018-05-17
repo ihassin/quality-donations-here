@@ -1,31 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Route } from 'react-router-dom'
-// import {
-//   Popover,
-//   Tooltip,
-//   Button,
-//   Modal,
-//   OverlayTrigger,
-//   Form,
-//   FormControl,
-//   Col,
-//   FormGroup
-// } from 'react-bootstrap'
-import {
-  Popover,
-  Tooltip
-} from 'react-bootstrap'
 import './App.css'
 import Navbar from './components/Navbar'
-import LoginForm from './components/Login/LoginForm'
-import SignupForm from './components/SignupForm'
 import DonateForm from './pages/DonateForm'
 import MyDonations from './pages/MyDonations'
 import MyPickups from './pages/MyPickups'
 import Shop from './pages/Shop'
-import googleButton from './components/Login/google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png'
-import API from './utils/API'
 
 class App extends Component {
   constructor() {
@@ -196,7 +177,7 @@ class App extends Component {
   }
 
   handleCityZipSearch = event => {
-    const { name, value } = event.target
+    const { value } = event.target
 
     // if value is not a number then it is city, otherwise zip
     if (isNaN(value.charAt(0))) {
@@ -213,12 +194,12 @@ class App extends Component {
   }
 
   render() {
-    const popover = (
-      <Popover id="modal-popover" title="popover">
-        very popover. such engagement
-      </Popover>
-    )
-    const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>
+    // const popover = (
+    //   <Popover id="modal-popover" title="popover">
+    //     very popover. such engagement
+    //   </Popover>
+    // )
+    // const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>
     if (this.state.redirectTo) {
       return (
         <div>
