@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const ageTags = props => (
   <form className="pb-1 mb-2 border-bottom border-success font-weight-bold text-left">
@@ -77,6 +77,6 @@ const ageTags = props => (
       </div>
     </div>
   </form>
-)
+);
 
-export default ageTags
+export default ageTags;

@@ -1,7 +1,7 @@
-import React from 'react'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import React from "react";
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Navbar.css";
-import {Link} from 'react-router-dom';
+import {Link} from "react-router-dom";
 
 const DonateNavbar = props => {
 	if (props.loggedIn) {
@@ -18,17 +18,17 @@ const DonateNavbar = props => {
 			<Navbar.Form pullLeft>
 				<FormGroup>
 					<FormControl type="text" id="keyword-search-input" name="keyword" onChange={props.handleKeywordSearch} placeholder="What are you looking for?" />
-				</FormGroup>{' '}
+				</FormGroup>{" "}
 				<FormGroup>
 					<FormControl type="text" id="cityZip-search-input" name="keyword" onChange={props.handleCityZipSearch} placeholder="Enter City or Zip" />
-				</FormGroup>{' '}
+				</FormGroup>{" "}
 			</Navbar.Form>
 			: ""}
 			{props.donate ? 
 			<Navbar.Form pullLeft>
 				<FormGroup>
 					<ControlLabel id="donate-title">Donate</ControlLabel>
-				</FormGroup>{' '}
+				</FormGroup>{" "}
 			</Navbar.Form>
 			: ""}
 			<Nav pullRight>
@@ -74,7 +74,7 @@ const DonateNavbar = props => {
 	</Navbar.Collapse>
 </Navbar>
 
-		)
+		);
 	} else {
 		return (
 
@@ -89,10 +89,10 @@ const DonateNavbar = props => {
 			<Navbar.Form pullLeft>
 				<FormGroup>
 				<FormControl type="text" id="keyword-search-input" name="keyword" onChange={props.handleKeywordSearch} placeholder="What are you looking for?" />
-				</FormGroup>{' '}
+				</FormGroup>{" "}
 				<FormGroup>
 					<FormControl type="text" id="cityZip-search-input" name="keyword" onChange={props.handleCityZipSearch} placeholder="Enter City or Zip" />
-				</FormGroup>{' '}
+				</FormGroup>{" "}
 			</Navbar.Form>
 			: ""}
 			<Nav pullRight>
@@ -117,8 +117,8 @@ const DonateNavbar = props => {
 		</Navbar.Collapse>
 	</Navbar>
 
-		)
+		);
 	}
-}
+};
 
-export default DonateNavbar
+export default DonateNavbar;

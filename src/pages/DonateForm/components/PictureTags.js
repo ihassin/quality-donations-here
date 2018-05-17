@@ -1,8 +1,8 @@
-import React from 'react'
-import CategoryTags from './CategoryTags';
-import ConditionTags from './ConditionTags';
-import GenderTags from './GenderTags';
-import AgeTags from './AgeTags';
+import React from "react";
+import CategoryTags from "./CategoryTags";
+import ConditionTags from "./ConditionTags";
+import GenderTags from "./GenderTags";
+import AgeTags from "./AgeTags";
 
 const pictureTags = props => (
   <div id="picture-tags">
@@ -11,6 +11,6 @@ const pictureTags = props => (
     <GenderTags handleInputChange={props.handleInputChange} />
     <AgeTags handleInputChange={props.handleInputChange} />
   </div>
-)
+);
 
-export default pictureTags
+export default pictureTags;
