@@ -7,4 +7,4 @@ cache:
 script:
   - yarn lint
   - yarn test-ci
-  - npm test
+  - npm run test
