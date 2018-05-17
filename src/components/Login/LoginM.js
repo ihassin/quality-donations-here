@@ -43,6 +43,7 @@ const LoginM = props => (
                     type="password"
                     placeholder="Password"
                     name="password"
+                    id="password"
                     value={props.password}
                     onChange={props.handleChange}
                     required
