@@ -1,5 +1,7 @@
 # Quality Donations Here  
 
+[![Build Status](https://travis-ci.org/ihassin/quality-donations-here.svg?branch=master)](https://travis-ci.org/ihassin/quality-donations-here)
+
 ### View the live version of this app here: https://glacial-mountain-71826.herokuapp.com/
 
 ## Technologies
@@ -41,3 +43,13 @@ yarn install
 * Misc
 
   - Copy .env.example to .env and fill in the needed keys.
+
+# Running tests
+
+```bash
+yarn test-ci src/tests/unit
+```
+or
+```bash
+npm run test-ci src/tests/unit
+```
