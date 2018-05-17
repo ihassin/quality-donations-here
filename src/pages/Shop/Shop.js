@@ -41,7 +41,8 @@ class Shop extends Component {
       male:"",
       female:"",
       neutral:"",   
-      typingTimeout:null
+      typingTimeout:null,
+      test:""
 		};
 		this.loadDonations = this.loadDonations.bind(this);
 	
