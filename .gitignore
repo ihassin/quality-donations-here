@@ -1,5 +1,7 @@
 .env
 build/**
+cypress/videos/**
+
 
 # Logs
 logs
