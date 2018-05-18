@@ -26,6 +26,7 @@ const SignupM = props => (
                   <input
                     className="form-control"
                     type="text"
+                    id="signup-firstname-input"
                     placeholder="First Name"
                     name="signupFirstname"
                     value={props.signupFirstname}
@@ -42,6 +43,7 @@ const SignupM = props => (
                   <input
                     className="form-control"
                     type="text"
+                    id="signup-lastname-input"
                     placeholder="Last Name"
                     name="signupLastname"
                     value={props.signupLastname}
@@ -58,6 +60,7 @@ const SignupM = props => (
                   <input
                     className="form-control"
                     type="email"
+                    id="signup-email-input"
                     placeholder="Email"
                     name="signupEmail"
                     value={props.signupEmail}
@@ -74,6 +77,7 @@ const SignupM = props => (
                   <input
                     className="form-control"
                     type="text"
+                    id="signup-username-input"
                     placeholder="Username"
                     name="signupUsername"
                     value={props.signupUsername}
@@ -90,6 +94,7 @@ const SignupM = props => (
                   <input
                     className="form-control"
                     type="password"
+                    id="signup-password-input"
                     placeholder="Password"
                     name="signupPassword"
                     value={props.signupPassword}
@@ -106,6 +111,7 @@ const SignupM = props => (
                   <input
                     className="form-control"
                     type="password"
+                    id="signup-confirmPassword-input"
                     placeholder="Confirm Password"
                     name="signupconfirmPassword"
                     value={props.signupconfirmPassword}
@@ -121,6 +127,7 @@ const SignupM = props => (
                 className="btn btn-success btn-block font-weight-bold"
                 data-dismiss="modal"
                 type="submit"
+                id="signup-submit-button"
                 onClick={props.handleSignupSubmit}
               >
                 Sign up
