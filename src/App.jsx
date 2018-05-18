@@ -1,134 +1,134 @@
-import React, { Component } from 'react'
-import axios from 'axios'
-import { Route } from 'react-router-dom'
-import './App.css'
-import Navbar from './components/Navbar'
-import DonateForm from './pages/DonateForm'
-import MyDonations from './pages/MyDonations'
-import MyPickups from './pages/MyPickups'
-import Shop from './pages/Shop'
+import React, { Component } from "react";
+import axios from "axios";
+import { Route } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import DonateForm from "./pages/DonateForm";
+import MyDonations from "./pages/MyDonations";
+import MyPickups from "./pages/MyPickups";
+import Shop from "./pages/Shop";
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       loggedIn: false,
       user: null,
       firstname: null,
       redirectTo: false,
-      keyword: '',
-      city: '',
-      zip: '',
+      keyword: "",
+      city: "",
+      zip: "",
       showLogIn: false,
-      signupFirstname: '',
-      signupLastname: '',
-      signupEmail: '',
-      signupUsername: '',
-      signupPassword: '',
-      signupconfirmPassword: '',
+      signupFirstname: "",
+      signupLastname: "",
+      signupEmail: "",
+      signupUsername: "",
+      signupPassword: "",
+      signupconfirmPassword: "",
       showSignup: false
-    }
-    this._logout = this._logout.bind(this)
-    this._login = this._login.bind(this)
-    this.handleKeywordSearch = this.handleKeywordSearch.bind(this)
-    this.handleCityZipSearch = this.handleCityZipSearch.bind(this)
+    };
+    this._logout = this._logout.bind(this);
+    this._login = this._login.bind(this);
+    this.handleKeywordSearch = this.handleKeywordSearch.bind(this);
+    this.handleCityZipSearch = this.handleCityZipSearch.bind(this);
   }
   componentDidMount() {
-    axios.get('/auth/user').then(response => {
-      console.log(response.data)
+    axios.get("/auth/user").then(response => {
+      console.log(response.data);
       if (!!response.data.user) {
-        console.log('THERE IS A USER')
-        console.log('login', response.data)
+        console.log("THERE IS A USER");
+        console.log("login", response.data);
         this.setState({
           loggedIn: true,
           user: response.data.user,
           firstname: response.data.user.firstname,
           redirectTo: false
-        })
+        });
       } else {
         this.setState({
           loggedIn: false,
           user: null,
           firstname: null,
           redirectTo: false
-        })
+        });
       }
-    })
+    });
   }
 
   _logout(event) {
-    event.preventDefault()
-    console.log('logging out')
-    axios.post('/auth/logout').then(response => {
+    event.preventDefault();
+    console.log("logging out");
+    axios.post("/auth/logout").then(response => {
       if (response.status === 200) {
-        window.location.href = '/'
+        window.location.href = "/";
         this.setState({
           loggedIn: false,
           user: null,
           firstname: null,
           redirectTo: true
-        })
+        });
       }
-    })
+    });
   }
 
   _login(username, password) {
     axios
-      .post('/auth/login', {
+      .post("/auth/login", {
         username,
         password
       })
       .then(response => {
-        console.log('login', response.data)
+        console.log("login", response.data);
         if (response.status === 200) {
           // close login modal
-          this.handleCloseLogin()
-          var fName = response.data.user.firstname
+          this.handleCloseLogin();
+          var fName = response.data.user.firstname;
           // update the state
           this.setState({
             loggedIn: true,
             user: response.data.user,
             firstname: fName,
             redirectTo: false
-          })
+          });
         }
-      })
+      });
   }
 
   handleChange = event => {
     console.log("handlechange");
-    const { name, value } = event.target
+    const { name, value } = event.target;
     this.setState({
       [name]: value
-    })
+    });
   }
 
   handleLoginSubmit = event => {
-    event.preventDefault()
-    console.log('this.handleLoginSubmit', this.state.username)
-    this._login(this.state.username, this.state.password)
+    event.preventDefault();
+    console.log("this.handleLoginSubmit", this.state.username);
+    this._login(this.state.username, this.state.password);
   }
 
   handleShowLogIn = () => {
     this.setState({
       showLogIn: true
-    })
+    });
   }
 
   handleCloseLogin = () => {
     this.setState({
       showLogIn: false
-    })
+    });
   }
 
   handleSignupSubmit = event => {
     console.log("handleSignupSubmit");
-    event.preventDefault()
+    event.preventDefault();
     // TODO - validate!
     axios
-      .post('/auth/signup', {
+      .post("/auth/signup", {
         username: this.state.signupUsername,
         password: this.state.signupPassword,
         firstname: this.state.signupFirstname,
@@ -136,8 +136,8 @@ class App extends Component {
         email: this.state.signupEmail
       })
       .then(response => {
-        this.handleCloseSignup()
-      })
+        this.handleCloseSignup();
+      });
 
     // const signupObj = {
     // 	username: this.state.signupUsername,
@@ -154,42 +154,42 @@ class App extends Component {
   handleShowSignup = () => {
     this.setState({
       showSignup: true
-    })
+    });
   }
 
   handleCloseSignup = () => {
     this.setState({
       showSignup: false,
-      signupFirstname: '',
-      signupLastname: '',
-      signupEmail: '',
-      signupUsername: '',
-      signupPassword: '',
-      signupconfirmPassword: ''
-    })
+      signupFirstname: "",
+      signupLastname: "",
+      signupEmail: "",
+      signupUsername: "",
+      signupPassword: "",
+      signupconfirmPassword: ""
+    });
   }
 
   handleKeywordSearch = event => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
     this.setState({
       [name]: value
-    })
+    });
   }
 
   handleCityZipSearch = event => {
-    const { value } = event.target
+    const { value } = event.target;
 
     // if value is not a number then it is city, otherwise zip
     if (isNaN(value.charAt(0))) {
       this.setState({
         city: value,
-        zip: ''
-      })
+        zip: ""
+      });
     } else {
       this.setState({
         zip: value,
-        city: ''
-      })
+        city: ""
+      });
     }
   }
 
@@ -223,14 +223,14 @@ class App extends Component {
             shop={true}
             handleKeywordSearch={this.handleKeywordSearch}
             handleCityZipSearch={this.handleCityZipSearch}
-          />{' '}
+          />{" "}
           <Shop
             keyword={this.state.keyword}
             city={this.state.city}
             zip={this.state.zip}
           />
         </div>
-      )
+      );
     }
     return (
       <div className="App">
@@ -259,7 +259,7 @@ class App extends Component {
                 shop={true}
                 handleKeywordSearch={this.handleKeywordSearch}
                 handleCityZipSearch={this.handleCityZipSearch}
-              />{' '}
+              />{" "}
               <Shop
                 keyword={this.state.keyword}
                 city={this.state.city}
@@ -282,7 +282,7 @@ class App extends Component {
                 />
                 <DonateForm user={this.state.user} />
               </div>
-            )
+            );
           }}
         />
         <Route
@@ -290,13 +290,13 @@ class App extends Component {
           path="/mydonations"
           render={() => (
             <div>
-              {' '}
+              {" "}
               <Navbar
                 _logout={this._logout}
                 loggedIn={this.state.loggedIn}
                 user={this.state.user}
-              />{' '}
-              <MyDonations />{' '}
+              />{" "}
+              <MyDonations />{" "}
             </div>
           )}
         />
@@ -305,19 +305,19 @@ class App extends Component {
           path="/mypickups"
           render={() => (
             <div>
-              {' '}
+              {" "}
               <Navbar
                 _logout={this._logout}
                 loggedIn={this.state.loggedIn}
                 user={this.state.user}
-              />{' '}
-              <MyPickups />{' '}
+              />{" "}
+              <MyPickups />{" "}
             </div>
           )}
         />
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
