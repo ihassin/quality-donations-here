@@ -25,6 +25,7 @@ const LoginM = props => (
                   <input
                     className="form-control"
                     type="text"
+                    id="login-username-input"
                     placeholder="Username"
                     name="username"
                     value={props.username}
@@ -43,7 +44,7 @@ const LoginM = props => (
                     type="password"
                     placeholder="Password"
                     name="password"
-                    id="password"
+                    id="login-password-input"
                     value={props.password}
                     onChange={props.handleChange}
                     required
@@ -57,6 +58,7 @@ const LoginM = props => (
                 className="btn btn-success btn-block font-weight-bold"
                 data-dismiss="modal"
                 type="submit"
+                id="login-submit-button"
                 onClick={props.handleLoginSubmit}
               >
                 Login
