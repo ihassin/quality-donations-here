@@ -45,9 +45,9 @@
     "seed": "node server/scripts/seedDB.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test:ci": "CI=true yarn test",
     "test": "react-scripts test --env=jsdom --coverage",
-    "cy": "node_modules/.bin/cypress",
+    "test:ci": "CI=true yarn test",
+    "test:cy": "node_modules/.bin/cypress run",
     "eject": "react-scripts eject",
     "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
     "prod": "export NODE_ENV=\"production\" && nodemon server/server.js"
