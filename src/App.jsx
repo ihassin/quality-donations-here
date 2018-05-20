@@ -8,7 +8,7 @@ import MyDonations from "./pages/MyDonations";
 import MyPickups from "./pages/MyPickups";
 import Shop from "./pages/Shop";
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state = {

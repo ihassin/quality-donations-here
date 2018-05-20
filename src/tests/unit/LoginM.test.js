@@ -7,11 +7,23 @@ describe('LoginM', () => {
   const mockHandleLoginSubmit = jest.fn()
   const user = 'lisa'
   const pass = 'password123'
-  const usernameEvent = { target: { value: user } }
-  const passEvent = { target: { value: pass } }
+  const usernameEvent = {
+    target: {
+      value: user
+    }
+  }
+  const passEvent = {
+    target: {
+      value: pass
+    }
+  }
   const props = {
-    username: { user },
-    password: { pass },
+    username: {
+      user
+    },
+    password: {
+      pass
+    },
     handleChange: mockHandleChange,
     handleLoginSubmit: mockHandleLoginSubmit
   }
