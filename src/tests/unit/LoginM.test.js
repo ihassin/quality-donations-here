@@ -11,12 +11,12 @@ describe("LoginM", () => {
     target: {
       value: user
     }
-  }
+  };
   const passEvent = {
     target: {
       value: pass
     }
-  }
+  };
   const props = {
     username: {
       user
