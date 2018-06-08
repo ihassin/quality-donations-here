@@ -61,7 +61,8 @@ typings/
 
 # dotenv environment variables file
 
-# *** should include (no #) for gitHub but should comment (add #) For heroku
+# *** should include (no #) for gitHub but should comment (add #) For heroku 
+# *** Why ignore for gitHub, do not want others to see AWS key
 # .env
 
 # See https://help.github.com/ignore-files/ for more about ignoring files.

@@ -8,11 +8,18 @@ function uploadFile(req, res, next){
   // const currentFile = req.files["images"];
   const currentFile = req.files["file"];
   const lastIndex = currentFile.path.lastIndexOf("/");
-  const newName = currentFile.path.substring(lastIndex + 1);
+  let newName = currentFile.path.substring(lastIndex + 1);
 
   //My Storage Bucket is setup as a configuration variable
   //For this I used the .env file for the development environment
-  console.log("Bucket Name", process.env.BUCKET_NAME);
+
+  // console.log("Bucket Name", process.env.BUCKET_NAME);
+  // console.log("Current File", currentFile);
+ 
+
+  newName = newName.includes('\\') ? newName.substring(newName.lastIndexOf('\\') + 1, newName.length) : newName;
+
+  // console.log("New Name", newName);
 
   const data = {
     Bucket: process.env.BUCKET_NAME,
@@ -38,7 +45,7 @@ function uploadFile(req, res, next){
         if(err){
           return next(err);
         }
-        console.log("DATA", url);
+        console.log("Picture Uploaded", url);
         res.json(url);
       });
 

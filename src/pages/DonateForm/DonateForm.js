@@ -50,61 +50,6 @@ class DonateForm extends Component {
       new Date().getFullYear()
   }
 
-  static getDerivedStateFromProps() {
-    console.log("*** Donate Form ***");
-    console.log("Lifecycle - getDerivedStateFromProps");
-    console.log("------------------------");
-  }
-    // considered unsafe
-  componentWillReceiveProps = nextProps => {
-    console.log("*** Donate Form ***");
-    console.log("Lifecycle - UNSAFE_componentWillReceiveProps");
-    console.log("------------------------");
-  }
-
-  // considered unsafe
-  componentWillMount() {
-    console.log("*** Donate Form ***");
-    console.log("Lifecycle - UNSAFE_componentWillMount");
-    console.log("------------------------");
-  }
-
-  shouldComponentUpdate() {
-    console.log("*** Donate Form ***");
-    console.log("Lifecycle - shouldComponentUpdate");
-    console.log("------------------------");
-  }
-
-  getSnapshotBeforeUpdate() {
-    console.log("*** Donate Form ***");
-    console.log("Lifecycle - getSnapshotBeforeUpdate");
-    console.log("------------------------");
-  }
-
-  componentDidUpdate() {
-    console.log("*** Donate Form ***");
-    console.log("Lifecycle - componentDidUpdate");
-    console.log("------------------------");
-  }
-
-  componentDidMount() {
-    console.log("*** Donate Form ***");
-    console.log("Lifecycle - componentDidMount");
-    console.log("------------------------");
-  }
-
-  componentWillUnmount() {
-    console.log("*** Donate Form ***");
-    console.log("Lifecycle - componentWillUnmount");
-    console.log("------------------------");
-  }
-
-  componentDidCatch() {
-    console.log("*** Donate Form ***");
-    console.log("Lifecycle - componentDidCatch");
-    console.log("------------------------");
-  }
-
   handleEdit = id => {}
 
   handleDelete = id => {}
@@ -185,17 +130,31 @@ class DonateForm extends Component {
       }
     };
 
+    // API.uploadPicture(formData, config).then(response => {
+    //   this.setState({
+    //     // *** Local - Change to run locally
+    //     // url: response.data[0].url
+
+    //     // *** Production - Change for deployment to Heroku
+    //     url: response.data     
+    //   });
+    // });
+
     API.uploadPicture(formData, config).then(response => {
-      // console.log('uploadPicture', response)
+      
       this.setState({
         // *** Local - Change to run locally
-        url: response.data[0].url
+        // url: response.data[0].url
 
         // *** Production - Change for deployment to Heroku
-        // url: response.data     
+        url: response.data     
       });
     });
+
+
   }
+
+  // if (process.env.NODE_ENV === "production") {
 
   render() {
     console.log("*** Donate Form ***");
