@@ -53,6 +53,7 @@
     "cy": "node_modules/.bin/cypress",
     "eject": "react-scripts eject",
     "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
+    "devSeed": "concurrently \"node server/scripts/seedDB.js\" \"react-scripts start\" \"nodemon server/server.js\"",
     "prod": "export NODE_ENV=\"production\" && nodemon server/server.js"
   },
   "proxy": {
