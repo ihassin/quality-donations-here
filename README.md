@@ -47,10 +47,18 @@ yarn install
 
 # Running tests
 
+## Unit tests
+
 ```bash
-yarn test-ci src/tests/unit
+yarn test:ci src/tests/unit
 ```
 or
 ```bash
-npm run test-ci src/tests/unit
+npm run test:ci src/tests/unit
+```
+
+## Integration tests
+
+```bash
+yarn test:cy
 ```
