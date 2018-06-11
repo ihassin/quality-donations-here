@@ -1,7 +1,7 @@
 .env
 build/**
 cypress/videos/**
-cyptess/screenshots
+cypress/screenshots
 
 # Logs
 logs
